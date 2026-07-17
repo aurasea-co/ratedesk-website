@@ -2,14 +2,14 @@ import { Landing } from '@/components/Landing';
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'RateDesk.ai — AI Revenue Management for SEA Hotels',
+  title: 'RateDesk.ai — Automated Revenue Management for SEA Hotels',
   description:
-    'RateDesk.ai is AI revenue management built for independent hotels and resorts across Southeast Asia — the right rate recommendation, every morning, on LINE.',
+    'RateDesk.ai is automated revenue management built for independent hotels and resorts across Southeast Asia — the right rate recommendation, every morning, on LINE.',
   openGraph: {
     locale: 'en_US',
-    title: 'RateDesk.ai — AI Revenue Management for SEA Hotels',
+    title: 'RateDesk.ai — Automated Revenue Management for SEA Hotels',
     description:
-      'AI revenue management for independent hotels and resorts in Southeast Asia.',
+      'Automated revenue management for independent hotels and resorts in Southeast Asia.',
   },
 };
 

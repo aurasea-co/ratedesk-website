@@ -14,9 +14,9 @@ export const content = {
       contact: 'ติดต่อทีมงาน',
     },
     hero: {
-      eyebrow: 'AI REVENUE MANAGEMENT · เปิดให้ใช้งานแล้ว',
+      eyebrow: 'AUTOMATED REVENUE MANAGEMENT · เปิดให้ใช้งานแล้ว',
       title: 'ราคาห้องที่ใช่\nสำหรับทุกคืน',
-      lead: 'RateDesk.ai เป็นระบบบริหารรายได้ AI ออกแบบมาเพื่อโรงแรมและรีสอร์ทอิสระในเอเชียตะวันออกเฉียงใต้ — แนะนำราคาที่เหมาะสมทุกเช้า ผ่าน LINE',
+      lead: 'RateDesk.ai เป็นระบบบริหารรายได้ห้องพักอัตโนมัติ ออกแบบมาเพื่อโรงแรมและรีสอร์ทอิสระในเอเชียตะวันออกเฉียงใต้ — แนะนำราคาที่เหมาะสมทุกเช้า ผ่าน LINE',
       caption:
         'สร้างขึ้นบน Aurasea OS แพลตฟอร์มปัญญาเชิงปฏิบัติการสำหรับ SME ในไทย',
     },
@@ -67,7 +67,7 @@ export const content = {
     pricing: {
       eyebrow: 'ราคา',
       title: 'ราคาเดียว ครบทุกฟีเจอร์',
-      lead: 'ราคาเดียว รวมทุกอย่าง — Auto Push, คำแนะนำ AI, สรุปเช้ารายประเภทห้อง และ Aurasea OS ไม่มีค่าเพิ่มเติม',
+      lead: 'ราคาเดียว รวมทุกอย่าง — Auto Push, คำแนะนำราคา, สรุปเช้ารายประเภทห้อง และ Aurasea OS ไม่มีค่าเพิ่มเติม',
       annual: {
         label: 'รายปี (แนะนำ)',
         price: '฿575',
@@ -130,12 +130,12 @@ export const content = {
         },
         {
           q: 'ราคาเท่าไหร่?',
-          a: 'ราคารายปี ฿575 / สาขา / เดือน (ประหยัด 2 เดือน) หรือ ฿690 รายเดือน รวม Auto Push, คำแนะนำ AI, สรุปเช้ารายประเภทห้อง และ Aurasea OS ทุกอย่างครบในราคาเดียว Founding Members 50 สาขาแรกได้ราคา ฿490 ล็อกตลอดชีพ ทดลองฟรี 90 วัน ไม่ต้องใช้บัตรเครดิต',
+          a: 'ราคารายปี ฿575 / สาขา / เดือน (ประหยัด 2 เดือน) หรือ ฿690 รายเดือน รวม Auto Push, คำแนะนำราคา, สรุปเช้ารายประเภทห้อง และ Aurasea OS ทุกอย่างครบในราคาเดียว Founding Members 50 สาขาแรกได้ราคา ฿490 ล็อกตลอดชีพ ทดลองฟรี 90 วัน ไม่ต้องใช้บัตรเครดิต',
         },
       ],
     },
     footer: {
-      tagline: 'ระบบบริหารรายได้ AI สำหรับโรงแรมและรีสอร์ทอิสระในเอเชียตะวันออกเฉียงใต้',
+      tagline: 'ระบบบริหารรายได้ห้องพักอัตโนมัติสำหรับโรงแรมและรีสอร์ทอิสระในเอเชียตะวันออกเฉียงใต้',
       crosslink:
         'RateDesk.ai เป็นส่วนหนึ่งของ Aurasea — แพลตฟอร์มปัญญาเชิงปฏิบัติการสำหรับ SME ในไทย ดูเพิ่มเติมที่ MenuDesk.ai สำหรับร้านอาหารและคาเฟ่',
       sections: {
@@ -177,9 +177,9 @@ export const content = {
       contact: 'Contact us',
     },
     hero: {
-      eyebrow: 'AI REVENUE MANAGEMENT · NOW OPEN',
+      eyebrow: 'AUTOMATED REVENUE MANAGEMENT · NOW OPEN',
       title: 'The right room rate,\nevery night.',
-      lead: 'RateDesk.ai is AI revenue management built for independent hotels and resorts across Southeast Asia — the right rate recommendation, every morning, on LINE.',
+      lead: 'RateDesk.ai is automated revenue management built for independent hotels and resorts across Southeast Asia — the right rate recommendation, every morning, on LINE.',
       caption:
         'Built on Aurasea OS — the operational intelligence platform for SEA small businesses.',
     },
@@ -230,7 +230,7 @@ export const content = {
     pricing: {
       eyebrow: 'Pricing',
       title: 'One price. Everything included.',
-      lead: 'One all-in price — Auto Push, AI rate recommendations, per-room-type morning brief, and Aurasea OS. No add-ons, no surprises.',
+      lead: 'One all-in price — Auto Push, rate recommendations, per-room-type morning brief, and Aurasea OS. No add-ons, no surprises.',
       annual: {
         label: 'Annual (recommended)',
         price: '฿575',
@@ -265,7 +265,7 @@ export const content = {
       ],
       includes: [
         'Auto Push (approve or adjust rates via LINE)',
-        'AI rate recommendations for the next 30 nights',
+        'Rate recommendations for the next 30 nights',
         'Per-room-type morning brief via LINE and email',
         'Automated competitor shopping 4× daily',
         'Aurasea OS — the operational platform for SMEs',
@@ -296,13 +296,13 @@ export const content = {
         },
         {
           q: 'How much does it cost?',
-          a: '฿575 / branch / month billed annually (saves 2 months), or ฿690 monthly. Everything is included — Auto Push, AI recommendations, per-room-type brief, and Aurasea OS. No add-ons. Founding Members (first 50 branches) pay ฿490 locked for life. 90-day free trial, no credit card.',
+          a: '฿575 / branch / month billed annually (saves 2 months), or ฿690 monthly. Everything is included — Auto Push, rate recommendations, per-room-type brief, and Aurasea OS. No add-ons. Founding Members (first 50 branches) pay ฿490 locked for life. 90-day free trial, no credit card.',
         },
       ],
     },
     footer: {
       tagline:
-        'AI revenue management for independent hotels and resorts in Southeast Asia.',
+        'Automated revenue management for independent hotels and resorts in Southeast Asia.',
       crosslink:
         'RateDesk.ai is part of Aurasea — the operational intelligence platform for SEA small businesses. See also MenuDesk.ai for cafes and restaurants.',
       sections: {

@@ -4,15 +4,15 @@ import './globals.css';
 export const metadata: Metadata = {
   metadataBase: new URL('https://www.ratedesk.ai'),
   title: {
-    default: 'RateDesk.ai — AI Revenue Management for SEA Hotels',
+    default: 'RateDesk.ai — Automated Revenue Management for SEA Hotels',
     template: '%s · RateDesk.ai',
   },
   description:
-    'AI revenue management for independent hotels and resorts across Southeast Asia. The right rate recommendation, every morning, on LINE.',
+    'Automated revenue management for independent hotels and resorts across Southeast Asia. The right rate recommendation, every morning, on LINE.',
   openGraph: {
-    title: 'RateDesk.ai — AI Revenue Management for SEA Hotels',
+    title: 'RateDesk.ai — Automated Revenue Management for SEA Hotels',
     description:
-      'AI revenue management for independent hotels and resorts across Southeast Asia.',
+      'Automated revenue management for independent hotels and resorts across Southeast Asia.',
     siteName: 'RateDesk.ai',
     type: 'website',
   },
