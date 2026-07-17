@@ -7,13 +7,14 @@ export const content = {
     nav: {
       howItWorks: 'วิธีใช้งาน',
       integrations: 'การเชื่อมต่อ',
+      pricing: 'ราคา',
       faq: 'คำถามที่พบบ่อย',
     },
     cta: {
       contact: 'ติดต่อทีมงาน',
     },
     hero: {
-      eyebrow: 'AI REVENUE MANAGEMENT · เร็วๆ นี้',
+      eyebrow: 'AI REVENUE MANAGEMENT · เปิดให้ใช้งานแล้ว',
       title: 'ราคาห้องที่ใช่\nสำหรับทุกคืน',
       lead: 'RateDesk.ai เป็นระบบบริหารรายได้ AI ออกแบบมาเพื่อโรงแรมและรีสอร์ทอิสระในเอเชียตะวันออกเฉียงใต้ — แนะนำราคาที่เหมาะสมทุกเช้า ผ่าน LINE',
       caption:
@@ -63,13 +64,60 @@ export const content = {
       body: 'RateDesk.ai พัฒนาโดยอิงประสบการณ์จริงจาก Crystal Resort — รีสอร์ทบูทีคในนครราชสีมาที่เป็นพันธมิตรการออกแบบของเรา ทุกฟีเจอร์ผ่านการใช้งานจริงก่อนปล่อยให้ลูกค้า',
       attribution: 'Crystal Resort · นครราชสีมา · พันธมิตรการออกแบบ Aurasea',
     },
+    pricing: {
+      eyebrow: 'ราคา',
+      title: 'ราคาเดียว ครบทุกฟีเจอร์',
+      lead: 'ราคาเดียว รวมทุกอย่าง — Auto Push, คำแนะนำ AI, สรุปเช้ารายประเภทห้อง และ Aurasea OS ไม่มีค่าเพิ่มเติม',
+      annual: {
+        label: 'รายปี (แนะนำ)',
+        price: '฿575',
+        unit: '/ สาขา / เดือน',
+        note: 'เทียบเท่า ฿6,900 / ปี — ประหยัด 2 เดือนเมื่อจ่ายรายปี',
+        badge: 'ราคาเริ่มต้น',
+      },
+      monthly: {
+        label: 'รายเดือน',
+        price: '฿690',
+        unit: '/ สาขา / เดือน',
+        note: 'ยืดหยุ่น ยกเลิกได้ทุกเมื่อ',
+      },
+      founding: {
+        label: 'Founding Members',
+        price: '฿490',
+        unit: '/ สาขา / เดือน',
+        note: 'ล็อกราคาตลอดชีพ · เหลือ 50 สาขาแรกเท่านั้น',
+        badge: 'พิเศษ',
+        perks: [
+          'ราคา ฿490 ล็อกตลอดชีพ',
+          'ฟรี onboarding แบบ 1:1',
+          'เข้าถึงผู้ก่อตั้งโดยตรง',
+          'ร่วม case-study partnership',
+        ],
+      },
+      promos: [
+        { icon: '90', text: 'ทดลองฟรี 90 วัน ไม่ต้องใช้บัตรเครดิต' },
+        { icon: '−15%', text: 'ส่วนลด 15% เมื่อมี 3 สาขาขึ้นไป' },
+        { icon: '1mo', text: 'แนะนำเพื่อนเจ้าของโรงแรม — ทั้งคู่ได้ฟรี 1 เดือน' },
+        { icon: 'OS', text: 'Aurasea OS รวมอยู่แล้ว ไม่คิดเพิ่ม' },
+      ],
+      includes: [
+        'Auto Push (อนุมัติหรือปรับราคาผ่าน LINE)',
+        'คำแนะนำ AI สำหรับ 30 วันข้างหน้า',
+        'สรุปเช้ารายประเภทห้องผ่าน LINE และ Email',
+        'ช้อปราคาคู่แข่งอัตโนมัติ วันละ 4 ครั้ง',
+        'Aurasea OS — ระบบปฏิบัติการสำหรับธุรกิจ SME',
+      ],
+      cta: 'เริ่มทดลองฟรี 90 วัน',
+      ctaSecondary: 'สมัคร Founding Members',
+      menudesk: 'MenuDesk.ai สำหรับร้านอาหารและคาเฟ่ — เปิดให้บริการ Q4 2026',
+    },
     faq: {
       eyebrow: 'คำถามที่พบบ่อย',
       title: 'คำถามจากเจ้าของโรงแรม',
       items: [
         {
-          q: 'RateDesk.ai เปิดให้ใช้งานเมื่อไหร่?',
-          a: 'เราเปิดรับลูกค้ารุ่น early access ในไตรมาส 2 ปี 2026 หากสนใจร่วมเป็นลูกค้ารุ่นแรก ส่งอีเมลมาที่ hello@ratedesk.ai',
+          q: 'RateDesk.ai เปิดให้ใช้งานได้แล้วหรือยัง?',
+          a: 'เปิดให้ใช้งานแล้ว เริ่มต้นด้วยการทดลองฟรี 90 วัน ไม่ต้องใช้บัตรเครดิต หากสนใจสมัครเป็น Founding Member (50 สาขาแรก) ส่งอีเมลมาที่ hello@ratedesk.ai',
         },
         {
           q: 'เหมาะกับโรงแรมขนาดไหน?',
@@ -85,7 +133,7 @@ export const content = {
         },
         {
           q: 'ราคาเท่าไหร่?',
-          a: 'แพ็คเกจเริ่มต้นจะประกาศพร้อมการเปิดตัว ลูกค้ารุ่น early access จะได้ราคาพิเศษล็อกตลอดอายุการใช้งาน',
+          a: 'ราคารายปี ฿575 / สาขา / เดือน (ประหยัด 2 เดือน) หรือ ฿690 รายเดือน รวม Auto Push, คำแนะนำ AI, สรุปเช้ารายประเภทห้อง และ Aurasea OS ทุกอย่างครบในราคาเดียว Founding Members 50 สาขาแรกได้ราคา ฿490 ล็อกตลอดชีพ ทดลองฟรี 90 วัน ไม่ต้องใช้บัตรเครดิต',
         },
       ],
     },
@@ -125,13 +173,14 @@ export const content = {
     nav: {
       howItWorks: 'How it works',
       integrations: 'Integrations',
+      pricing: 'Pricing',
       faq: 'FAQ',
     },
     cta: {
       contact: 'Contact us',
     },
     hero: {
-      eyebrow: 'AI REVENUE MANAGEMENT · COMING SOON',
+      eyebrow: 'AI REVENUE MANAGEMENT · NOW OPEN',
       title: 'The right room rate,\nevery night.',
       lead: 'RateDesk.ai is AI revenue management built for independent hotels and resorts across Southeast Asia — the right rate recommendation, every morning, on LINE.',
       caption:
@@ -181,13 +230,60 @@ export const content = {
       body: 'RateDesk.ai is shaped by real operations at Crystal Resort — a boutique resort in Nakhon Ratchasima that serves as our design partner. Every feature is used in production before it reaches a customer.',
       attribution: 'Crystal Resort · Nakhon Ratchasima · Aurasea design partner',
     },
+    pricing: {
+      eyebrow: 'Pricing',
+      title: 'One price. Everything included.',
+      lead: 'One all-in price — Auto Push, AI rate recommendations, per-room-type morning brief, and Aurasea OS. No add-ons, no surprises.',
+      annual: {
+        label: 'Annual (recommended)',
+        price: '฿575',
+        unit: '/ branch / mo',
+        note: '฿6,900 billed annually — save 2 months',
+        badge: 'Best value',
+      },
+      monthly: {
+        label: 'Monthly',
+        price: '฿690',
+        unit: '/ branch / mo',
+        note: 'Flexible, cancel any time',
+      },
+      founding: {
+        label: 'Founding Members',
+        price: '฿490',
+        unit: '/ branch / mo',
+        note: 'Locked for life · First 50 branches only',
+        badge: 'Limited',
+        perks: [
+          '฿490 locked for the life of your account',
+          'Free 1-on-1 onboarding',
+          'Direct founder access',
+          'Case-study partnership',
+        ],
+      },
+      promos: [
+        { icon: '90', text: '90-day free trial, no credit card required' },
+        { icon: '−15%', text: '15% off at 3+ branches' },
+        { icon: '1mo', text: 'Refer a fellow owner — you both get 1 month free' },
+        { icon: 'OS', text: 'Aurasea OS included, at no extra cost' },
+      ],
+      includes: [
+        'Auto Push (approve or adjust rates via LINE)',
+        'AI rate recommendations for the next 30 nights',
+        'Per-room-type morning brief via LINE and email',
+        'Automated competitor shopping 4× daily',
+        'Aurasea OS — the operational platform for SMEs',
+      ],
+      cta: 'Start 90-day free trial',
+      ctaSecondary: 'Join Founding Members',
+      menudesk: 'MenuDesk.ai for cafes and restaurants — coming Q4 2026',
+    },
     faq: {
       eyebrow: 'FAQ',
       title: 'Questions from hotel owners.',
       items: [
         {
-          q: 'When does RateDesk.ai launch?',
-          a: 'We open early access in Q2 2026. To be considered as an early customer, write to hello@ratedesk.ai.',
+          q: 'Is RateDesk.ai available now?',
+          a: 'Yes — RateDesk.ai is live. Start with a 90-day free trial, no credit card required. To join as a Founding Member (first 50 branches), write to hello@ratedesk.ai.',
         },
         {
           q: 'What size of property is RateDesk for?',
@@ -203,7 +299,7 @@ export const content = {
         },
         {
           q: 'How much does it cost?',
-          a: 'Launch pricing will be announced at general availability. Early access customers receive a special rate locked in for the lifetime of their account.',
+          a: '฿575 / branch / month billed annually (saves 2 months), or ฿690 monthly. Everything is included — Auto Push, AI recommendations, per-room-type brief, and Aurasea OS. No add-ons. Founding Members (first 50 branches) pay ฿490 locked for life. 90-day free trial, no credit card.',
         },
       ],
     },

@@ -27,6 +27,9 @@ export function Header({ lang }: { lang: Lang }) {
           <a href="#integrations" className="nav-link link-underline">
             {c.nav.integrations}
           </a>
+          <a href="#pricing" className="nav-link link-underline">
+            {c.nav.pricing}
+          </a>
           <a href="#faq" className="nav-link link-underline">
             {c.nav.faq}
           </a>

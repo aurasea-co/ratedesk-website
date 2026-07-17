@@ -4,6 +4,7 @@ import { Problem } from '@/components/Problem';
 import { HowItWorks } from '@/components/HowItWorks';
 import { Integrations } from '@/components/Integrations';
 import { DesignPartner } from '@/components/DesignPartner';
+import { Pricing } from '@/components/Pricing';
 import { FAQ } from '@/components/FAQ';
 import { Footer } from '@/components/Footer';
 import type { Lang } from '@/lib/content';
@@ -17,6 +18,7 @@ export function Landing({ lang }: { lang: Lang }) {
       <HowItWorks lang={lang} />
       <Integrations lang={lang} />
       <DesignPartner lang={lang} />
+      <Pricing lang={lang} />
       <FAQ lang={lang} />
       <Footer lang={lang} />
     </main>
