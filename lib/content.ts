@@ -92,7 +92,7 @@ export const content = {
         ],
       },
       promos: [
-        { icon: '90', text: 'ทดลองฟรี 90 วัน ไม่ต้องใช้บัตรเครดิต' },
+        { icon: '60', text: 'ทดลองฟรี 60 วัน ไม่ต้องใช้บัตรเครดิต' },
         { icon: '−15%', text: 'ส่วนลด 15% เมื่อมี 3 สาขาขึ้นไป' },
         { icon: '1mo', text: 'แนะนำเพื่อนเจ้าของโรงแรม — ทั้งคู่ได้ฟรี 1 เดือน' },
         { icon: 'OS', text: 'Aurasea OS รวมอยู่แล้ว ไม่คิดเพิ่ม' },
@@ -104,7 +104,7 @@ export const content = {
         'ช้อปราคาคู่แข่งอัตโนมัติ วันละ 4 ครั้ง',
         'Aurasea OS — ระบบปฏิบัติการสำหรับธุรกิจ SME',
       ],
-      cta: 'เริ่มทดลองฟรี 90 วัน',
+      cta: 'เริ่มทดลองฟรี 60 วัน',
       ctaSecondary: 'สมัคร Founding Members',
       menudesk: 'MenuDesk.ai สำหรับร้านอาหารและคาเฟ่ — เปิดให้บริการ Q4 2026',
     },
@@ -114,7 +114,7 @@ export const content = {
       items: [
         {
           q: 'RateDesk.ai เปิดให้ใช้งานได้แล้วหรือยัง?',
-          a: 'เปิดให้ใช้งานแล้ว เริ่มต้นด้วยการทดลองฟรี 90 วัน ไม่ต้องใช้บัตรเครดิต หากสนใจสมัครเป็น Founding Member (50 สาขาแรก) ส่งอีเมลมาที่ hello@ratedesk.ai',
+          a: 'เปิดให้ใช้งานแล้ว เริ่มต้นด้วยการทดลองฟรี 60 วัน ไม่ต้องใช้บัตรเครดิต หากสนใจสมัครเป็น Founding Member (50 สาขาแรก) ส่งอีเมลมาที่ hello@ratedesk.ai',
         },
         {
           q: 'เหมาะกับโรงแรมขนาดไหน?',
@@ -130,7 +130,7 @@ export const content = {
         },
         {
           q: 'ราคาเท่าไหร่?',
-          a: 'ราคารายปี ฿575 / สาขา / เดือน (ประหยัด 2 เดือน) หรือ ฿690 รายเดือน รวม Auto Push, คำแนะนำราคา, สรุปเช้ารายประเภทห้อง และ Aurasea OS ทุกอย่างครบในราคาเดียว Founding Members 50 สาขาแรกได้ราคา ฿490 ล็อกตลอดชีพ ทดลองฟรี 90 วัน ไม่ต้องใช้บัตรเครดิต',
+          a: 'ราคารายปี ฿575 / สาขา / เดือน (ประหยัด 2 เดือน) หรือ ฿690 รายเดือน รวม Auto Push, คำแนะนำราคา, สรุปเช้ารายประเภทห้อง และ Aurasea OS ทุกอย่างครบในราคาเดียว Founding Members 50 สาขาแรกได้ราคา ฿490 ล็อกตลอดชีพ ทดลองฟรี 60 วัน ไม่ต้องใช้บัตรเครดิต',
         },
       ],
     },
@@ -258,7 +258,7 @@ export const content = {
         ],
       },
       promos: [
-        { icon: '90', text: '90-day free trial, no credit card required' },
+        { icon: '60', text: '60-day free trial, no credit card required' },
         { icon: '−15%', text: '15% off at 3+ branches' },
         { icon: '1mo', text: 'Refer a fellow owner — you both get 1 month free' },
         { icon: 'OS', text: 'Aurasea OS included, at no extra cost' },
@@ -270,7 +270,7 @@ export const content = {
         'Automated competitor shopping 4× daily',
         'Aurasea OS — the operational platform for SMEs',
       ],
-      cta: 'Start 90-day free trial',
+      cta: 'Start 60-day free trial',
       ctaSecondary: 'Join Founding Members',
       menudesk: 'MenuDesk.ai for cafes and restaurants — coming Q4 2026',
     },
@@ -280,7 +280,7 @@ export const content = {
       items: [
         {
           q: 'Is RateDesk.ai available now?',
-          a: 'Yes — RateDesk.ai is live. Start with a 90-day free trial, no credit card required. To join as a Founding Member (first 50 branches), write to hello@ratedesk.ai.',
+          a: 'Yes — RateDesk.ai is live. Start with a 60-day free trial, no credit card required. To join as a Founding Member (first 50 branches), write to hello@ratedesk.ai.',
         },
         {
           q: 'What size of property is RateDesk for?',
@@ -296,7 +296,7 @@ export const content = {
         },
         {
           q: 'How much does it cost?',
-          a: '฿575 / branch / month billed annually (saves 2 months), or ฿690 monthly. Everything is included — Auto Push, rate recommendations, per-room-type brief, and Aurasea OS. No add-ons. Founding Members (first 50 branches) pay ฿490 locked for life. 90-day free trial, no credit card.',
+          a: '฿575 / branch / month billed annually (saves 2 months), or ฿690 monthly. Everything is included — Auto Push, rate recommendations, per-room-type brief, and Aurasea OS. No add-ons. Founding Members (first 50 branches) pay ฿490 locked for life. 60-day free trial, no credit card.',
         },
       ],
     },
