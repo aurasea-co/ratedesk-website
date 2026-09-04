@@ -41,7 +41,7 @@ export const content = {
         {
           n: '02',
           title: 'เช็คคู่แข่งอัตโนมัติ',
-          body: 'ระบบช้อปราคาคู่แข่งวันละ 4 ครั้ง — เห็นทันทีว่าใครเปลี่ยนราคา ใครเริ่มขาย ใครเปิด promotion ก่อนที่ pickup ของคุณจะตก',
+          body: 'ถ่ายหน้าจอผลค้นหา OTA ส่งเข้ามา ระบบอ่านราคาคู่แข่งให้ทั้งหน้า จับคู่กับคู่แข่งที่คุณตั้งไว้ และให้คุณตรวจก่อนบันทึก จากนั้นทุกเช้าคุณจะเห็นว่าช่องว่างราคาขยับไปทางไหน',
         },
         {
           n: '03',
@@ -67,46 +67,39 @@ export const content = {
     pricing: {
       eyebrow: 'ราคา',
       title: 'ราคาเดียว ครบทุกฟีเจอร์',
-      lead: 'ราคาเดียว รวมทุกอย่าง — Auto Push, คำแนะนำราคา, สรุปเช้ารายประเภทห้อง และ Aurasea OS ไม่มีค่าเพิ่มเติม',
-      annual: {
-        label: 'รายปี (แนะนำ)',
-        price: '฿575',
-        unit: '/ สาขา / เดือน',
-        note: 'เทียบเท่า ฿6,900 / ปี — ประหยัด 2 เดือนเมื่อจ่ายรายปี',
-        badge: 'ราคาเริ่มต้น',
-      },
-      monthly: {
+      lead: 'ราคาเดียวต่อสาขา รวมทุกอย่าง — คำแนะนำราคา สรุปเช้ารายประเภทห้อง การติดตามราคาคู่แข่ง และ Aurasea OS ไม่มีค่าเสริม',
+      standard: {
         label: 'รายเดือน',
-        price: '฿690',
+        price: '฿890',
         unit: '/ สาขา / เดือน',
-        note: 'ยืดหยุ่น ยกเลิกได้ทุกเมื่อ',
+        note: 'ยกเลิกได้ทุกเมื่อ ไม่มีสัญญาผูกมัด',
+        badge: 'ราคาเดียว',
       },
-      founding: {
-        label: 'Founding Members',
-        price: '฿490',
-        unit: '/ สาขา / เดือน',
-        note: 'ล็อกราคาตลอดชีพ · เหลือ 50 สาขาแรกเท่านั้น',
-        badge: 'พิเศษ',
-        perks: [
-          'ราคา ฿490 ล็อกตลอดชีพ',
-        ],
+      bundle: {
+        label: 'โรงแรม + ร้านอาหาร',
+        price: '฿990',
+        unit: '/ เดือน',
+        note: 'สำหรับคู่แรก — RateDesk ฿890 + MenuDesk ฿199 รวมเป็น ฿990 สาขาถัดไปคิดราคาปกติ',
       },
       promos: [
         { icon: '60', text: 'ทดลองฟรี 60 วัน ไม่ต้องใช้บัตรเครดิต' },
-        { icon: '−15%', text: 'ส่วนลด 15% เมื่อมี 3 สาขาขึ้นไป' },
-        { icon: '1mo', text: 'แนะนำเพื่อนเจ้าของโรงแรม — ทั้งคู่ได้ฟรี 1 เดือน' },
         { icon: 'OS', text: 'Aurasea OS รวมอยู่แล้ว ไม่คิดเพิ่ม' },
       ],
       includes: [
-        'Auto Push (อนุมัติหรือปรับราคาผ่าน LINE)',
-        'คำแนะนำ สำหรับ 30 วันข้างหน้า',
-        'สรุปเช้ารายประเภทห้องผ่าน LINE และ Email',
-        'ช้อปราคาคู่แข่งอัตโนมัติ วันละ 4 ครั้ง',
+        'คำแนะนำราคา สำหรับ 30 วันข้างหน้า',
+        'สรุปเช้ารายประเภทห้อง ทาง LINE และอีเมล ทุกวัน 7 โมง',
+        'ติดตามราคาคู่แข่ง — ถ่ายหน้าจอ OTA แล้วระบบอ่านให้ คุณตรวจก่อนบันทึก',
         'Aurasea OS — ระบบปฏิบัติการสำหรับธุรกิจ SME',
       ],
+      notYet: {
+        label: 'ยังไม่เปิดใช้งาน',
+        items: [
+          'Auto Push — กดอนุมัติแล้วส่งราคากลับเข้า PMS รวมอยู่ในราคาแล้ว แต่เรายังพัฒนาการส่งราคากลับไม่เสร็จกับ PMS ระบบใดเลย',
+        ],
+      },
       cta: 'เริ่มทดลองฟรี 60 วัน',
-      ctaSecondary: 'สมัคร Founding Members',
-      menudesk: 'MenuDesk.ai สำหรับร้านอาหารและคาเฟ่ — เปิดให้บริการ Q4 2026',
+      ctaSecondary: 'คุยกับเราก่อน',
+      menudesk: 'MenuDesk.ai สำหรับร้านอาหารและคาเฟ่ — เปิดให้บริการแล้ว',
     },
     faq: {
       eyebrow: 'คำถามที่พบบ่อย',
@@ -114,7 +107,7 @@ export const content = {
       items: [
         {
           q: 'RateDesk.ai เปิดให้ใช้งานได้แล้วหรือยัง?',
-          a: 'เปิดให้ใช้งานแล้ว เริ่มต้นด้วยการทดลองฟรี 60 วัน ไม่ต้องใช้บัตรเครดิต หากสนใจสมัครเป็น Founding Member (50 สาขาแรก) ส่งอีเมลมาที่ hello@ratedesk.ai',
+          a: 'เปิดให้ใช้งานแล้ว เริ่มต้นด้วยการทดลองฟรี 60 วัน ไม่ต้องใช้บัตรเครดิต มีคำถามหรืออยากให้เราพาชมก่อน ส่งอีเมลมาที่ hello@ratedesk.ai',
         },
         {
           q: 'เหมาะกับโรงแรมขนาดไหน?',
@@ -130,7 +123,7 @@ export const content = {
         },
         {
           q: 'ราคาเท่าไหร่?',
-          a: 'ราคารายปี ฿575 / สาขา / เดือน (ประหยัด 2 เดือน) หรือ ฿690 รายเดือน รวม Auto Push, คำแนะนำราคา, สรุปเช้ารายประเภทห้อง และ Aurasea OS ทุกอย่างครบในราคาเดียว Founding Members 50 สาขาแรกได้ราคา ฿490 ล็อกตลอดชีพ ทดลองฟรี 60 วัน ไม่ต้องใช้บัตรเครดิต',
+          a: '฿890 / สาขา / เดือน ราคาเดียว ไม่มีค่าเสริม รวมคำแนะนำราคา สรุปเช้ารายประเภทห้อง การติดตามราคาคู่แข่ง และ Aurasea OS ถ้าคุณมีทั้งโรงแรมและร้านอาหาร คู่แรกราคา ฿990 ต่อเดือน (RateDesk ฿890 + MenuDesk ฿199) ทดลองฟรี 60 วัน ไม่ต้องใช้บัตรเครดิต · Auto Push รวมอยู่ในราคาแล้ว แต่ยังใช้งานไม่ได้ — เรายังพัฒนาการส่งราคากลับเข้า PMS ไม่เสร็จ',
         },
       ],
     },
@@ -204,7 +197,7 @@ export const content = {
         {
           n: '02',
           title: 'Automated competitor shopping',
-          body: 'We shop your competitor set four times a day — so you see the moment a neighbour drops their price, opens a promotion, or sells out, before your own pickup softens.',
+          body: 'Screenshot an OTA search page and send it in. We read every rate on it, match them to the competitors you track, and hand them back for you to check before anything saves. From then on the morning brief shows you which way the gap has moved.',
         },
         {
           n: '03',
@@ -230,49 +223,39 @@ export const content = {
     pricing: {
       eyebrow: 'Pricing',
       title: 'One price. Everything included.',
-      lead: 'One all-in price — Auto Push, rate recommendations, per-room-type morning brief, and Aurasea OS. No add-ons, no surprises.',
-      annual: {
-        label: 'Annual (recommended)',
-        price: '฿575',
-        unit: '/ branch / mo',
-        note: '฿6,900 billed annually — save 2 months',
-        badge: 'Best value',
-      },
-      monthly: {
+      lead: 'One price per branch — rate recommendations, the per-room-type morning brief, competitor rate tracking, and Aurasea OS. No add-ons.',
+      standard: {
         label: 'Monthly',
-        price: '฿690',
-        unit: '/ branch / mo',
-        note: 'Flexible, cancel any time',
+        price: '฿890',
+        unit: '/ branch / month',
+        note: 'Cancel any time. No contract.',
+        badge: 'One price',
       },
-      founding: {
-        label: 'Founding Members',
-        price: '฿490',
-        unit: '/ branch / mo',
-        note: 'Locked for life · First 50 branches only',
-        badge: 'Limited',
-        perks: [
-          '฿490 locked for the life of your account',
-          'Free 1-on-1 onboarding',
-          'Direct founder access',
-          'Case-study partnership',
-        ],
+      bundle: {
+        label: 'Hotel + F&B',
+        price: '฿990',
+        unit: '/ month',
+        note: 'For your first pair — RateDesk ฿890 + MenuDesk ฿199 together for ฿990. Further branches are list price.',
       },
       promos: [
         { icon: '60', text: '60-day free trial, no credit card required' },
-        { icon: '−15%', text: '15% off at 3+ branches' },
-        { icon: '1mo', text: 'Refer a fellow owner — you both get 1 month free' },
-        { icon: 'OS', text: 'Aurasea OS included, at no extra cost' },
+        { icon: 'OS', text: 'Aurasea OS included at no extra cost' },
       ],
       includes: [
-        'Auto Push (approve or adjust rates via LINE)',
-        'Rate recommendations for the next 30 nights',
-        'Per-room-type morning brief via LINE and email',
-        'Automated competitor shopping 4× daily',
-        'Aurasea OS — the operational platform for SMEs',
+        'Rate recommendations for the next 30 days',
+        'Per-room-type morning brief by LINE and email, 7am daily',
+        'Competitor rate tracking — screenshot an OTA page, we read it, you check it before it saves',
+        'Aurasea OS — the operating system for your business',
       ],
+      notYet: {
+        label: 'Not live yet',
+        items: [
+          'Auto Push — approve a rate and have it written back to your PMS. Included in the price, but we have not finished rate write-back for any PMS yet.',
+        ],
+      },
       cta: 'Start 60-day free trial',
-      ctaSecondary: 'Join Founding Members',
-      menudesk: 'MenuDesk.ai for cafes and restaurants — coming Q4 2026',
+      ctaSecondary: 'Talk to us first',
+      menudesk: 'MenuDesk.ai for cafes and restaurants — available now',
     },
     faq: {
       eyebrow: 'FAQ',
@@ -280,7 +263,7 @@ export const content = {
       items: [
         {
           q: 'Is RateDesk.ai available now?',
-          a: 'Yes — RateDesk.ai is live. Start with a 60-day free trial, no credit card required. To join as a Founding Member (first 50 branches), write to hello@ratedesk.ai.',
+          a: 'Yes — RateDesk.ai is live. Start with a 60-day free trial, no credit card required. Questions, or want a walkthrough first? Write to hello@ratedesk.ai.',
         },
         {
           q: 'What size of property is RateDesk for?',
@@ -296,7 +279,7 @@ export const content = {
         },
         {
           q: 'How much does it cost?',
-          a: '฿575 / branch / month billed annually (saves 2 months), or ฿690 monthly. Everything is included — Auto Push, rate recommendations, per-room-type brief, and Aurasea OS. No add-ons. Founding Members (first 50 branches) pay ฿490 locked for life. 60-day free trial, no credit card.',
+          a: '฿890 / branch / month. One price, no add-ons — rate recommendations, the per-room-type morning brief, competitor rate tracking, and Aurasea OS. Running a hotel and an F&B venue? Your first pair is ฿990 a month (RateDesk ฿890 + MenuDesk ฿199). 60-day free trial, no credit card. Auto Push is included in the price but is not working yet — we have not finished rate write-back for any PMS.',
         },
       ],
     },
