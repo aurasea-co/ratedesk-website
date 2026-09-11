@@ -1,11 +1,36 @@
 'use client';
 
 import { useState } from 'react';
-import { content, type Lang } from '@/lib/content';
-import { showPricing } from '@/lib/pricing-visibility';
+import type { Lang } from '@/lib/content';
 
-export function FAQ({ lang }: { lang: Lang }) {
-  const c = content[lang];
+/**
+ * Takes its copy as PROPS rather than importing lib/content.
+ *
+ * This used to `import { content }`, and because this is a client component
+ * that pulled the ENTIRE content object — both locales, every section — into
+ * .next/static/chunks/705-*.js. Every visitor downloaded
+ * `price:"฿890"`, `"฿990"` and the bundle note, readable in devtools, while
+ * the rendered HTML was clean. scripts/check-no-pricing.mjs caught it; an
+ * HTML-only check never would have, because it was never in the HTML.
+ *
+ * A runtime strip did not fix it either: the raw object stays in the bundle
+ * as long as anything references it. The data has to not be imported here at
+ * all, which is what props achieve — the server passes only the items that
+ * survive filtering.
+ */
+export type FaqItem = { q: string; a: string };
+
+export function FAQ({
+  lang,
+  eyebrow,
+  title,
+  items,
+}: {
+  lang: Lang;
+  eyebrow: string;
+  title: string;
+  items: FaqItem[];
+}) {
   const isThai = lang === 'th';
   const [open, setOpen] = useState<number | null>(0);
 
@@ -14,7 +39,7 @@ export function FAQ({ lang }: { lang: Lang }) {
       <div className="mx-auto max-w-7xl px-6 md:px-10">
         <div className="grid grid-cols-12 gap-6 md:gap-12">
           <div className="col-span-12 md:col-span-4">
-            <p className="eyebrow">{c.faq.eyebrow}</p>
+            <p className="eyebrow">{eyebrow}</p>
             <h2
               className={`${
                 isThai
@@ -22,7 +47,7 @@ export function FAQ({ lang }: { lang: Lang }) {
                   : 'display-serif text-[2.4rem] md:text-[3rem]'
               } mt-5 text-ink text-balance leading-[1.15] md:sticky md:top-24`}
             >
-              {c.faq.title}
+              {title}
             </h2>
           </div>
 
@@ -33,9 +58,7 @@ export function FAQ({ lang }: { lang: Lang }) {
                   filtered on the FIGURE rather than a hand-kept index list,
                   so a new priced answer cannot be added and silently shown.
                   Nothing is deleted from content.ts. */}
-              {c.faq.items
-                .filter((item) => showPricing() || !/฿\s*\d/.test(item.a))
-                .map((item, idx) => {
+              {items.map((item, idx) => {
                 const isOpen = open === idx;
                 return (
                   <li key={idx}>
