@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import { content, type Lang } from '@/lib/content';
+import { showPricing } from '@/lib/pricing-visibility';
 
 export function Header({ lang }: { lang: Lang }) {
   const c = content[lang];
@@ -27,9 +28,11 @@ export function Header({ lang }: { lang: Lang }) {
           <a href="#integrations" className="nav-link link-underline">
             {c.nav.integrations}
           </a>
+          {showPricing() && (
           <a href="#pricing" className="nav-link link-underline">
             {c.nav.pricing}
           </a>
+          )}
           <a href="#faq" className="nav-link link-underline">
             {c.nav.faq}
           </a>

@@ -64,6 +64,12 @@ export const content = {
       body: 'RateDesk.ai พัฒนาโดยอิงประสบการณ์จริงจาก Crystal Resort — รีสอร์ทบูทีคในนครราชสีมาที่เป็นพันธมิตรการออกแบบของเรา ทุกฟีเจอร์ผ่านการใช้งานจริงก่อนปล่อยให้ลูกค้า',
       attribution: 'Crystal Resort · นครราชสีมา · พันธมิตรการออกแบบ Aurasea',
     },
+    partner: {
+      eyebrow: 'พาร์ทเนอร์ร่วมพัฒนา',
+      title: 'เปิดรับพาร์ทเนอร์ร่วมพัฒนา — เฉพาะคำเชิญ',
+      lead: 'ราคาจะประกาศภายหลัง',
+      cta: 'ขอเข้าร่วมเป็นพาร์ทเนอร์',
+    },
     pricing: {
       eyebrow: 'ราคา',
       title: 'ราคาเดียว ครบทุกฟีเจอร์',
@@ -219,6 +225,12 @@ export const content = {
       title: 'Built with Crystal Resort.',
       body: 'RateDesk.ai is shaped by real operations at Crystal Resort — a boutique resort in Nakhon Ratchasima that serves as our design partner. Every feature is used in production before it reaches a customer.',
       attribution: 'Crystal Resort · Nakhon Ratchasima · Aurasea design partner',
+    },
+    partner: {
+      eyebrow: 'Build partners',
+      title: 'Open to build partners — by invitation',
+      lead: 'Pricing announced later',
+      cta: 'Ask to join as a partner',
     },
     pricing: {
       eyebrow: 'Pricing',

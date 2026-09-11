@@ -2,6 +2,7 @@
 
 import { useState } from 'react';
 import { content, type Lang } from '@/lib/content';
+import { showPricing } from '@/lib/pricing-visibility';
 
 export function FAQ({ lang }: { lang: Lang }) {
   const c = content[lang];
@@ -27,7 +28,14 @@ export function FAQ({ lang }: { lang: Lang }) {
 
           <div className="col-span-12 md:col-span-7 md:col-start-6">
             <ul className="divide-y divide-ink/15 border-t border-ink/15">
-              {c.faq.items.map((item, idx) => {
+              {/* Entries that quote a price are dropped while pricing is off.
+                  Two of the ten answer "how much" with ฿890 / ฿990 / ฿199 —
+                  filtered on the FIGURE rather than a hand-kept index list,
+                  so a new priced answer cannot be added and silently shown.
+                  Nothing is deleted from content.ts. */}
+              {c.faq.items
+                .filter((item) => showPricing() || !/฿\s*\d/.test(item.a))
+                .map((item, idx) => {
                 const isOpen = open === idx;
                 return (
                   <li key={idx}>

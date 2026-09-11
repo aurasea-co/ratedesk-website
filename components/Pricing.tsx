@@ -1,4 +1,5 @@
 import { content, type Lang } from '@/lib/content';
+import { showPricing } from '@/lib/pricing-visibility';
 
 export function Pricing({ lang }: { lang: Lang }) {
   const c = content[lang];
@@ -6,6 +7,29 @@ export function Pricing({ lang }: { lang: Lang }) {
   const isThai = lang === 'th';
   const bodyFont = isThai ? 'font-thai' : 'font-sans';
   const displayFont = isThai ? 'display-thai' : 'display-serif';
+
+  // REPLACED, not emptied. The section keeps its id and its place in the
+  // page so the nav anchor and the scroll position still work; what changes
+  // is that it invites build partners instead of quoting ฿890. Every price
+  // below is untouched and returns when the flag flips.
+  if (!showPricing()) {
+    const pa = content[lang].partner;
+    return (
+      <section id="pricing" className="relative py-24 md:py-32 border-t border-ink/10 bg-paper">
+        <div className="mx-auto max-w-3xl px-6 text-center">
+          <p className="eyebrow">{pa.eyebrow}</p>
+          <h2 className="mt-4 text-3xl md:text-4xl font-semibold tracking-tight">{pa.title}</h2>
+          <p className="mt-4 text-lg text-ink/70">{pa.lead}</p>
+          {/* mailto, because that is the only contact channel this site has —
+              there is no #contact anchor. Not "request a demo" or "contact
+              sales"; the ask is to join as a partner. */}
+          <a href="mailto:hello@ratedesk.ai" className="btn-primary mt-8 inline-flex">
+            {pa.cta}
+          </a>
+        </div>
+      </section>
+    );
+  }
 
   return (
     <section id="pricing" className="relative py-24 md:py-32 border-t border-ink/10 bg-paper">
