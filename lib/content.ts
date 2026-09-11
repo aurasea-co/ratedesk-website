@@ -1,6 +1,6 @@
 export type Lang = 'th' | 'en';
 
-export const content = {
+const rawContent = {
   th: {
     locale: 'th',
     other: 'en',
@@ -63,6 +63,12 @@ export const content = {
       title: 'สร้างร่วมกับ Crystal Resort',
       body: 'RateDesk.ai พัฒนาโดยอิงประสบการณ์จริงจาก Crystal Resort — รีสอร์ทบูทีคในนครราชสีมาที่เป็นพันธมิตรการออกแบบของเรา ทุกฟีเจอร์ผ่านการใช้งานจริงก่อนปล่อยให้ลูกค้า',
       attribution: 'Crystal Resort · นครราชสีมา · พันธมิตรการออกแบบ Aurasea',
+    },
+    partner: {
+      eyebrow: 'พาร์ทเนอร์ร่วมพัฒนา',
+      title: 'เปิดรับพาร์ทเนอร์ร่วมพัฒนา — เฉพาะคำเชิญ',
+      lead: 'ราคาจะประกาศภายหลัง',
+      cta: 'ขอเข้าร่วมเป็นพาร์ทเนอร์',
     },
     pricing: {
       eyebrow: 'ราคา',
@@ -220,6 +226,12 @@ export const content = {
       body: 'RateDesk.ai is shaped by real operations at Crystal Resort — a boutique resort in Nakhon Ratchasima that serves as our design partner. Every feature is used in production before it reaches a customer.',
       attribution: 'Crystal Resort · Nakhon Ratchasima · Aurasea design partner',
     },
+    partner: {
+      eyebrow: 'Build partners',
+      title: 'Open to build partners — by invitation',
+      lead: 'Pricing announced later',
+      cta: 'Ask to join as a partner',
+    },
     pricing: {
       eyebrow: 'Pricing',
       title: 'One price. Everything included.',
@@ -317,3 +329,34 @@ export const content = {
 } as const;
 
 export type ContentType = typeof content.en;
+
+
+/**
+ * The exported content, with prices removed while pricing is off.
+ *
+ * Stripped HERE rather than at each render, because this object is imported
+ * by a CLIENT component and therefore shipped to the browser whole. Gating
+ * the renders left the built HTML clean and still put
+ * `price:"฿890"`, `"฿990"` and the bundle note into
+ * .next/static/chunks/705-*.js — downloaded by every visitor, readable in
+ * devtools. scripts/check-no-pricing.mjs caught it; the HTML check alone did
+ * not, because it was never in the HTML.
+ *
+ * NEXT_PUBLIC_* is inlined at build time, so with the flag off the pricing
+ * block is not merely hidden — it is not in the bundle. Nothing is deleted
+ * from this file, and flipping the flag restores it with no code change.
+ */
+function stripPricing<T>(c: T): T {
+  const out = JSON.parse(JSON.stringify(c)) as Record<string, any>
+  for (const lang of Object.keys(out)) {
+    delete out[lang]?.pricing
+    const faq = out[lang]?.faq
+    if (faq?.items) {
+      faq.items = faq.items.filter((i: { a?: string }) => !/฿\s*\d/.test(i.a ?? ''))
+    }
+  }
+  return out as T
+}
+
+export const content =
+  process.env.NEXT_PUBLIC_SHOW_PRICING === 'true' ? rawContent : stripPricing(rawContent)
