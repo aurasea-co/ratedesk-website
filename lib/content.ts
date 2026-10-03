@@ -7,7 +7,6 @@ const rawContent = {
     nav: {
       howItWorks: 'วิธีใช้งาน',
       integrations: 'การเชื่อมต่อ',
-      pricing: 'ราคา',
       faq: 'คำถามที่พบบ่อย',
     },
     cta: {
@@ -64,56 +63,13 @@ const rawContent = {
       body: 'RateDesk.ai พัฒนาโดยอิงประสบการณ์จริงจาก Crystal Resort — รีสอร์ทบูทีคในนครราชสีมาที่เป็นพันธมิตรการออกแบบของเรา ทุกฟีเจอร์ผ่านการใช้งานจริงก่อนปล่อยให้ลูกค้า',
       attribution: 'Crystal Resort · นครราชสีมา · พันธมิตรการออกแบบ Aurasea',
     },
-    partner: {
-      eyebrow: 'พาร์ทเนอร์ร่วมพัฒนา',
-      title: 'เปิดรับพาร์ทเนอร์ร่วมพัฒนา — เฉพาะคำเชิญ',
-      lead: 'ราคาจะประกาศภายหลัง',
-      cta: 'ขอเข้าร่วมเป็นพาร์ทเนอร์',
-    },
-    pricing: {
-      eyebrow: 'ราคา',
-      title: 'ราคาเดียว ครบทุกฟีเจอร์',
-      lead: 'ราคาเดียวต่อสาขา รวมทุกอย่าง — คำแนะนำราคา สรุปเช้ารายประเภทห้อง การติดตามราคาคู่แข่ง และ Aurasea OS ไม่มีค่าเสริม',
-      standard: {
-        label: 'รายเดือน',
-        price: '฿890',
-        unit: '/ สาขา / เดือน',
-        note: 'ยกเลิกได้ทุกเมื่อ ไม่มีสัญญาผูกมัด',
-        badge: 'ราคาเดียว',
-      },
-      bundle: {
-        label: 'โรงแรม + ร้านอาหาร',
-        price: '฿990',
-        unit: '/ เดือน',
-        note: 'สำหรับคู่แรก — RateDesk ฿890 + MenuDesk ฿199 รวมเป็น ฿990 สาขาถัดไปคิดราคาปกติ',
-      },
-      promos: [
-        { icon: '60', text: 'ทดลองฟรี 60 วัน ไม่ต้องใช้บัตรเครดิต' },
-        { icon: 'OS', text: 'Aurasea OS รวมอยู่แล้ว ไม่คิดเพิ่ม' },
-      ],
-      includes: [
-        'คำแนะนำราคา สำหรับ 30 วันข้างหน้า',
-        'สรุปเช้ารายประเภทห้อง ทาง LINE และอีเมล ทุกวัน 7 โมง',
-        'ติดตามราคาคู่แข่ง — ถ่ายหน้าจอ OTA แล้วระบบอ่านให้ คุณตรวจก่อนบันทึก',
-        'Aurasea OS — ระบบปฏิบัติการสำหรับธุรกิจ SME',
-      ],
-      notYet: {
-        label: 'ยังไม่เปิดใช้งาน',
-        items: [
-          'Auto Push — กดอนุมัติแล้วส่งราคากลับเข้า PMS รวมอยู่ในราคาแล้ว แต่เรายังพัฒนาการส่งราคากลับไม่เสร็จกับ PMS ระบบใดเลย',
-        ],
-      },
-      cta: 'เริ่มทดลองฟรี 60 วัน',
-      ctaSecondary: 'คุยกับเราก่อน',
-      menudesk: 'MenuDesk.ai สำหรับร้านอาหารและคาเฟ่ — เปิดให้บริการแล้ว',
-    },
     faq: {
       eyebrow: 'คำถามที่พบบ่อย',
       title: 'คำถามจากเจ้าของโรงแรม',
       items: [
         {
           q: 'RateDesk.ai เปิดให้ใช้งานได้แล้วหรือยัง?',
-          a: 'เปิดให้ใช้งานแล้ว เริ่มต้นด้วยการทดลองฟรี 60 วัน ไม่ต้องใช้บัตรเครดิต มีคำถามหรืออยากให้เราพาชมก่อน ส่งอีเมลมาที่ hello@ratedesk.ai',
+          a: 'เปิดให้ใช้งานแล้ว มีคำถามหรืออยากให้เราพาชมก่อน ส่งอีเมลมาที่ hello@ratedesk.ai',
         },
         {
           q: 'เหมาะกับโรงแรมขนาดไหน?',
@@ -126,10 +82,6 @@ const rawContent = {
         {
           q: 'ข้อมูลของผมปลอดภัยไหม?',
           a: 'ข้อมูลของคุณเป็นของคุณ เราไม่แชร์ข้อมูลข้ามลูกค้า ไม่ขายให้บุคคลที่สาม และเก็บข้อมูลในเซิร์ฟเวอร์ที่เข้ารหัส รายละเอียดเพิ่มเติมในนโยบายความเป็นส่วนตัวเมื่อเปิดตัว',
-        },
-        {
-          q: 'ราคาเท่าไหร่?',
-          a: '฿890 / สาขา / เดือน ราคาเดียว ไม่มีค่าเสริม รวมคำแนะนำราคา สรุปเช้ารายประเภทห้อง การติดตามราคาคู่แข่ง และ Aurasea OS ถ้าคุณมีทั้งโรงแรมและร้านอาหาร คู่แรกราคา ฿990 ต่อเดือน (RateDesk ฿890 + MenuDesk ฿199) ทดลองฟรี 60 วัน ไม่ต้องใช้บัตรเครดิต · Auto Push รวมอยู่ในราคาแล้ว แต่ยังใช้งานไม่ได้ — เรายังพัฒนาการส่งราคากลับเข้า PMS ไม่เสร็จ',
         },
       ],
     },
@@ -169,7 +121,6 @@ const rawContent = {
     nav: {
       howItWorks: 'How it works',
       integrations: 'Integrations',
-      pricing: 'Pricing',
       faq: 'FAQ',
     },
     cta: {
@@ -226,56 +177,13 @@ const rawContent = {
       body: 'RateDesk.ai is shaped by real operations at Crystal Resort — a boutique resort in Nakhon Ratchasima that serves as our design partner. Every feature is used in production before it reaches a customer.',
       attribution: 'Crystal Resort · Nakhon Ratchasima · Aurasea design partner',
     },
-    partner: {
-      eyebrow: 'Build partners',
-      title: 'Open to build partners — by invitation',
-      lead: 'Pricing announced later',
-      cta: 'Ask to join as a partner',
-    },
-    pricing: {
-      eyebrow: 'Pricing',
-      title: 'One price. Everything included.',
-      lead: 'One price per branch — rate recommendations, the per-room-type morning brief, competitor rate tracking, and Aurasea OS. No add-ons.',
-      standard: {
-        label: 'Monthly',
-        price: '฿890',
-        unit: '/ branch / month',
-        note: 'Cancel any time. No contract.',
-        badge: 'One price',
-      },
-      bundle: {
-        label: 'Hotel + F&B',
-        price: '฿990',
-        unit: '/ month',
-        note: 'For your first pair — RateDesk ฿890 + MenuDesk ฿199 together for ฿990. Further branches are list price.',
-      },
-      promos: [
-        { icon: '60', text: '60-day free trial, no credit card required' },
-        { icon: 'OS', text: 'Aurasea OS included at no extra cost' },
-      ],
-      includes: [
-        'Rate recommendations for the next 30 days',
-        'Per-room-type morning brief by LINE and email, 7am daily',
-        'Competitor rate tracking — screenshot an OTA page, we read it, you check it before it saves',
-        'Aurasea OS — the operating system for your business',
-      ],
-      notYet: {
-        label: 'Not live yet',
-        items: [
-          'Auto Push — approve a rate and have it written back to your PMS. Included in the price, but we have not finished rate write-back for any PMS yet.',
-        ],
-      },
-      cta: 'Start 60-day free trial',
-      ctaSecondary: 'Talk to us first',
-      menudesk: 'MenuDesk.ai for cafes and restaurants — available now',
-    },
     faq: {
       eyebrow: 'FAQ',
       title: 'Questions from hotel owners.',
       items: [
         {
           q: 'Is RateDesk.ai available now?',
-          a: 'Yes — RateDesk.ai is live. Start with a 60-day free trial, no credit card required. Questions, or want a walkthrough first? Write to hello@ratedesk.ai.',
+          a: 'Yes — RateDesk.ai is live. Questions, or want a walkthrough first? Write to hello@ratedesk.ai.',
         },
         {
           q: 'What size of property is RateDesk for?',
@@ -288,10 +196,6 @@ const rawContent = {
         {
           q: 'Is my data safe?',
           a: 'Your data is yours. We do not share data across customers, never sell to third parties, and store everything encrypted at rest. Full privacy details will be published with launch.',
-        },
-        {
-          q: 'How much does it cost?',
-          a: '฿890 / branch / month. One price, no add-ons — rate recommendations, the per-room-type morning brief, competitor rate tracking, and Aurasea OS. Running a hotel and an F&B venue? Your first pair is ฿990 a month (RateDesk ฿890 + MenuDesk ฿199). 60-day free trial, no credit card. Auto Push is included in the price but is not working yet — we have not finished rate write-back for any PMS.',
         },
       ],
     },
@@ -331,32 +235,4 @@ const rawContent = {
 export type ContentType = typeof content.en;
 
 
-/**
- * The exported content, with prices removed while pricing is off.
- *
- * Stripped HERE rather than at each render, because this object is imported
- * by a CLIENT component and therefore shipped to the browser whole. Gating
- * the renders left the built HTML clean and still put
- * `price:"฿890"`, `"฿990"` and the bundle note into
- * .next/static/chunks/705-*.js — downloaded by every visitor, readable in
- * devtools. scripts/check-no-pricing.mjs caught it; the HTML check alone did
- * not, because it was never in the HTML.
- *
- * NEXT_PUBLIC_* is inlined at build time, so with the flag off the pricing
- * block is not merely hidden — it is not in the bundle. Nothing is deleted
- * from this file, and flipping the flag restores it with no code change.
- */
-function stripPricing<T>(c: T): T {
-  const out = JSON.parse(JSON.stringify(c)) as Record<string, any>
-  for (const lang of Object.keys(out)) {
-    delete out[lang]?.pricing
-    const faq = out[lang]?.faq
-    if (faq?.items) {
-      faq.items = faq.items.filter((i: { a?: string }) => !/฿\s*\d/.test(i.a ?? ''))
-    }
-  }
-  return out as T
-}
-
-export const content =
-  process.env.NEXT_PUBLIC_SHOW_PRICING === 'true' ? rawContent : stripPricing(rawContent)
+export const content = rawContent

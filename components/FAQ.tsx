@@ -8,9 +8,8 @@ import type { Lang } from '@/lib/content';
  *
  * This used to `import { content }`, and because this is a client component
  * that pulled the ENTIRE content object — both locales, every section — into
- * .next/static/chunks/705-*.js. Every visitor downloaded
- * `price:"฿890"`, `"฿990"` and the bundle note, readable in devtools, while
- * the rendered HTML was clean. scripts/check-no-pricing.mjs caught it; an
+ * .next/static/chunks/705-*.js, downloaded by every visitor, while the
+ * rendered HTML was clean. scripts/check-no-pricing.mjs caught it; an
  * HTML-only check never would have, because it was never in the HTML.
  *
  * A runtime strip did not fix it either: the raw object stays in the bundle
@@ -29,7 +28,7 @@ export function FAQ({
   lang: Lang;
   eyebrow: string;
   title: string;
-  items: FaqItem[];
+  items: readonly FaqItem[];
 }) {
   const isThai = lang === 'th';
   const [open, setOpen] = useState<number | null>(0);
@@ -53,11 +52,6 @@ export function FAQ({
 
           <div className="col-span-12 md:col-span-7 md:col-start-6">
             <ul className="divide-y divide-ink/15 border-t border-ink/15">
-              {/* Entries that quote a price are dropped while pricing is off.
-                  Two of the ten answer "how much" with ฿890 / ฿990 / ฿199 —
-                  filtered on the FIGURE rather than a hand-kept index list,
-                  so a new priced answer cannot be added and silently shown.
-                  Nothing is deleted from content.ts. */}
               {items.map((item, idx) => {
                 const isOpen = open === idx;
                 return (
