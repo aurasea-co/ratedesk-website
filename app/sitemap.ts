@@ -5,7 +5,19 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const lastModified = new Date();
 
   return [
-    { url: `${base}/th`, lastModified, priority: 1, changeFrequency: 'weekly' },
-    { url: `${base}/en`, lastModified, priority: 0.9, changeFrequency: 'weekly' },
+    {
+      url: `${base}/th`,
+      lastModified,
+      priority: 1,
+      changeFrequency: 'weekly',
+      alternates: { languages: { th: `${base}/th`, en: `${base}/en` } },
+    },
+    {
+      url: `${base}/en`,
+      lastModified,
+      priority: 0.9,
+      changeFrequency: 'weekly',
+      alternates: { languages: { th: `${base}/th`, en: `${base}/en` } },
+    },
   ];
 }

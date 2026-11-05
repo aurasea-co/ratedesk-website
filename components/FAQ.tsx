@@ -17,7 +17,11 @@ import type { Lang } from '@/lib/content';
  * all, which is what props achieve — the server passes only the items that
  * survive filtering.
  */
-export type FaqItem = { q: string; a: string };
+export type FaqItem = {
+  q: string;
+  a: string;
+  link?: { readonly label: string; readonly href: string };
+};
 
 export function FAQ({
   lang,
@@ -93,6 +97,19 @@ export function FAQ({
                           } text-[1rem] md:text-[1.05rem] text-ink-muted leading-[1.7] max-w-prose pr-12 text-pretty`}
                         >
                           {item.a}
+                          {item.link && (
+                            <>
+                              {' '}
+                              <a
+                                href={item.link.href}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="text-brand-trust underline underline-offset-4 hover:text-brand-navy"
+                              >
+                                {item.link.label} ↗
+                              </a>
+                            </>
+                          )}
                         </p>
                       </div>
                     </div>

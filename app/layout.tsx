@@ -4,22 +4,20 @@ import './globals.css';
 export const metadata: Metadata = {
   metadataBase: new URL('https://www.ratedesk.ai'),
   title: {
-    default: 'RateDesk.ai — Automated Revenue Management for SEA Hotels',
-    template: '%s · RateDesk.ai',
+    default: 'RateDesk — ราคาห้องที่ควรขายทุกเช้าใน LINE สำหรับโรงแรมและรีสอร์ทอิสระ',
+    template: '%s · RateDesk',
   },
   description:
-    'Automated revenue management for independent hotels and resorts across Southeast Asia. The right rate recommendation, every morning, on LINE.',
+    'ทุกเช้า 7 โมง RateDesk ส่งราคาที่ควรขายของทุกประเภทห้องเข้า LINE พร้อมเหตุผล ราคาโรงแรมแถวนี้ และ 3 เรื่องที่ควรทำวันนี้',
   openGraph: {
-    title: 'RateDesk.ai — Automated Revenue Management for SEA Hotels',
-    description:
-      'Automated revenue management for independent hotels and resorts across Southeast Asia.',
-    siteName: 'RateDesk.ai',
+    siteName: 'RateDesk',
     type: 'website',
   },
   alternates: {
     languages: {
-      en: '/en',
       th: '/th',
+      en: '/en',
+      'x-default': '/th',
     },
   },
 };
