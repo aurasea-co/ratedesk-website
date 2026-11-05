@@ -39,11 +39,11 @@ export function Footer({ lang }: { lang: Lang }) {
 
           {/* Product links */}
           <div className="col-span-6 md:col-span-2">
-            <h4
+            <h2
               className={`eyebrow mb-5`}
             >
               {f.sections.product.title}
-            </h4>
+            </h2>
             <ul className="space-y-3">
               {f.sections.product.links.map((l) => (
                 <li key={l.label}>
@@ -62,7 +62,7 @@ export function Footer({ lang }: { lang: Lang }) {
 
           {/* Ecosystem */}
           <div className="col-span-6 md:col-span-2">
-            <h4 className="eyebrow mb-5">{f.sections.ecosystem.title}</h4>
+            <h2 className="eyebrow mb-5">{f.sections.ecosystem.title}</h2>
             <ul className="space-y-3">
               {f.sections.ecosystem.links.map((l) => (
                 <li key={l.label}>
@@ -90,7 +90,7 @@ export function Footer({ lang }: { lang: Lang }) {
 
           {/* Contact */}
           <div className="col-span-12 md:col-span-3">
-            <h4 className="eyebrow mb-5">{f.sections.contact.title}</h4>
+            <h2 className="eyebrow mb-5">{f.sections.contact.title}</h2>
             <ul
               className={`${
                 isThai ? 'font-thai' : 'font-sans'

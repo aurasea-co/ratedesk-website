@@ -11,7 +11,7 @@ module.exports = {
           DEFAULT: '#0B0F14',
           soft: '#1A2230',
           muted: '#4A5568',
-          subtle: '#6B7280',
+          subtle: '#5A606B', // a11y (5 Nov 2026): was #6B7280, 4.3:1 on the cream background
         },
         paper: {
           DEFAULT: '#FBF9F4',
@@ -36,7 +36,7 @@ module.exports = {
           navy: '#042C53',
           forest: '#04342C',
           mint: '#5DCAA5',
-          trust: '#378ADD',
+          trust: '#1F5E9E', // a11y (5 Nov 2026): was #378ADD, 2.8–3.6:1 as text and under white
           sand: '#F1EFE8',
         },
       },
