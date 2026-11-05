@@ -14,7 +14,7 @@ const rawContent = {
     meta: {
       title: 'RateDesk — ราคาห้องที่ควรขายทุกเช้าใน LINE สำหรับโรงแรมและรีสอร์ทอิสระ',
       description:
-        'ทุกเช้า 7 โมง RateDesk ส่งราคาที่ควรขายของทุกประเภทห้องเข้า LINE พร้อมเหตุผล ราคาโรงแรมแถวนี้ และ 3 เรื่องที่ควรทำวันนี้ · สำหรับโรงแรมและรีสอร์ทอิสระ 15–100 ห้อง',
+        'ทุกเช้า 7 โมง RateDesk ส่งราคาที่ควรขายของทุกประเภทห้องเข้า LINE พร้อมเหตุผล ราคาที่พักแถวนี้ และ 3 เรื่องที่ควรทำวันนี้ · สำหรับโรงแรมและรีสอร์ทอิสระ 10–100 ห้อง',
     },
     nav: {
       howItWorks: 'วิธีใช้งาน',
@@ -22,15 +22,15 @@ const rawContent = {
       faq: 'คำถามที่พบบ่อย',
     },
     cta: {
-      primary: 'เริ่มใช้กับโรงแรมของคุณ',
+      primary: 'เริ่มใช้กับโรงแรมหรือรีสอร์ทของคุณ',
       secondary: 'ดูตัวอย่างข้อความเช้า',
       trust: 'ทีมงานตั้งค่าให้ ถึงที่หรือออนไลน์ · ไม่ผูกบัตร · ไม่มีสัญญา',
     },
     hero: {
       eyebrow: 'เปิดใช้งานแล้ว · สำหรับโรงแรมและรีสอร์ทอิสระ',
       title: 'ราคาห้องที่ใช่\nสำหรับทุกคืน',
-      lead: 'ทุกเช้า 7 โมง RateDesk ส่งราคาที่ควรขายของทุกประเภทห้องเข้า LINE พร้อมเหตุผล ราคาโรงแรมแถวนี้ และ 3 เรื่องที่ควรทำวันนี้',
-      caption: 'ส่วนหนึ่งของ Aurasea OS — ระบบหลังบ้านรายวันของโรงแรม',
+      lead: 'ทุกเช้า 7 โมง RateDesk ส่งราคาที่ควรขายของทุกประเภทห้องเข้า LINE พร้อมเหตุผล ราคาที่พักแถวนี้ และ 3 เรื่องที่ควรทำวันนี้',
+      caption: 'ส่วนหนึ่งของ Aurasea OS — ระบบหลังบ้านของโรงแรมและรีสอร์ท',
     },
     sample: {
       eyebrow: 'ทุกเช้าคุณได้อะไร',
@@ -55,7 +55,7 @@ const rawContent = {
       callouts: [
         'ราคาแนะนำแยกทุกประเภทห้อง พร้อมเหตุผลภาษาไทย',
         '3 เรื่องที่ควรทำวันนี้ อ่านจบใน 30 วินาที',
-        'ราคาโรงแรมแถวนี้ อัปเดตอัตโนมัติทุกคืน (สูงสุด 5 แห่งที่คุณเลือก)',
+        'ราคาที่พักแถวนี้ อัปเดตอัตโนมัติทุกคืน (สูงสุด 5 แห่งที่คุณเลือก)',
         'ส่งถึงเจ้าของและผู้จัดการ ทาง LINE และอีเมล',
       ],
     },
@@ -80,7 +80,7 @@ const rawContent = {
         {
           n: '02',
           title: 'ราคาคู่แข่งอัตโนมัติ',
-          body: 'ระบบเช็คราคาที่เปิดขายของโรงแรมที่คุณเลือก (สูงสุด 5 แห่ง) 30 คืนข้างหน้าทุกคืน ไม่ต้องไล่ดูเอง · โรงแรมที่ไม่มีราคาออนไลน์ กรอกราคาเองได้',
+          body: 'ระบบเช็คราคาที่เปิดขายของที่พักที่คุณเลือก (สูงสุด 5 แห่ง) 30 คืนข้างหน้าทุกคืน ไม่ต้องไล่ดูเอง · ที่พักที่ไม่มีราคาออนไลน์ กรอกราคาเองได้',
         },
         {
           n: '03',
@@ -131,25 +131,25 @@ const rawContent = {
     founder: {
       eyebrow: 'ผู้ก่อตั้ง',
       title: 'สร้างโดยเจ้าของรีสอร์ท ใช้จริงทุกเช้า',
-      body: 'RateDesk เริ่มจากรีสอร์ทบูติก 85 ห้องในนครราชสีมาของผู้ก่อตั้ง ทุกฟีเจอร์ผ่านการใช้งานจริงที่หน้าเคาน์เตอร์ก่อนเปิดให้โรงแรมอื่นใช้',
+      body: 'RateDesk เริ่มจากรีสอร์ทบูติก 85 ห้องในนครราชสีมาของผู้ก่อตั้ง ทุกฟีเจอร์ผ่านการใช้งานจริงที่หน้าเคาน์เตอร์ก่อนเปิดให้โรงแรมและรีสอร์ทอื่นใช้',
     },
     report: {
-      title: 'อยากรู้ราคาโรงแรมแถวคุณ 30 คืนข้างหน้า? ทักมาใน LINE',
-      body: 'บอกชื่อโรงแรมที่อยากเทียบ 3–5 แห่ง เราส่งตารางราคาให้ภายใน 24 ชม. ไม่ต้องสมัครอะไร',
+      title: 'อยากรู้ราคาที่พักแถวคุณ 30 คืนข้างหน้า? ทักมาใน LINE',
+      body: 'บอกชื่อที่พักที่อยากเทียบ 3–5 แห่ง เราส่งตารางราคาให้ภายใน 24 ชม. ไม่ต้องสมัครอะไร',
       button: 'ทักใน LINE',
     },
     faq: {
       eyebrow: 'คำถามที่พบบ่อย',
-      title: 'คำถามจากเจ้าของโรงแรม',
+      title: 'คำถามจากเจ้าของโรงแรมและรีสอร์ท',
       items: [
         {
           q: 'ใช้ได้แล้วหรือยัง?',
-          a: 'ใช้ได้แล้ว ทักใน LINE @auraseaos เพื่อเริ่มใช้กับโรงแรมของคุณ',
+          a: 'ใช้ได้แล้ว ทักใน LINE @auraseaos เพื่อเริ่มใช้กับโรงแรมหรือรีสอร์ทของคุณ',
           link: { label: 'ทักใน LINE', href: LINE_URL },
         },
         {
-          q: 'เหมาะกับโรงแรมขนาดไหน?',
-          a: 'โรงแรมและรีสอร์ทอิสระ 15–100 ห้อง โดยเฉพาะที่ไม่มีทีม Revenue เต็มเวลา',
+          q: 'เหมาะกับโรงแรมและรีสอร์ทขนาดไหน?',
+          a: 'เหมาะกับโรงแรม รีสอร์ท และเกสต์เฮาส์ ราว 10–100 ห้อง โดยเฉพาะที่เจ้าของดูแลเองและไม่มีทีม Revenue เต็มเวลา',
         },
         {
           q: 'ไม่มี PMS ใช้ได้ไหม?',
@@ -161,15 +161,15 @@ const rawContent = {
         },
         {
           q: 'ใครตั้งค่าและสอนพนักงาน?',
-          a: 'ทีมงานตั้งค่าให้ที่โรงแรม หรือผ่าน LINE วิดีโอคอล',
+          a: 'ทีมงานตั้งค่าให้ที่โรงแรมหรือรีสอร์ทของคุณ หรือผ่าน LINE วิดีโอคอล',
         },
         {
           q: 'ต่างจากระบบ RMS ของฝั่งตะวันตกอย่างไร?',
-          a: 'RateDesk สร้างมาเพื่อโรงแรมไทย — เข้าใจวันหยุดและเทศกาลในพื้นที่ ส่งสรุปทาง LINE ใช้งานเป็นภาษาไทยตั้งแต่วันแรก และทีมงานตั้งค่าให้ ถึงที่หรือออนไลน์',
+          a: 'RateDesk สร้างมาเพื่อโรงแรมและรีสอร์ทไทย — เข้าใจวันหยุดและเทศกาลในพื้นที่ ส่งสรุปทาง LINE ใช้งานเป็นภาษาไทยตั้งแต่วันแรก และทีมงานตั้งค่าให้ ถึงที่หรือออนไลน์',
         },
         {
           q: 'ข้อมูลของผมปลอดภัยไหม?',
-          a: 'ยอดจองของคุณไม่เปิดเผยให้โรงแรมอื่น ไม่ขายข้อมูล เข้ารหัสทั้งหมด · ลบได้ทั้งหมดเมื่อเลิกใช้',
+          a: 'ยอดจองของคุณไม่เปิดเผยให้ที่พักอื่น ไม่ขายข้อมูล เข้ารหัสทั้งหมด · ลบได้ทั้งหมดเมื่อเลิกใช้',
           link: { label: 'นโยบายความเป็นส่วนตัว', href: 'https://www.auraseaos.com/privacy' },
         },
       ],
@@ -180,7 +180,7 @@ const rawContent = {
     },
     footer: {
       tagline: 'ราคาห้องที่ควรขายทุกเช้าใน LINE สำหรับโรงแรมและรีสอร์ทอิสระ',
-      crosslink: 'ส่วนหนึ่งของ Aurasea OS — ระบบหลังบ้านรายวันของโรงแรม',
+      crosslink: 'ส่วนหนึ่งของ Aurasea OS — ระบบหลังบ้านของโรงแรมและรีสอร์ท',
       company:
         'บริษัท ออร่า ซี จำกัด (AuraSea Co., Ltd.) · ทะเบียนนิติบุคคล 0305568007729 · นครราชสีมา · โทร 0835159599 (ทุกวัน 08:00–18:00 น.) · LINE @auraseaos · hello@ratedesk.ai',
       privacy: { label: 'นโยบายความเป็นส่วนตัว', href: 'https://www.auraseaos.com/privacy' },
@@ -215,7 +215,7 @@ const rawContent = {
     meta: {
       title: 'RateDesk — the rate to sell, every morning on LINE, for independent hotels and resorts',
       description:
-        'Every morning at 7, RateDesk sends the rate to sell for every room type to LINE, with the reasons, nearby hotels’ rates and 3 things to do today · For independent hotels and resorts of 15–100 rooms.',
+        'Every morning at 7, RateDesk sends the rate to sell for every room type to LINE, with the reasons, nearby properties’ rates and 3 things to do today · For independent hotels and resorts of 10–100 rooms.',
     },
     nav: {
       howItWorks: 'How it works',
@@ -223,15 +223,15 @@ const rawContent = {
       faq: 'FAQ',
     },
     cta: {
-      primary: 'Start with your hotel',
+      primary: 'Start with your hotel or resort',
       secondary: 'See a sample morning message',
       trust: 'We set it up for you, on site or online · No card · No contract',
     },
     hero: {
       eyebrow: 'Live now · For independent hotels and resorts',
       title: 'The right room rate,\nevery night.',
-      lead: 'Every morning at 7, RateDesk sends the rate to sell for every room type to your LINE, with the reasons, nearby hotels’ rates and 3 things to do today.',
-      caption: 'Part of Aurasea OS — the daily back office for hotels',
+      lead: 'Every morning at 7, RateDesk sends the rate to sell for every room type to your LINE, with the reasons, nearby properties’ rates and 3 things to do today.',
+      caption: 'Part of Aurasea OS — the back office for hotels and resorts',
     },
     sample: {
       eyebrow: 'What you get every morning',
@@ -256,7 +256,7 @@ const rawContent = {
       callouts: [
         'A suggested rate for every room type, with the reasons in Thai',
         '3 things to do today, read in 30 seconds',
-        'Nearby hotels’ rates, updated automatically every night (up to 5 that you choose)',
+        'Nearby properties’ rates, updated automatically every night (up to 5 that you choose)',
         'Sent to the owner and managers, by LINE and email',
       ],
     },
@@ -281,7 +281,7 @@ const rawContent = {
         {
           n: '02',
           title: 'Competitor rates, automatically',
-          body: 'Every night the system checks the published rates of the hotels you choose (up to 5) for the next 30 nights. No more checking them yourself. A hotel with no rate online can be entered by hand.',
+          body: 'Every night the system checks the published rates of the properties you choose (up to 5) for the next 30 nights. No more checking them yourself. A property with no rate online can be entered by hand.',
         },
         {
           n: '03',
@@ -333,25 +333,25 @@ const rawContent = {
     founder: {
       eyebrow: 'Founder',
       title: 'Built by a resort owner, used every morning.',
-      body: 'RateDesk began at the founder’s own 85-room boutique resort in Nakhon Ratchasima. Every feature is used for real at the front desk before other hotels get it.',
+      body: 'RateDesk began at the founder’s own 85-room boutique resort in Nakhon Ratchasima. Every feature is used for real at the front desk before other hotels and resorts get it.',
     },
     report: {
-      title: 'Want to know nearby hotels’ rates for the next 30 nights? Message us on LINE.',
-      body: 'Name 3–5 hotels you want to compare and we send you a rate table within 24 hours. No sign-up needed.',
+      title: 'Want to know nearby properties’ rates for the next 30 nights? Message us on LINE.',
+      body: 'Name 3–5 properties you want to compare and we send you a rate table within 24 hours. No sign-up needed.',
       button: 'Message us on LINE',
     },
     faq: {
       eyebrow: 'FAQ',
-      title: 'Questions from hotel owners.',
+      title: 'Questions from hotel and resort owners.',
       items: [
         {
           q: 'Is it available now?',
-          a: 'Yes. Message LINE @auraseaos to start with your hotel.',
+          a: 'Yes. Message LINE @auraseaos to start with your hotel or resort.',
           link: { label: 'Message us on LINE', href: LINE_URL },
         },
         {
-          q: 'What size of property is it for?',
-          a: 'Independent hotels and resorts of 15–100 rooms, especially those without a full-time revenue team.',
+          q: 'What size of hotel or resort is it for?',
+          a: 'Hotels, resorts and guest houses of about 10–100 rooms, especially owner-run ones without a full-time revenue team.',
         },
         {
           q: 'Can I use it without a PMS?',
@@ -363,15 +363,15 @@ const rawContent = {
         },
         {
           q: 'Who sets it up and trains my staff?',
-          a: 'We set it up at your hotel or by LINE video call.',
+          a: 'We set it up at your hotel or resort, or by LINE video call.',
         },
         {
           q: 'How is this different from Western RMS platforms?',
-          a: 'RateDesk is built for Thai hotels — it understands local holidays and festivals, sends its summary on LINE, works in Thai from day one, and we set it up for you, on site or online.',
+          a: 'RateDesk is built for Thai hotels and resorts — it understands local holidays and festivals, sends its summary on LINE, works in Thai from day one, and we set it up for you, on site or online.',
         },
         {
           q: 'Is my data safe?',
-          a: 'Your bookings are never shown to other hotels, we never sell data, and everything is encrypted · Everything can be deleted when you stop using it.',
+          a: 'Your bookings are never shown to other properties, we never sell data, and everything is encrypted · Everything can be deleted when you stop using it.',
           link: { label: 'Privacy policy', href: 'https://www.auraseaos.com/en/privacy' },
         },
       ],
@@ -382,7 +382,7 @@ const rawContent = {
     },
     footer: {
       tagline: 'The rate to sell, every morning on LINE, for independent hotels and resorts.',
-      crosslink: 'Part of Aurasea OS — the daily back office for hotels',
+      crosslink: 'Part of Aurasea OS — the back office for hotels and resorts',
       company:
         'AuraSea Co., Ltd. (บริษัท ออร่า ซี จำกัด) · Company registration 0305568007729 · Nakhon Ratchasima · Tel 0835159599 (daily 08:00–18:00) · LINE @auraseaos · hello@ratedesk.ai',
       privacy: { label: 'Privacy policy', href: 'https://www.auraseaos.com/en/privacy' },
