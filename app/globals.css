@@ -148,3 +148,15 @@
 .marquee-track {
   animation: marquee 40s linear infinite;
 }
+
+/* Visitors who ask for less motion see every section at once. */
+@media (prefers-reduced-motion: reduce) {
+  .reveal {
+    opacity: 1;
+    transform: none;
+    animation: none;
+  }
+  .horizon-anim {
+    animation: none;
+  }
+}

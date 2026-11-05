@@ -1,14 +1,23 @@
 import { Landing } from '@/components/Landing';
+import { content } from '@/lib/content';
 import type { Metadata } from 'next';
 
+const m = content.th.meta;
+
 export const metadata: Metadata = {
-  title: 'RateDesk.ai — ระบบบริหารรายได้ห้องพักอัตโนมัติสำหรับโรงแรมในเอเชียตะวันออกเฉียงใต้',
-  description:
-    'RateDesk.ai เป็นระบบบริหารรายได้ห้องพักอัตโนมัติ ออกแบบมาเพื่อโรงแรมและรีสอร์ทอิสระในเอเชียตะวันออกเฉียงใต้ — แนะนำราคาที่เหมาะสมทุกเช้า ผ่าน LINE',
+  title: { absolute: m.title },
+  description: m.description,
+  alternates: {
+    canonical: '/th',
+    languages: { th: '/th', en: '/en', 'x-default': '/th' },
+  },
   openGraph: {
     locale: 'th_TH',
-    title: 'RateDesk.ai — ระบบบริหารรายได้ห้องพักอัตโนมัติสำหรับโรงแรม',
-    description: 'Automated revenue management built for SEA independent hotels.',
+    url: '/th',
+    siteName: 'RateDesk',
+    type: 'website',
+    title: m.title,
+    description: m.description,
   },
 };
 

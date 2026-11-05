@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { content, type Lang } from '@/lib/content';
+import { content, AURASEAOS_URL, LINE_URL, PHONE_TEL, type Lang } from '@/lib/content';
 
 export function Footer({ lang }: { lang: Lang }) {
   const c = content[lang];
@@ -9,7 +9,7 @@ export function Footer({ lang }: { lang: Lang }) {
   return (
     <footer className="relative bg-paper-warm border-t border-ink/15 pt-20 md:pt-24 pb-10">
       <div className="mx-auto max-w-7xl px-6 md:px-10">
-        <div className="grid grid-cols-12 gap-8 md:gap-12">
+        <div className="grid grid-cols-12 gap-x-6 gap-y-8 md:gap-12">
           {/* Brand block */}
           <div className="col-span-12 md:col-span-5">
             <Link
@@ -25,13 +25,16 @@ export function Footer({ lang }: { lang: Lang }) {
             >
               {f.tagline}
             </p>
-            <p
+            <a
+              href={AURASEAOS_URL}
+              target="_blank"
+              rel="noopener noreferrer"
               className={`${
                 isThai ? 'font-thai' : 'font-sans'
-              } mt-8 text-sm text-ink-subtle leading-relaxed max-w-md italic text-pretty`}
+              } mt-8 block text-sm text-ink-subtle leading-relaxed max-w-md italic text-pretty hover:text-brand-navy`}
             >
-              {f.crosslink}
-            </p>
+              {f.crosslink} ↗
+            </a>
           </div>
 
           {/* Product links */}
@@ -75,29 +78,53 @@ export function Footer({ lang }: { lang: Lang }) {
                   </a>
                 </li>
               ))}
+              <li
+                className={`${
+                  isThai ? 'font-thai' : 'font-sans'
+                } text-sm text-ink-subtle`}
+              >
+                {f.sections.ecosystem.menudesk}
+              </li>
             </ul>
           </div>
 
           {/* Contact */}
           <div className="col-span-12 md:col-span-3">
             <h4 className="eyebrow mb-5">{f.sections.contact.title}</h4>
-            <a
-              href={`mailto:${f.sections.contact.email}`}
-              className="block display-serif text-[1.15rem] text-ink hover:text-sea-aura transition mb-3"
-            >
-              {f.sections.contact.email}
-            </a>
-            <p
+            <ul
               className={`${
                 isThai ? 'font-thai' : 'font-sans'
-              } text-sm text-ink-muted leading-relaxed`}
+              } space-y-2 text-sm text-ink-soft`}
             >
-              {f.sections.contact.location}
-            </p>
+              <li>
+                <a href={LINE_URL} target="_blank" rel="noopener noreferrer" className="hover:text-sea-deep transition">
+                  {f.sections.contact.line} ↗
+                </a>
+              </li>
+              <li>
+                <a href={PHONE_TEL} className="hover:text-sea-deep transition">
+                  {f.sections.contact.phone}
+                </a>
+                <span className="block text-ink-muted">{f.sections.contact.hours}</span>
+              </li>
+              <li>
+                <a href={`mailto:${f.sections.contact.email}`} className="hover:text-sea-deep transition">
+                  {f.sections.contact.email}
+                </a>
+              </li>
+            </ul>
           </div>
         </div>
 
-        <div className="mt-16 pt-8 border-t border-ink/10 flex flex-col md:flex-row md:items-center md:justify-between gap-4">
+        <p
+          className={`${
+            isThai ? 'font-thai' : 'font-sans'
+          } mt-14 text-xs text-ink-muted leading-relaxed text-pretty`}
+        >
+          {f.company}
+        </p>
+
+        <div className="mt-6 pt-8 border-t border-ink/10 flex flex-col md:flex-row md:items-center md:justify-between gap-4">
           <p className="text-xs tracking-wide-soft text-ink-subtle">
             {f.copyright}
           </p>
@@ -110,12 +137,12 @@ export function Footer({ lang }: { lang: Lang }) {
             </Link>
             <span className="block w-px h-3 bg-ink/20" />
             <a
-              href="https://www.aurasea.ai"
+              href={f.privacy.href}
               target="_blank"
               rel="noopener noreferrer"
-              className="hover:text-ink transition"
+              className={`${isThai ? 'font-thai normal-case' : ''} hover:text-ink transition`}
             >
-              Aurasea ↗
+              {f.privacy.label} ↗
             </a>
           </div>
         </div>

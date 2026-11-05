@@ -1,15 +1,23 @@
 import { Landing } from '@/components/Landing';
+import { content } from '@/lib/content';
 import type { Metadata } from 'next';
 
+const m = content.en.meta;
+
 export const metadata: Metadata = {
-  title: 'RateDesk.ai — Automated Revenue Management for SEA Hotels',
-  description:
-    'RateDesk.ai is automated revenue management built for independent hotels and resorts across Southeast Asia — the right rate recommendation, every morning, on LINE.',
+  title: { absolute: m.title },
+  description: m.description,
+  alternates: {
+    canonical: '/en',
+    languages: { th: '/th', en: '/en', 'x-default': '/th' },
+  },
   openGraph: {
     locale: 'en_US',
-    title: 'RateDesk.ai — Automated Revenue Management for SEA Hotels',
-    description:
-      'Automated revenue management for independent hotels and resorts in Southeast Asia.',
+    url: '/en',
+    siteName: 'RateDesk',
+    type: 'website',
+    title: m.title,
+    description: m.description,
   },
 };
 

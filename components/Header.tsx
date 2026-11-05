@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { content, type Lang } from '@/lib/content';
+import { content, LINE_URL, type Lang } from '@/lib/content';
 
 export function Header({ lang }: { lang: Lang }) {
   const c = content[lang];
@@ -41,10 +41,14 @@ export function Header({ lang }: { lang: Lang }) {
             {otherLabel}
           </Link>
           <a
-            href="mailto:hello@ratedesk.ai"
-            className="hidden sm:inline-flex items-center gap-1.5 text-sm text-ink hover:text-sea-aura transition border-b border-ink/40 hover:border-sea-aura pb-0.5"
+            href={LINE_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            className={`${
+              lang === 'th' ? 'font-thai' : 'font-sans'
+            } hidden sm:inline-flex items-center gap-1.5 rounded-full bg-brand-navy px-4 py-2 text-sm text-white hover:bg-brand-forest transition`}
           >
-            {c.cta.contact}
+            {c.cta.primary}
             <span aria-hidden>→</span>
           </a>
         </div>

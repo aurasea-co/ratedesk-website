@@ -1,4 +1,5 @@
-import { content, type Lang } from '@/lib/content';
+import { content, AURASEAOS_URL, type Lang } from '@/lib/content';
+import { CtaButtons } from '@/components/Cta';
 
 export function Hero({ lang }: { lang: Lang }) {
   const c = content[lang];
@@ -66,37 +67,34 @@ export function Hero({ lang }: { lang: Lang }) {
             >
               {c.hero.lead}
             </p>
-          </div>
 
-          <div className="col-span-12 md:col-span-3 lg:col-span-4 md:pt-2 flex md:justify-end">
-            <div className="md:max-w-[260px] md:text-right reveal delay-4">
-              <div className="hidden md:block w-12 h-px bg-ink/30 ml-auto mb-5" />
+            <div className="mt-10 reveal delay-4">
+              <CtaButtons lang={lang} />
               <p
                 className={`${
                   isThai ? 'font-thai' : 'font-sans'
-                } text-sm text-ink-muted leading-relaxed italic`}
+                } mt-4 text-sm text-ink-muted`}
               >
-                {c.hero.caption}
+                {c.cta.trust}
               </p>
             </div>
           </div>
-        </div>
 
-        {/* Decorative editorial credits row */}
-        <div className="mt-20 md:mt-28 flex items-end justify-between reveal delay-5">
-          <div className="flex items-center gap-3 text-xs tracking-wide-soft uppercase text-ink-muted">
-            <span className="block w-8 h-px bg-ink/40" />
-            <span>Aurasea · Vol. 01 · 2026</span>
+          <div className="col-span-12 md:col-span-3 lg:col-span-4 md:pt-2 flex md:justify-end">
+            <div className="md:max-w-[260px] md:text-right reveal delay-5">
+              <div className="hidden md:block w-12 h-px bg-ink/30 ml-auto mb-5" />
+              <a
+                href={AURASEAOS_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className={`${
+                  isThai ? 'font-thai' : 'font-sans'
+                } text-sm text-ink-muted leading-relaxed italic hover:text-brand-navy transition`}
+              >
+                {c.hero.caption} ↗
+              </a>
+            </div>
           </div>
-          <a
-            href="#problem"
-            className="text-xs tracking-wide-soft uppercase text-ink-muted hover:text-ink transition flex items-center gap-2 group"
-          >
-            <span>{isThai ? 'อ่านต่อ' : 'Read on'}</span>
-            <span className="block group-hover:translate-y-0.5 transition-transform">
-              ↓
-            </span>
-          </a>
         </div>
       </div>
     </section>

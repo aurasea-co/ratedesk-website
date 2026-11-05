@@ -31,6 +31,14 @@ module.exports = {
           pale: '#F0E5C8',
         },
         line: '#06C755',
+        // Aurasea brand (WEB standing rules)
+        brand: {
+          navy: '#042C53',
+          forest: '#04342C',
+          mint: '#5DCAA5',
+          trust: '#378ADD',
+          sand: '#F1EFE8',
+        },
       },
       fontFamily: {
         serif: ['var(--font-serif)', 'Georgia', 'serif'],
