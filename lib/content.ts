@@ -80,7 +80,7 @@ const rawContent = {
         {
           n: '02',
           title: 'ราคาคู่แข่งอัตโนมัติ',
-          body: 'ระบบเช็คราคาที่เปิดขายของโรงแรมที่คุณเลือก (สูงสุด 5 แห่ง) 30 คืนข้างหน้าทุกคืน ไม่ต้องไล่ดูเอง',
+          body: 'ระบบเช็คราคาที่เปิดขายของโรงแรมที่คุณเลือก (สูงสุด 5 แห่ง) 30 คืนข้างหน้าทุกคืน ไม่ต้องไล่ดูเอง · โรงแรมที่ไม่มีราคาออนไลน์ กรอกราคาเองได้',
         },
         {
           n: '03',
@@ -95,7 +95,7 @@ const rawContent = {
       checks: [
         'ระบบแนะนำ คุณตัดสินใจ — ไม่เปลี่ยนราคาบน OTA หรือ Channel Manager เอง',
         'ไม่ต่ำกว่าราคาขั้นต่ำที่คุณตั้งไว้ในแต่ละประเภทห้อง',
-        'บอกเหตุผลทุกครั้ง ถ้าข้อมูลยังน้อย ระบบบอกตรงๆ ว่า "ความมั่นใจต่ำ"',
+        'บอกเหตุผลทุกครั้ง ถ้าข้อมูลยังน้อย ระบบบอกตรงๆ ว่า "ข้อมูลยังไม่พอ — คงราคาไว้ก่อน"',
       ],
     },
     timeline: {
@@ -281,7 +281,7 @@ const rawContent = {
         {
           n: '02',
           title: 'Competitor rates, automatically',
-          body: 'Every night the system checks the published rates of the hotels you choose (up to 5) for the next 30 nights. No more checking them yourself.',
+          body: 'Every night the system checks the published rates of the hotels you choose (up to 5) for the next 30 nights. No more checking them yourself. A hotel with no rate online can be entered by hand.',
         },
         {
           n: '03',
@@ -296,7 +296,7 @@ const rawContent = {
       checks: [
         'The system suggests, you decide — it never changes rates on an OTA or channel manager itself',
         'Never below the minimum rate you set for each room type',
-        'It gives its reasons every time, and when data is still thin it says plainly: "low confidence"',
+        'It gives its reasons every time, and when data is still thin it says plainly: "not enough data yet — hold the rate"',
       ],
     },
     timeline: {
