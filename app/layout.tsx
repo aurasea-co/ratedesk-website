@@ -8,7 +8,7 @@ export const metadata: Metadata = {
     template: '%s · RateDesk',
   },
   description:
-    'ทุกเช้า 7 โมง RateDesk ส่งราคาที่ควรขายของทุกประเภทห้องเข้า LINE พร้อมเหตุผล ราคาโรงแรมแถวนี้ และ 3 เรื่องที่ควรทำวันนี้',
+    'ทุกเช้า 7 โมง RateDesk ส่งราคาที่ควรขายของทุกประเภทห้องเข้า LINE พร้อมเหตุผล ราคาที่พักแถวนี้ และ 3 เรื่องที่ควรทำวันนี้',
   openGraph: {
     siteName: 'RateDesk',
     type: 'website',
