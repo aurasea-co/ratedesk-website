@@ -2,7 +2,7 @@ export type Lang = 'th' | 'en';
 
 /** The one place a visitor is sent to start: the Aurasea OS LINE account. */
 export const LINE_URL = 'https://lin.ee/ydDaqx8l';
-export const PHONE_DISPLAY = '083-515-9599';
+export const PHONE_DISPLAY = '0835159599';
 export const PHONE_TEL = 'tel:+66835159599';
 export const EMAIL = 'hello@ratedesk.ai';
 export const AURASEAOS_URL = 'https://www.auraseaos.com';
@@ -182,7 +182,7 @@ const rawContent = {
       tagline: 'ราคาห้องที่ควรขายทุกเช้าใน LINE สำหรับโรงแรมและรีสอร์ทอิสระ',
       crosslink: 'ส่วนหนึ่งของ Aurasea OS — ระบบหลังบ้านรายวันของโรงแรม',
       company:
-        'บริษัท ออร่า ซี จำกัด (AuraSea Co., Ltd.) · ทะเบียนนิติบุคคล 0305568007729 · นครราชสีมา · โทร 083-515-9599 (ทุกวัน 08:00–18:00 น.) · LINE @auraseaos · hello@ratedesk.ai',
+        'บริษัท ออร่า ซี จำกัด (AuraSea Co., Ltd.) · ทะเบียนนิติบุคคล 0305568007729 · นครราชสีมา · โทร 0835159599 (ทุกวัน 08:00–18:00 น.) · LINE @auraseaos · hello@ratedesk.ai',
       privacy: { label: 'นโยบายความเป็นส่วนตัว', href: 'https://www.auraseaos.com/privacy' },
       sections: {
         product: {
@@ -201,7 +201,7 @@ const rawContent = {
         contact: {
           title: 'ติดต่อ',
           line: 'LINE @auraseaos',
-          phone: 'โทร 083-515-9599',
+          phone: 'โทร 0835159599',
           hours: 'ทุกวัน 08:00–18:00 น.',
           email: EMAIL,
         },
@@ -384,7 +384,7 @@ const rawContent = {
       tagline: 'The rate to sell, every morning on LINE, for independent hotels and resorts.',
       crosslink: 'Part of Aurasea OS — the daily back office for hotels',
       company:
-        'AuraSea Co., Ltd. (บริษัท ออร่า ซี จำกัด) · Company registration 0305568007729 · Nakhon Ratchasima · Tel 083-515-9599 (daily 08:00–18:00) · LINE @auraseaos · hello@ratedesk.ai',
+        'AuraSea Co., Ltd. (บริษัท ออร่า ซี จำกัด) · Company registration 0305568007729 · Nakhon Ratchasima · Tel 0835159599 (daily 08:00–18:00) · LINE @auraseaos · hello@ratedesk.ai',
       privacy: { label: 'Privacy policy', href: 'https://www.auraseaos.com/en/privacy' },
       sections: {
         product: {
@@ -403,7 +403,7 @@ const rawContent = {
         contact: {
           title: 'Contact',
           line: 'LINE @auraseaos',
-          phone: 'Tel 083-515-9599',
+          phone: 'Tel 0835159599',
           hours: 'Daily 08:00–18:00',
           email: EMAIL,
         },
