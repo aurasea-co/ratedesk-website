@@ -1,5 +1,10 @@
 #!/usr/bin/env node
-// Fails if a price, a "free" claim or a trial length reaches the built output.
+// Fails if a price of ours or a pricing link reaches the built output.
+//
+// Bible v3.7a (16 Nov 2026, Bo): the sites MAY now say "ฟรี" / "free" about the
+// trial and the free plan, and state the trial length — both are true since the
+// free plan and public sign-up exist (O1, O3). Those two rules are gone; every
+// price rule stays.
 //
 // MD1 (Oct 2026): the partner testing period has started and pricing is
 // REMOVED from the marketing sites — not hidden behind a flag. A price in the
@@ -13,8 +18,7 @@
 //      that is not our price (a hotel's room rates in a phone mockup, a
 //      delivery-commission worked example). Those exact strings are declared
 //      per site in check-no-pricing.config.json → "allow".
-//   2. "ฟรี" and the word "free" (any case).
-//   3. A trial length: "ทดลอง… 90 วัน", "90-day trial", "trial … 60 days".
+//   2–3. (removed in v3.7a: "ฟรี"/"free" and trial lengths)
 //   4. A link to a pricing section or page: "#pricing", "/pricing".
 //   5. Structured-data prices: JSON-LD "offers" / "price" / "priceCurrency".
 //
@@ -49,13 +53,6 @@ const RULES = [
     text: false,
   })),
   ...[
-    { name: 'ฟรี', re: /ฟรี/g },
-    { name: 'free', re: /\bfree\b/gi },
-    { name: 'trial length (th)', re: /ทดลอง[^\s"<]{0,12}\s*\d+\s*วัน/g },
-    {
-      name: 'trial length (en)',
-      re: /\d+[\s-]*days?[\s-]+(?:free[\s-]+)?trial|trial[^.<"]{0,30}?\d+\s*days?/gi,
-    },
     { name: 'pricing link', re: /#pricing\b|(?<![\w[\]-])\/(?:(?:en|th)\/)?pricing(?![\w-])/g },
     { name: 'JSON-LD price', re: /\\?"(?:offers|price|priceCurrency)\\?"\s*:/g },
   ].map((r) => ({ ...r, allow: ALLOW_TEXT, text: true })),
@@ -107,13 +104,13 @@ if (scanned === 0) {
 }
 
 if (offences.length > 0) {
-  console.error(`\n✗ ${offences.length} price / free / trial / pricing-link offence(s) in the built output:\n`)
+  console.error(`\n✗ ${offences.length} price / pricing-link offence(s) in the built output:\n`)
   for (const o of offences.slice(0, 30)) console.error('  ' + o)
-  console.error('\n  Pricing is removed from the marketing sites during the partner testing period.')
+  console.error('\n  The marketing sites show no price of ours (bible §12).')
   console.error('  A figure or word that is a product DEMO or unchanged legal text, not our price,')
   console.error('  belongs in check-no-pricing.config.json — with the surrounding text, not the bare word.\n')
   process.exit(1)
 }
 console.log(
-  `✓ no pricing, "free" or trial claims in the built output (${scanned} files scanned, ${RULES.length} rules)`,
+  `✓ no pricing in the built output (${scanned} files scanned, ${RULES.length} rules)`,
 )

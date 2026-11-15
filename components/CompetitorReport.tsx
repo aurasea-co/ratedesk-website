@@ -1,4 +1,5 @@
 import { content, LINE_URL, type Lang } from '@/lib/content';
+import { TrackedLink } from '@/components/TrackedLink';
 
 /** The competitor rate report offer (WEB2-9), dashed trust-blue box. */
 export function CompetitorReport({ lang }: { lang: Lang }) {
@@ -15,14 +16,14 @@ export function CompetitorReport({ lang }: { lang: Lang }) {
             </h2>
             <p className={`${font} mt-4 text-base md:text-lg text-ink-soft leading-relaxed text-pretty`}>{r.body}</p>
           </div>
-          <a
+          <TrackedLink
             href={LINE_URL}
-            target="_blank"
-            rel="noopener noreferrer"
-            className={`${font} mt-6 md:mt-0 shrink-0 inline-flex items-center justify-center rounded-full bg-brand-trust px-6 py-3.5 text-base font-medium text-white hover:bg-brand-navy transition`}
+            placement="report"
+            lang={lang}
+            className={`${font} mt-6 md:mt-0 shrink-0 inline-flex items-center justify-center rounded-full bg-brand-blue px-6 py-3.5 text-base font-medium text-white hover:bg-brand-deep transition`}
           >
             {r.button}
-          </a>
+          </TrackedLink>
         </div>
       </div>
     </section>

@@ -11,6 +11,9 @@ import { CompetitorReport } from '@/components/CompetitorReport';
 import { FAQ } from '@/components/FAQ';
 import { FinalCta } from '@/components/FinalCta';
 import { Footer } from '@/components/Footer';
+import { KhaoYaiSection } from '@/components/KhaoYaiSection';
+import { StickyLine } from '@/components/StickyLine';
+import { getKhaoYaiIndex } from '@/lib/khaoyai';
 import type { Lang } from '@/lib/content';
 import { content } from '@/lib/content';
 
@@ -44,7 +47,8 @@ const ORGANIZATION = {
   },
 };
 
-export function Landing({ lang }: { lang: Lang }) {
+export async function Landing({ lang }: { lang: Lang }) {
+  const feed = await getKhaoYaiIndex();
   return (
     <main className="min-h-screen">
       <script
@@ -55,6 +59,7 @@ export function Landing({ lang }: { lang: Lang }) {
       <Header lang={lang} />
       <Hero lang={lang} />
       <SampleBrief lang={lang} />
+      <KhaoYaiSection lang={lang} feed={feed} variant="home" />
       <Problem lang={lang} />
       <HowItWorks lang={lang} />
       <Control lang={lang} />
@@ -71,6 +76,7 @@ export function Landing({ lang }: { lang: Lang }) {
       />
       <FinalCta lang={lang} />
       <Footer lang={lang} />
+      <StickyLine lang={lang} />
     </main>
   );
 }

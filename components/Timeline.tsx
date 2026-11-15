@@ -20,7 +20,7 @@ export function Timeline({ lang }: { lang: Lang }) {
             </li>
           ))}
         </ol>
-        <p className={`${font} mt-10 text-sm text-ink-muted`}>{t.footnote}</p>
+        {t.footnote && <p className={`${font} mt-10 text-sm text-ink-muted`}>{t.footnote}</p>}
       </div>
     </section>
   );

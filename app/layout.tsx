@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import { Analytics } from '@vercel/analytics/react';
 import './globals.css';
 
 export const metadata: Metadata = {
@@ -8,7 +9,7 @@ export const metadata: Metadata = {
     template: '%s · RateDesk',
   },
   description:
-    'ทุกเช้า 7 โมง RateDesk ส่งราคาที่ควรขายของทุกประเภทห้องเข้า LINE พร้อมเหตุผล ราคาที่พักแถวนี้ และ 3 เรื่องที่ควรทำวันนี้',
+    'RateDesk ดูราคาที่พักรอบตัวคุณทุกคืน แล้วส่งราคาแนะนำเข้า LINE ทุกเช้า พร้อมเหตุผลและราคาที่พักแถวนี้',
   openGraph: {
     siteName: 'RateDesk',
     type: 'website',
@@ -42,7 +43,11 @@ export default function RootLayout({
         />
         <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
       </head>
-      <body>{children}</body>
+      <body>
+        {children}
+        {/* Cookieless page views + one event per CTA and zone tab (W1). */}
+        <Analytics />
+      </body>
     </html>
   );
 }

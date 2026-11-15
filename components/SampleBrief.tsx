@@ -23,9 +23,9 @@ export function SampleBrief({ lang }: { lang: Lang }) {
             <p className={`${font} mb-3 inline-block rounded-full bg-brand-trust/10 px-3 py-1 text-xs font-medium text-brand-trust`}>
               {s.label}
             </p>
-            <div className={`${font} mx-auto w-full max-w-[380px] rounded-[2rem] border-[8px] sm:border-[10px] border-brand-navy bg-[#8CABD9]/25 p-3 shadow-xl`}>
-              <div className="rounded-2xl bg-white overflow-hidden text-[0.92rem] text-ink-soft">
-                <div className="bg-brand-navy px-4 py-3 text-white">
+            <div className={`${font} mx-auto w-full max-w-[380px] rounded-[2rem] border-[8px] sm:border-[10px] border-brand-deep bg-[#8CABD9]/25 p-3 shadow-xl`}>
+              <div className="force-light rounded-2xl bg-white overflow-hidden text-[0.92rem] text-ink-soft">
+                <div className="bg-brand-deep px-4 py-3 text-white">
                   <p className="text-xs text-white/70">{s.cardHeader}</p>
                   <p className="mt-0.5 text-base font-semibold">{s.cardTitle}</p>
                 </div>
@@ -78,7 +78,7 @@ export function SampleBrief({ lang }: { lang: Lang }) {
           <ol className="min-w-0 col-span-12 md:col-span-6 lg:col-span-6 lg:col-start-7 space-y-6 md:pt-14">
             {s.callouts.map((t, i) => (
               <li key={t} className="flex gap-4">
-                <span className="shrink-0 flex h-9 w-9 items-center justify-center rounded-full bg-brand-mint text-brand-navy font-semibold">
+                <span className="shrink-0 flex h-9 w-9 items-center justify-center rounded-full bg-brand-mint text-brand-deep font-semibold">
                   {i + 1}
                 </span>
                 <p className={`${font} pt-1 text-lg leading-relaxed text-ink-soft text-pretty`}>{t}</p>
@@ -96,7 +96,7 @@ function Marker({ n, inline = false }: { n: number; inline?: boolean }) {
   return (
     <span
       aria-hidden
-      className={`${inline ? 'mt-0.5' : 'float-right'} flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-brand-mint text-[0.7rem] font-semibold text-brand-navy`}
+      className={`${inline ? 'mt-0.5' : 'float-right'} flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-brand-mint text-[0.7rem] font-semibold text-brand-deep`}
     >
       {n}
     </span>
