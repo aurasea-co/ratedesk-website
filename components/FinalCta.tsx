@@ -12,7 +12,7 @@ export function FinalCta({ lang }: { lang: Lang }) {
           {f.title}
         </h2>
         <div className="mt-10">
-          <CtaButtons lang={lang} dark />
+          <CtaButtons lang={lang} dark where="final" />
         </div>
         <p className={`${isThai ? 'font-thai' : 'font-sans'} mt-6 text-white/80`}>
           {f.phone}{' '}

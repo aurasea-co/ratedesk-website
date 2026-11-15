@@ -4,9 +4,76 @@
 
 @layer base {
   :root {
+    --c-ink: 11 15 20;
+    --c-ink-soft: 26 34 48;
+    --c-ink-muted: 74 85 104;
+    --c-ink-subtle: 90 96 107;
+    --c-paper: 251 249 244;
+    --c-paper-warm: 245 241 232;
+    --c-paper-soft: 255 255 255;
+    --c-sea-deep: 15 42 63;
+    --c-sea-mid: 31 78 111;
+    --c-sea-pale: 230 238 245;
+    --c-navy: 4 44 83;
+    --c-trust: 31 94 158;
+    --c-sand: 241 239 232;
+    --c-cta: 4 44 83;
+    --c-cta-ink: 255 255 255;
+    --c-cta-hover: 4 52 44;
+    --c-wkend: 230 238 245;
+    --c-hol: 240 229 200;
+    color-scheme: light;
     --font-serif: 'Fraunces', 'Cormorant Garamond', Georgia, serif;
     --font-sans: 'Inter Tight', -apple-system, BlinkMacSystemFont, sans-serif;
     --font-thai: 'IBM Plex Sans Thai', 'Sarabun', system-ui, sans-serif;
+  }
+
+  /* Dark theme follows the visitor's setting (W1, 16 Nov 2026). */
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --c-ink: 236 239 243;
+      --c-ink-soft: 211 218 227;
+      --c-ink-muted: 174 184 197;
+      --c-ink-subtle: 160 171 184;
+      --c-paper: 14 22 32;
+      --c-paper-warm: 18 28 40;
+      --c-paper-soft: 23 34 47;
+      --c-sea-deep: 156 195 228;
+      --c-sea-mid: 141 180 214;
+      --c-sea-pale: 20 37 54;
+      --c-navy: 185 211 236;
+      --c-trust: 125 178 232;
+      --c-sand: 17 27 38;
+      --c-cta: 93 202 165;
+      --c-cta-ink: 4 44 83;
+      --c-cta-hover: 143 224 196;
+      --c-wkend: 27 44 63;
+      --c-hol: 62 51 27;
+      color-scheme: dark;
+    }
+  }
+
+  /* A surface that stays light in both themes (the LINE message mock-up, the QR). */
+  .force-light {
+    --c-ink: 11 15 20;
+    --c-ink-soft: 26 34 48;
+    --c-ink-muted: 74 85 104;
+    --c-ink-subtle: 90 96 107;
+    --c-paper: 251 249 244;
+    --c-paper-warm: 245 241 232;
+    --c-paper-soft: 255 255 255;
+    --c-sea-deep: 15 42 63;
+    --c-sea-mid: 31 78 111;
+    --c-sea-pale: 230 238 245;
+    --c-navy: 4 44 83;
+    --c-trust: 31 94 158;
+    --c-sand: 241 239 232;
+    --c-cta: 4 44 83;
+    --c-cta-ink: 255 255 255;
+    --c-cta-hover: 4 52 44;
+    --c-wkend: 230 238 245;
+    --c-hol: 240 229 200;
+    color-scheme: light;
   }
 
   html {
@@ -16,8 +83,8 @@
   }
 
   body {
-    background: #FBF9F4;
-    color: #0B0F14;
+    background: rgb(var(--c-paper));
+    color: rgb(var(--c-ink));
     font-family: var(--font-sans);
     font-feature-settings: 'ss01' on, 'cv11' on;
   }
@@ -49,7 +116,7 @@
     letter-spacing: 0.14em;
     font-size: 0.7rem;
     font-weight: 500;
-    color: #4A5568;
+    color: rgb(var(--c-ink-muted));
   }
 
   .editorial-rule {
@@ -69,6 +136,10 @@
     opacity: 0.035;
     mix-blend-mode: multiply;
     background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  }
+
+  @media (prefers-color-scheme: dark) {
+    .grain::after { opacity: 0; }
   }
 
   .reveal {
@@ -112,12 +183,12 @@
   }
 
   .nav-link {
-    color: #1A2230;
+    color: rgb(var(--c-ink-soft));
     font-size: 0.875rem;
     transition: color 0.2s;
   }
   .nav-link:hover {
-    color: #1F4E6F;
+    color: rgb(var(--c-sea-mid));
   }
 }
 

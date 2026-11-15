@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import { content, LINE_URL, type Lang } from '@/lib/content';
+import { TrackedLink } from '@/components/TrackedLink';
 
 export function Header({ lang }: { lang: Lang }) {
   const c = content[lang];
@@ -16,18 +17,18 @@ export function Header({ lang }: { lang: Lang }) {
         >
           <RateDeskMark />
           <span className="display-serif text-[1.35rem] tracking-tight text-ink">
-            RateDesk<span className="text-sea-aura">.ai</span>
+            RateDesk<span className="text-sea-mid">.ai</span>
           </span>
         </Link>
 
         <nav className="hidden md:flex items-center gap-9">
-          <a href="#how" className="nav-link link-underline">
+          <a href={`/${lang}#how`} className="nav-link link-underline">
             {c.nav.howItWorks}
           </a>
-          <a href="#integrations" className="nav-link link-underline">
+          <a href={`/${lang}#integrations`} className="nav-link link-underline">
             {c.nav.integrations}
           </a>
-          <a href="#faq" className="nav-link link-underline">
+          <a href={`/${lang}#faq`} className="nav-link link-underline">
             {c.nav.faq}
           </a>
         </nav>
@@ -40,17 +41,17 @@ export function Header({ lang }: { lang: Lang }) {
           >
             {otherLabel}
           </Link>
-          <a
+          <TrackedLink
             href={LINE_URL}
-            target="_blank"
-            rel="noopener noreferrer"
+            placement="header"
+            lang={lang}
             className={`${
               lang === 'th' ? 'font-thai' : 'font-sans'
-            } hidden sm:inline-flex items-center gap-1.5 rounded-full bg-brand-navy px-4 py-2 text-sm text-white hover:bg-brand-forest transition`}
+            } hidden sm:inline-flex items-center gap-1.5 rounded-full bg-cta px-4 py-2 text-sm text-cta-ink hover:bg-cta-hover transition`}
           >
             {c.cta.primary}
             <span aria-hidden>→</span>
-          </a>
+          </TrackedLink>
         </div>
       </div>
     </header>
@@ -66,9 +67,9 @@ function RateDeskMark() {
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
       aria-hidden
-      className="transition-transform duration-500 group-hover:rotate-[8deg]"
+      className="text-sea-deep transition-transform duration-500 group-hover:rotate-[8deg]"
     >
-      <circle cx="14" cy="14" r="13" stroke="#0F2A3F" strokeWidth="1" />
+      <circle cx="14" cy="14" r="13" stroke="currentColor" strokeWidth="1" />
       <path
         d="M3 14 Q 8 10.5, 14 14 T 25 14"
         stroke="#3A7CA5"

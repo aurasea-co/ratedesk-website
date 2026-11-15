@@ -6,6 +6,8 @@ export const PHONE_DISPLAY = '0835159599';
 export const PHONE_TEL = 'tel:+66835159599';
 export const EMAIL = 'hello@ratedesk.ai';
 export const AURASEAOS_URL = 'https://www.auraseaos.com';
+/** Self-serve sign-up in the app (O3, live since 14 Nov 2026). */
+export const SIGNUP_URL = 'https://app.auraseaos.com/signup';
 
 const rawContent = {
   th: {
@@ -14,7 +16,7 @@ const rawContent = {
     meta: {
       title: 'RateDesk — ราคาห้องที่ควรขายทุกเช้าใน LINE สำหรับโรงแรมและรีสอร์ทอิสระ',
       description:
-        'ทุกเช้า 7 โมง RateDesk ส่งราคาที่ควรขายของทุกประเภทห้องเข้า LINE พร้อมเหตุผล ราคาที่พักแถวนี้ และ 3 เรื่องที่ควรทำวันนี้ · สำหรับโรงแรมและรีสอร์ทอิสระ 10–100 ห้อง',
+        'RateDesk ดูราคาที่พักรอบตัวคุณทุกคืน แล้วส่งราคาแนะนำเข้า LINE ทุกเช้า พร้อมเหตุผลและราคาที่พักแถวนี้ · สำหรับโรงแรมและรีสอร์ทอิสระ 10–100 ห้อง',
     },
     nav: {
       howItWorks: 'วิธีใช้งาน',
@@ -22,14 +24,17 @@ const rawContent = {
       faq: 'คำถามที่พบบ่อย',
     },
     cta: {
-      primary: 'เริ่มใช้กับโรงแรมหรือรีสอร์ทของคุณ',
-      secondary: 'ดูตัวอย่างข้อความเช้า',
-      trust: 'ทีมงานตั้งค่าให้ ถึงที่หรือออนไลน์ · ไม่ผูกบัตร · ไม่มีสัญญา',
+      primary: 'เริ่มทดลองฟรีใน LINE',
+      secondary: 'รับกราฟเทียบตลาดของโรงแรมคุณ ฟรี',
+      trust: 'ทดลองฟรีอย่างน้อย 30 วัน ครอบคลุมวันหยุดยาวอย่างน้อย 1 ครั้ง · ไม่ผูกบัตร · ไม่มีสัญญา · มีแพ็กเกจฟรีให้ใช้ต่อ',
+      signup: 'สมัครเองได้เลย',
+      proof: 'ใช้งานจริงทุกเช้าที่โรงแรมและรีสอร์ทในเขาใหญ่ ปากช่อง และโคราช',
+      qr: 'สแกนเพื่อเพิ่ม LINE AuraSea OS (@auraseaos)',
     },
     hero: {
       eyebrow: 'เปิดใช้งานแล้ว · สำหรับโรงแรมและรีสอร์ทอิสระ',
-      title: 'ราคาห้องที่ใช่\nสำหรับทุกคืน',
-      lead: 'ทุกเช้า 7 โมง RateDesk ส่งราคาที่ควรขายของทุกประเภทห้องเข้า LINE พร้อมเหตุผล ราคาที่พักแถวนี้ และ 3 เรื่องที่ควรทำวันนี้',
+      title: 'ตลาดขึ้นราคา\nแต่ราคาคุณยังเท่าเดิม?',
+      lead: 'RateDesk ดูราคาที่พักรอบตัวคุณทุกคืน แล้วส่งราคาแนะนำเข้า LINE ทุกเช้า เริ่มได้ทันที ไม่ต้องกรอกข้อมูล',
       caption: 'ส่วนหนึ่งของ Aurasea OS — ระบบหลังบ้านของโรงแรมและรีสอร์ท',
     },
     sample: {
@@ -38,12 +43,12 @@ const rawContent = {
       label: 'ตัวอย่าง · ตัวเลขสมมติ',
       cardHeader: 'RateDesk · ศ. 20 พ.ย.',
       cardTitle: 'คืนนี้ขายแพงขึ้นได้',
-      booked: 'จองแล้ว 52/70 ห้อง · โรงแรมแถวนี้เต็มแล้ว 1 แห่ง',
+      booked: 'จองแล้ว 52/70 ห้อง · โรงแรมแถวนี้น่าจะเต็ม 1 แห่ง',
       columns: ['ประเภทห้อง', 'ตอนนี้', 'ควรขาย'],
       rows: [
         ['Standard', '฿880', '฿1,080'],
-        ['Deluxe', '฿1,235', '฿1,450'],
-        ['Family', '฿1,435', '฿1,650'],
+        ['Deluxe', '฿1,235', '฿1,435'],
+        ['Family', '฿1,435', '฿1,635'],
       ],
       todayTitle: 'วันนี้ควรทำ',
       today: [
@@ -59,12 +64,57 @@ const rawContent = {
         'ส่งถึงเจ้าของและผู้จัดการ ทาง LINE และอีเมล',
       ],
     },
+    index: {
+      eyebrow: 'ดัชนีเขาใหญ่',
+      title: 'ดัชนีเขาใหญ่ · ราคาที่พักในเขาใหญ่ 30 คืนข้างหน้า',
+      zones: 'โซน',
+      legend: {
+        median: 'ราคากลาง',
+        band: 'ที่พักส่วนใหญ่ขายในช่วงนี้',
+        weekend: 'สุดสัปดาห์',
+        holiday: 'วันหยุด',
+        gap: 'ข้อมูลไม่พอ',
+      },
+      today: 'วันนี้',
+      gapTip: 'ข้อมูลไม่พอ · มีราคาไม่ถึง 6 ที่พัก',
+      priced: 'มีราคา {n} ที่พัก',
+      columns: ['วันที่', 'ราคากลาง', 'ช่วงราคาส่วนใหญ่', 'ที่พักขึ้นราคาใน 7 วัน', 'ไม่มีราคาบน Google'],
+      tableNote: 'สุดสัปดาห์ 4 ครั้งถัดไป และวันหยุดใน 30 คืนข้างหน้า',
+      footer: 'ราคาห้องเริ่มต้นบน Google · 2 ท่าน 1 คืน · {updated} · {n} ที่พัก · ไม่แสดงชื่อที่พัก',
+      updated: 'อัปเดต {time}',
+      stale: 'ข้อมูลล่าสุด {date}',
+      cta: 'ราคาของคุณอยู่ตรงไหนในตลาดนี้? ส่งชื่อโรงแรมใน LINE รับกราฟเทียบตลาด 30 คืน ฟรี ภายใน 24 ชม.',
+      ctaButton: 'ส่งชื่อโรงแรมใน LINE',
+      seeAll: 'ดูดัชนีเขาใหญ่ทั้งหมด',
+      page: {
+        seoTitle: 'ราคาที่พักเขาใหญ่ 30 วันข้างหน้า · ดัชนีเขาใหญ่',
+        description: 'ราคากลางของที่พักในเขาใหญ่ (ปากช่อง ธนะรัชต์ หมูสี) 30 คืนข้างหน้า จากราคาห้องเริ่มต้นบน Google อัปเดตทุกวัน ไม่แสดงชื่อที่พัก',
+        h1: 'ดัชนีเขาใหญ่',
+        lead: 'ราคาที่พักในเขาใหญ่ 30 คืนข้างหน้า อัปเดตทุกวัน',
+        howToReadTitle: 'วิธีอ่าน',
+        howToRead: [
+          'เส้นคือราคากลางของคืนนั้น ครึ่งหนึ่งของที่พักขายถูกกว่า อีกครึ่งขายแพงกว่า',
+          'แถบสีคือช่วงที่ที่พักส่วนใหญ่ขาย (ครึ่งกลางของราคาทั้งหมด)',
+          'คืนที่มีราคาไม่ถึง 6 ที่พักจะเว้นว่างไว้และขึ้นว่า "ข้อมูลไม่พอ"',
+          'แตะหรือชี้ที่คืนใดก็ได้เพื่อดูตัวเลขของคืนนั้น',
+        ],
+        methodTitle: 'วิธีคำนวณ',
+        method: [
+          'ใช้ราคาห้องเริ่มต้นที่เปิดขายบน Google สำหรับ 2 ท่าน 1 คืน ของที่พักในแต่ละโซน',
+          'คำนวณราคากลาง (มัธยฐาน) และครึ่งกลางของราคา เฉพาะคืนที่มีราคาอย่างน้อย 6 ที่พัก',
+          'ราคาที่ผิดปกติมาก (ต่ำกว่าหรือสูงกว่าราคาปกติของที่พักนั้นหลายเท่า) ไม่นำมาคิด',
+          'ไม่แสดงชื่อที่พัก และไม่มีราคาของที่พักแห่งใดแห่งหนึ่ง',
+        ],
+        monthly: 'รับรายงานตลาดเขาใหญ่ทุกเดือนทาง LINE',
+        monthlyButton: 'รับรายงานทาง LINE',
+      },
+    },
     problem: {
       eyebrow: 'ความท้าทาย',
       title: 'ราคาห้องตัดสินใจช้า\nรายได้หลุดมือทุกคืน',
       body: [
         'เจ้าของโรงแรมและรีสอร์ทอิสระต้องเช็คราคาคู่แข่ง ดูยอดจองรายวัน และปรับราคาบน Channel Manager — ทั้งหมดด้วยตัวเองตอนเช้าก่อนเปิดออฟฟิศ',
-        'ผลคือ ราคาห้องมักช้ากว่าตลาด 24–48 ชั่วโมง ในช่วงพีคเสียโอกาสขึ้นราคา ในช่วงโลว์ปล่อยห้องว่างทั้งที่ลดราคานิดเดียวก็ขายได้',
+        'ผลคือ ในช่วงพีคเสียโอกาสขึ้นราคา ในช่วงโลว์ปล่อยห้องว่างทั้งที่ลดราคานิดเดียวก็ขายได้',
         'RateDesk ทำงานทุกคืนแทนคุณ — ดูยอดจองของคุณ เช็คราคาคู่แข่งสูงสุด 5 แห่งที่คุณเลือก และส่งราคาแนะนำมาทาง LINE ก่อนกาแฟแก้วแรกของวัน',
       ],
     },
@@ -104,26 +154,26 @@ const rawContent = {
       steps: [
         {
           when: 'วันแรก',
-          body: 'ทีมงานตั้งค่าให้ ถึงที่หรือออนไลน์ เลือกคู่แข่ง 5 แห่ง → เห็นราคาคู่แข่ง 30 คืน และปฏิทินวันสำคัญทันที',
+          body: 'ตั้งค่า เลือกคู่แข่ง แล้วเห็นกราฟตลาด 30 คืนข้างหน้าทันที',
         },
         {
-          when: '7 คืน',
-          body: 'ได้ราคาคืนนี้ทุกประเภทห้อง พร้อม 3 เรื่องที่ควรทำ',
+          when: 'ทุกวันอังคาร',
+          body: 'ได้ราคาแนะนำคืนวันศุกร์–เสาร์และวันหยุดยาว ทาง LINE โดยไม่ต้องกรอกข้อมูล',
         },
         {
-          when: '25 วัน',
-          body: 'ได้ราคาแนะนำ 30 คืนข้างหน้า*',
+          when: 'เมื่อส่งข้อมูลการจองทุกวัน',
+          body: 'กรอก อัปโหลด หรือส่งไฟล์ทาง LINE แล้วได้ราคาแนะนำวันธรรมดาด้วย พร้อมสรุปทุกเช้า 07:00',
         },
       ],
-      footnote: '* เมื่อ PMS ส่งออกยอดจองล่วงหน้าได้ · ถ้าไม่มี จะได้ราคาคืนนี้ทุกเช้า',
+      footnote: '',
     },
     integrations: {
       eyebrow: 'ใช้กับระบบเดิม',
       title: 'ใช้กับระบบที่คุณมีอยู่ — ไม่ต้องเปลี่ยน PMS',
       lead:
-        'อัปโหลดรายงานที่ส่งออกจาก PMS ที่คุณใช้อยู่ หรือถ้าไม่มี PMS พนักงานกรอกยอดห้องวันละประมาณ 2 นาทีผ่านมือถือ · ใช้ร่วมกับ Channel Manager เดิมได้ ระบบไม่เปลี่ยนราคาบน OTA เอง',
+        'อัปโหลดรายงานที่ส่งออกจาก PMS ที่คุณใช้อยู่ หรือส่งไฟล์รายงานจาก PMS ทาง LINE ได้ · ถ้าไม่มี PMS พนักงานกรอกยอดห้องวันละประมาณ 2 นาทีผ่านมือถือ · ใช้ร่วมกับ Channel Manager เดิมได้ ระบบไม่เปลี่ยนราคาบน OTA เอง',
       points: [
-        { title: 'มี PMS', body: 'อัปโหลดรายงานที่ส่งออกจาก PMS วันละครั้ง' },
+        { title: 'มี PMS', body: 'อัปโหลด หรือส่งไฟล์รายงานจาก PMS ทาง LINE วันละครั้ง' },
         { title: 'ไม่มี PMS', body: 'กรอกยอดห้องผ่านมือถือ วันละประมาณ 2 นาที' },
         { title: 'Channel Manager', body: 'ใช้ร่วมกับของเดิมได้ คุณเป็นคนเปลี่ยนราคาเอง' },
       ],
@@ -131,7 +181,7 @@ const rawContent = {
     founder: {
       eyebrow: 'ผู้ก่อตั้ง',
       title: 'สร้างโดยเจ้าของรีสอร์ท ใช้จริงทุกเช้า',
-      body: 'RateDesk เริ่มจากรีสอร์ทบูติก 85 ห้องในนครราชสีมาของผู้ก่อตั้ง ทุกฟีเจอร์ผ่านการใช้งานจริงที่หน้าเคาน์เตอร์ก่อนเปิดให้โรงแรมและรีสอร์ทอื่นใช้',
+      body: 'RateDesk สร้างและใช้จริงทุกเช้าที่รีสอร์ทในโคราช ทุกฟีเจอร์ผ่านการใช้งานจริงที่หน้าเคาน์เตอร์ก่อนเปิดให้โรงแรมและรีสอร์ทอื่นใช้',
     },
     report: {
       title: 'อยากรู้ราคาที่พักแถวคุณ 30 คืนข้างหน้า? ทักมาใน LINE',
@@ -144,7 +194,7 @@ const rawContent = {
       items: [
         {
           q: 'ใช้ได้แล้วหรือยัง?',
-          a: 'ใช้ได้แล้ว ทักใน LINE @auraseaos เพื่อเริ่มใช้กับโรงแรมหรือรีสอร์ทของคุณ',
+          a: 'ใช้ได้แล้ว ทักใน LINE ของเรา ชื่อ AuraSea OS (@auraseaos) หรือสมัครเองที่ app.auraseaos.com',
           link: { label: 'ทักใน LINE', href: LINE_URL },
         },
         {
@@ -156,12 +206,21 @@ const rawContent = {
           a: 'ได้ พนักงานกรอกจำนวนห้องที่ขายได้วันละประมาณ 2 นาทีผ่านมือถือ',
         },
         {
+          q: 'ไม่มีเวลากรอกข้อมูลทุกวัน ใช้ได้ไหม?',
+          a: 'ได้ ไม่ต้องกรอกอะไร ทุกวันอังคารระบบส่งราคาแนะนำคืนวันศุกร์–เสาร์และวันหยุดยาวทาง LINE จากราคาตลาดรอบตัวคุณ ถ้าส่งข้อมูลการจองทุกวัน จะได้ราคาวันธรรมดาและสรุปทุกเช้าเพิ่ม',
+        },
+        {
+          q: 'ราคาเท่าไหร่?',
+          a: 'ทดลองฟรีอย่างน้อย 30 วัน และมีแพ็กเกจฟรีให้ใช้ต่อ แพ็กเกจเต็มคิดตามขนาดที่พัก ทักใน LINE เพื่อดูราคา',
+          link: { label: 'ทักใน LINE', href: LINE_URL },
+        },
+        {
           q: 'ระบบเปลี่ยนราคาบน OTA เองไหม?',
           a: 'ไม่ ระบบแนะนำ คุณเป็นคนตัดสินใจ และไม่แนะนำต่ำกว่าราคาขั้นต่ำที่คุณตั้ง',
         },
         {
           q: 'ใครตั้งค่าและสอนพนักงาน?',
-          a: 'ทีมงานตั้งค่าให้ที่โรงแรมหรือรีสอร์ทของคุณ หรือผ่าน LINE วิดีโอคอล',
+          a: 'สมัครและตั้งค่าเองได้ที่ app.auraseaos.com หรือให้ทีมงานช่วยตั้งค่าที่โรงแรมหรือรีสอร์ทของคุณ หรือผ่าน LINE วิดีโอคอล',
         },
         {
           q: 'ต่างจากระบบ RMS ของฝั่งตะวันตกอย่างไร?',
@@ -169,7 +228,7 @@ const rawContent = {
         },
         {
           q: 'ข้อมูลของผมปลอดภัยไหม?',
-          a: 'ยอดจองของคุณไม่เปิดเผยให้ที่พักอื่น ไม่ขายข้อมูล เข้ารหัสทั้งหมด · ลบได้ทั้งหมดเมื่อเลิกใช้',
+          a: 'ยอดจองของคุณไม่เปิดเผยให้ที่พักอื่น ไม่ขายข้อมูล เข้ารหัสทั้งระหว่างส่งและขณะจัดเก็บ · ข้อมูลที่พักใช้ในสถิติภาพรวมแบบไม่ระบุตัวตนเท่านั้น · ลบได้ทั้งหมดเมื่อเลิกใช้',
           link: { label: 'นโยบายความเป็นส่วนตัว', href: 'https://www.auraseaos.com/privacy' },
         },
       ],
@@ -182,7 +241,7 @@ const rawContent = {
       tagline: 'ราคาห้องที่ควรขายทุกเช้าใน LINE สำหรับโรงแรมและรีสอร์ทอิสระ',
       crosslink: 'ส่วนหนึ่งของ Aurasea OS — ระบบหลังบ้านของโรงแรมและรีสอร์ท',
       company:
-        'บริษัท ออร่า ซี จำกัด (AuraSea Co., Ltd.) · ทะเบียนนิติบุคคล 0305568007729 · นครราชสีมา · โทร 0835159599 (ทุกวัน 08:00–18:00 น.) · LINE @auraseaos · hello@ratedesk.ai',
+        'บริษัท ออร่า ซี จำกัด (AuraSea Co., Ltd.) · ทะเบียนนิติบุคคล 0305568007729 · นครราชสีมา · โทร 0835159599 (ทุกวัน 08:00–18:00 น.) · LINE AuraSea OS (@auraseaos) · hello@ratedesk.ai',
       privacy: { label: 'นโยบายความเป็นส่วนตัว', href: 'https://www.auraseaos.com/privacy' },
       sections: {
         product: {
@@ -200,13 +259,13 @@ const rawContent = {
         },
         contact: {
           title: 'ติดต่อ',
-          line: 'LINE @auraseaos',
+          line: 'LINE AuraSea OS (@auraseaos)',
           phone: 'โทร 0835159599',
           hours: 'ทุกวัน 08:00–18:00 น.',
           email: EMAIL,
         },
       },
-      copyright: '© 2026 บริษัท ออร่า ซี จำกัด สงวนลิขสิทธิ์',
+      copyright: '© 2569 บริษัท ออร่า ซี จำกัด สงวนลิขสิทธิ์',
     },
   },
   en: {
@@ -215,7 +274,7 @@ const rawContent = {
     meta: {
       title: 'RateDesk — the rate to sell, every morning on LINE, for independent hotels and resorts',
       description:
-        'Every morning at 7, RateDesk sends the rate to sell for every room type to LINE, with the reasons, nearby properties’ rates and 3 things to do today · For independent hotels and resorts of 10–100 rooms.',
+        'RateDesk checks the rates of the properties around you every night, then sends a suggested rate to your LINE every morning, with the reasons and nearby properties’ rates · For independent hotels and resorts of 10–100 rooms.',
     },
     nav: {
       howItWorks: 'How it works',
@@ -223,14 +282,17 @@ const rawContent = {
       faq: 'FAQ',
     },
     cta: {
-      primary: 'Start with your hotel or resort',
-      secondary: 'See a sample morning message',
-      trust: 'We set it up for you, on site or online · No card · No contract',
+      primary: 'Start your free trial on LINE',
+      secondary: 'Get a free market chart for your hotel',
+      trust: 'Free trial of at least 30 days, covering at least one long weekend · No card · No contract · A free plan to continue on',
+      signup: 'Sign up yourself',
+      proof: 'In use every morning at hotels and resorts in Khao Yai, Pak Chong and Korat',
+      qr: 'Scan to add LINE AuraSea OS (@auraseaos)',
     },
     hero: {
       eyebrow: 'Live now · For independent hotels and resorts',
-      title: 'The right room rate,\nevery night.',
-      lead: 'Every morning at 7, RateDesk sends the rate to sell for every room type to your LINE, with the reasons, nearby properties’ rates and 3 things to do today.',
+      title: 'The market is raising rates.\nAre yours still the same?',
+      lead: 'RateDesk checks the rates of the properties around you every night, then sends a suggested rate to your LINE every morning. Start right away — no data entry needed.',
       caption: 'Part of Aurasea OS — the back office for hotels and resorts',
     },
     sample: {
@@ -239,12 +301,12 @@ const rawContent = {
       label: 'Sample · illustrative figures',
       cardHeader: 'RateDesk · Fri 20 Nov',
       cardTitle: 'You can sell higher tonight',
-      booked: 'Booked 52/70 rooms · 1 nearby hotel already full',
+      booked: 'Booked 52/70 rooms · 1 nearby hotel probably full',
       columns: ['Room type', 'Now', 'Sell at'],
       rows: [
         ['Standard', '฿880', '฿1,080'],
-        ['Deluxe', '฿1,235', '฿1,450'],
-        ['Family', '฿1,435', '฿1,650'],
+        ['Deluxe', '฿1,235', '฿1,435'],
+        ['Family', '฿1,435', '฿1,635'],
       ],
       todayTitle: 'To do today',
       today: [
@@ -260,12 +322,57 @@ const rawContent = {
         'Sent to the owner and managers, by LINE and email',
       ],
     },
+    index: {
+      eyebrow: 'Khao Yai Index',
+      title: 'Khao Yai Index · Khao Yai room rates, next 30 nights',
+      zones: 'Zone',
+      legend: {
+        median: 'Median rate',
+        band: 'Where most properties sell',
+        weekend: 'Weekend',
+        holiday: 'Holiday',
+        gap: 'Not enough data',
+      },
+      today: 'Today',
+      gapTip: 'Not enough data · fewer than 6 properties priced',
+      priced: '{n} properties priced',
+      columns: ['Night', 'Median', 'Most properties', 'Raised in 7 days', 'No price on Google'],
+      tableNote: 'The next 4 weekends and every holiday in the next 30 nights',
+      footer: 'Cheapest room on Google · 2 adults, 1 night · {updated} · {n} properties · No property names shown',
+      updated: 'Updated {time}',
+      stale: 'Latest data {date}',
+      cta: 'Where does your rate sit in this market? Send your hotel’s name on LINE and get a free 30-night market chart within 24 hours.',
+      ctaButton: 'Send your hotel’s name on LINE',
+      seeAll: 'See the full Khao Yai Index',
+      page: {
+        seoTitle: 'Khao Yai room rates, next 30 days · Khao Yai Index',
+        description: 'The median room rate in Khao Yai (Pak Chong, Thanarat, Mu Si) for the next 30 nights, from the cheapest room on Google, updated daily. No property names shown.',
+        h1: 'Khao Yai Index',
+        lead: 'Khao Yai room rates for the next 30 nights, updated daily',
+        howToReadTitle: 'How to read it',
+        howToRead: [
+          'The line is the night’s median rate: half the properties sell cheaper, half dearer.',
+          'The band is where most properties sell (the middle half of all rates).',
+          'A night with fewer than 6 properties priced is left as a gap marked "Not enough data".',
+          'Tap or hover over any night to see its figures.',
+        ],
+        methodTitle: 'How it is calculated',
+        method: [
+          'We use the cheapest room published on Google for 2 adults, 1 night, for the properties in each zone.',
+          'The median and the middle half are calculated only for nights with at least 6 properties priced.',
+          'Rates far outside a property’s usual range are left out.',
+          'No property is named, and no single property’s rate is shown.',
+        ],
+        monthly: 'Get the Khao Yai market report every month on LINE',
+        monthlyButton: 'Get the report on LINE',
+      },
+    },
     problem: {
       eyebrow: 'The problem',
       title: 'Rate decisions made too slowly.\nRevenue lost every night.',
       body: [
         'Independent hotel and resort owners check competitor rates, look over daily bookings and adjust prices in their channel manager — all by hand, every morning before the office opens.',
-        'The result: rates lag the market by 24–48 hours. In peak periods you miss the chance to push price. In soft periods you sit on empty rooms when a small adjustment would have closed the booking.',
+        'The result: in peak periods you miss the chance to push price. In soft periods you sit on empty rooms when a small adjustment would have closed the booking.',
         'RateDesk works through the night for you — it reads your bookings, checks up to 5 competitors that you choose, and sends a suggested rate to LINE before your first coffee.',
       ],
     },
@@ -305,27 +412,26 @@ const rawContent = {
       steps: [
         {
           when: 'Day 1',
-          body: 'We set it up for you, on site or online, and you choose 5 competitors → you see their rates for 30 nights and the calendar of important dates right away',
+          body: 'Set it up, choose your competitors and see the market chart for the next 30 nights right away',
         },
         {
-          when: '7 nights',
-          body: 'Tonight’s rate for every room type, with 3 things to do',
+          when: 'Every Tuesday',
+          body: 'Suggested rates for Friday–Saturday nights and long weekends on LINE, with no data entry',
         },
         {
-          when: '25 days',
-          body: 'Suggested rates for the next 30 nights*',
+          when: 'When you send bookings daily',
+          body: 'Type them, upload them or send the file on LINE, and you also get weekday rates and a summary every morning at 07:00',
         },
       ],
-      footnote:
-        '* When your PMS can export forward bookings · Otherwise you get tonight’s rate every morning',
+      footnote: '',
     },
     integrations: {
       eyebrow: 'Works with your system',
       title: 'Works with the system you already have — no need to change your PMS.',
       lead:
-        'Upload the report you export from the PMS you already use, or if you have no PMS, staff enter the room numbers in about 2 minutes a day on a phone · Works alongside your existing channel manager; the system never changes your OTA rates itself.',
+        'Upload the report you export from the PMS you already use, or send the PMS report file on LINE · With no PMS, staff enter the room numbers in about 2 minutes a day on a phone · Works alongside your existing channel manager; the system never changes your OTA rates itself.',
       points: [
-        { title: 'With a PMS', body: 'Upload the report you export from your PMS, once a day' },
+        { title: 'With a PMS', body: 'Upload your PMS report, or send the file on LINE, once a day' },
         { title: 'Without a PMS', body: 'Enter the room numbers on a phone, about 2 minutes a day' },
         { title: 'Channel manager', body: 'Keep the one you have; you change the rates yourself' },
       ],
@@ -333,7 +439,7 @@ const rawContent = {
     founder: {
       eyebrow: 'Founder',
       title: 'Built by a resort owner, used every morning.',
-      body: 'RateDesk began at the founder’s own 85-room boutique resort in Nakhon Ratchasima. Every feature is used for real at the front desk before other hotels and resorts get it.',
+      body: 'RateDesk is built and used every morning at a resort in Korat. Every feature is used for real at the front desk before other hotels and resorts get it.',
     },
     report: {
       title: 'Want to know nearby properties’ rates for the next 30 nights? Message us on LINE.',
@@ -346,7 +452,7 @@ const rawContent = {
       items: [
         {
           q: 'Is it available now?',
-          a: 'Yes. Message LINE @auraseaos to start with your hotel or resort.',
+          a: 'Yes. Message our LINE account, AuraSea OS (@auraseaos), or sign up yourself at app.auraseaos.com.',
           link: { label: 'Message us on LINE', href: LINE_URL },
         },
         {
@@ -358,12 +464,21 @@ const rawContent = {
           a: 'Yes. Staff enter the number of rooms sold on a phone, in about 2 minutes a day.',
         },
         {
+          q: 'I don’t have time to enter data every day. Can I still use it?',
+          a: 'Yes, with no data entry at all. Every Tuesday you get suggested rates for Friday–Saturday nights and long weekends on LINE, from the market around you. Send your bookings daily and you also get weekday rates and a morning summary.',
+        },
+        {
+          q: 'How much does it cost?',
+          a: 'A free trial of at least 30 days, and a free plan to continue on. The full plan is priced by property size — message us on LINE for the price.',
+          link: { label: 'Message us on LINE', href: LINE_URL },
+        },
+        {
           q: 'Does it change my rates on the OTAs by itself?',
           a: 'No. The system suggests and you decide, and it never suggests a rate below the minimum you set.',
         },
         {
           q: 'Who sets it up and trains my staff?',
-          a: 'We set it up at your hotel or resort, or by LINE video call.',
+          a: 'Sign up and set it up yourself at app.auraseaos.com, or we set it up with you at your hotel or resort, or by LINE video call.',
         },
         {
           q: 'How is this different from Western RMS platforms?',
@@ -371,7 +486,7 @@ const rawContent = {
         },
         {
           q: 'Is my data safe?',
-          a: 'Your bookings are never shown to other properties, we never sell data, and everything is encrypted · Everything can be deleted when you stop using it.',
+          a: 'Your bookings are never shown to other properties, we never sell data, and data is encrypted in transit and at rest · Property data is used only in anonymous, aggregate statistics · Everything can be deleted when you stop using it.',
           link: { label: 'Privacy policy', href: 'https://www.auraseaos.com/en/privacy' },
         },
       ],
@@ -384,7 +499,7 @@ const rawContent = {
       tagline: 'The rate to sell, every morning on LINE, for independent hotels and resorts.',
       crosslink: 'Part of Aurasea OS — the back office for hotels and resorts',
       company:
-        'AuraSea Co., Ltd. (บริษัท ออร่า ซี จำกัด) · Company registration 0305568007729 · Nakhon Ratchasima · Tel 0835159599 (daily 08:00–18:00) · LINE @auraseaos · hello@ratedesk.ai',
+        'AuraSea Co., Ltd. (บริษัท ออร่า ซี จำกัด) · Company registration 0305568007729 · Nakhon Ratchasima · Tel 0835159599 (daily 08:00–18:00) · LINE AuraSea OS (@auraseaos) · hello@ratedesk.ai',
       privacy: { label: 'Privacy policy', href: 'https://www.auraseaos.com/en/privacy' },
       sections: {
         product: {
@@ -402,7 +517,7 @@ const rawContent = {
         },
         contact: {
           title: 'Contact',
-          line: 'LINE @auraseaos',
+          line: 'LINE AuraSea OS (@auraseaos)',
           phone: 'Tel 0835159599',
           hours: 'Daily 08:00–18:00',
           email: EMAIL,

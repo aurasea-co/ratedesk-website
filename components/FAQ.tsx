@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from 'react';
+import { track } from '@vercel/analytics';
 import type { Lang } from '@/lib/content';
 
 /**
@@ -75,7 +76,7 @@ export function FAQ({
                       <span
                         className={`shrink-0 mt-1 w-7 h-7 flex items-center justify-center border border-ink/30 rounded-full text-ink-muted transition-all duration-300 ${
                           isOpen
-                            ? 'rotate-45 bg-sea-deep border-sea-deep text-paper'
+                            ? 'rotate-45 bg-sea-night border-sea-night text-cream'
                             : 'group-hover:border-ink'
                         }`}
                         aria-hidden
@@ -104,6 +105,7 @@ export function FAQ({
                                 href={item.link.href}
                                 target="_blank"
                                 rel="noopener noreferrer"
+                                onClick={() => track('cta_click', { placement: 'faq', lang })}
                                 className="text-brand-trust underline underline-offset-4 hover:text-brand-navy"
                               >
                                 {item.link.label} ↗

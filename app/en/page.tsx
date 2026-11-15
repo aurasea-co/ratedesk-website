@@ -2,6 +2,9 @@ import { Landing } from '@/components/Landing';
 import { content } from '@/lib/content';
 import type { Metadata } from 'next';
 
+// The Khao Yai Index section refreshes hourly (W1-A3).
+export const revalidate = 3600;
+
 const m = content.en.meta;
 
 export const metadata: Metadata = {

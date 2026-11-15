@@ -1,5 +1,7 @@
-import { content, AURASEAOS_URL, type Lang } from '@/lib/content';
+import { content, AURASEAOS_URL, SIGNUP_URL, type Lang } from '@/lib/content';
 import { CtaButtons } from '@/components/Cta';
+import { LineQr } from '@/components/LineQr';
+import { TrackedLink } from '@/components/TrackedLink';
 
 export function Hero({ lang }: { lang: Lang }) {
   const c = content[lang];
@@ -69,19 +71,39 @@ export function Hero({ lang }: { lang: Lang }) {
             </p>
 
             <div className="mt-10 reveal delay-4">
-              <CtaButtons lang={lang} />
+              <CtaButtons lang={lang} where="hero" />
               <p
                 className={`${
                   isThai ? 'font-thai' : 'font-sans'
-                } mt-4 text-sm text-ink-muted`}
+                } mt-4 text-sm text-ink-muted text-pretty`}
               >
-                {c.cta.trust}
+                {c.cta.trust}{' '}
+                <span aria-hidden>·</span>{' '}
+                <TrackedLink
+                  href={SIGNUP_URL}
+                  placement="hero_signup"
+                  lang={lang}
+                  className="font-medium text-brand-trust underline underline-offset-4 hover:text-brand-navy"
+                >
+                  {c.cta.signup} ↗
+                </TrackedLink>
+              </p>
+              <p
+                className={`${
+                  isThai ? 'font-thai' : 'font-sans'
+                } mt-5 flex items-start gap-2 text-sm text-ink-soft`}
+              >
+                <span aria-hidden className="mt-1.5 block h-2 w-2 shrink-0 rounded-full bg-brand-mint" />
+                {c.cta.proof}
               </p>
             </div>
           </div>
 
           <div className="col-span-12 md:col-span-3 lg:col-span-4 md:pt-2 flex md:justify-end">
-            <div className="md:max-w-[260px] md:text-right reveal delay-5">
+            <div className="md:max-w-[260px] md:text-right reveal delay-5 md:flex md:flex-col md:items-end">
+              <div className="mb-8">
+                <LineQr lang={lang} />
+              </div>
               <div className="hidden md:block w-12 h-px bg-ink/30 ml-auto mb-5" />
               <a
                 href={AURASEAOS_URL}

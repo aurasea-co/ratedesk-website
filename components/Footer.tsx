@@ -7,7 +7,7 @@ export function Footer({ lang }: { lang: Lang }) {
   const f = c.footer;
 
   return (
-    <footer className="relative bg-paper-warm border-t border-ink/15 pt-20 md:pt-24 pb-10">
+    <footer className="relative bg-paper-warm border-t border-ink/15 pt-20 md:pt-24 pb-28 md:pb-10">
       <div className="mx-auto max-w-7xl px-6 md:px-10">
         <div className="grid grid-cols-12 gap-x-6 gap-y-8 md:gap-12">
           {/* Brand block */}
@@ -16,7 +16,7 @@ export function Footer({ lang }: { lang: Lang }) {
               href={`/${lang}`}
               className="display-serif text-[1.6rem] tracking-tight text-ink"
             >
-              RateDesk<span className="text-sea-aura">.ai</span>
+              RateDesk<span className="text-sea-mid">.ai</span>
             </Link>
             <p
               className={`${
