@@ -150,7 +150,7 @@ const rawContent = {
     },
     timeline: {
       eyebrow: 'เริ่มใช้งาน',
-      title: 'ยิ่งใช้ ยิ่งแม่น',
+      title: 'ยิ่งส่งข้อมูล ยิ่งได้ราคาแนะนำครบทุกคืน',
       steps: [
         {
           when: 'วันแรก',
@@ -408,7 +408,7 @@ const rawContent = {
     },
     timeline: {
       eyebrow: 'Getting started',
-      title: 'The more you use it, the sharper it gets.',
+      title: 'Send your bookings daily and get suggested rates for every night',
       steps: [
         {
           when: 'Day 1',
