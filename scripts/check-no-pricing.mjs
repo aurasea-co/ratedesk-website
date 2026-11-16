@@ -22,6 +22,11 @@
 //   4. A link to a pricing section or page: "#pricing", "/pricing".
 //   5. Structured-data prices: JSON-LD "offers" / "price" / "priceCurrency".
 //
+// IX2 (16 Nov 2026): the Khao Yai Index shows MARKET prices, and a market median can be exactly ฿990. In the rendered
+// HTML its whole block is one <section data-market-index> (KhaoYaiSection, nothing nested), and that region — only
+// that — is cut out before the figure rules run. Its prices reach the RSC payload as bare numbers (no ฿), and the
+// feed's summary sentences carry no baht figure, so nothing else needs excusing. Any other section stays checked.
+//
 // Rules 2–5 are excused only by an exact substring in "allowText" (e.g. the
 // unchanged terms page's "Free trials" section) or for files whose path
 // contains one of "skipPaths". Keep both lists minimal and explicit.
@@ -75,12 +80,17 @@ function* files(dir) {
   }
 }
 
+/** Cut the Khao Yai Index block (market prices, not ours) out of rendered HTML. */
+export function stripMarketIndex(text) {
+  return text.replace(/<section(?=[^>]*\sdata-market-index)[^>]*>[\s\S]*?<\/section>/g, '<section data-market-index></section>')
+}
+
 const offences = []
 let scanned = 0
 for (const dir of DIRS) {
   for (const f of files(dir)) {
     scanned++
-    const text = readFileSync(f, 'utf8')
+    const text = stripMarketIndex(readFileSync(f, 'utf8'))
     const skipText = SKIP_PATHS.some((s) => f.includes(s))
     for (const rule of RULES) {
       if (rule.text && skipText) continue

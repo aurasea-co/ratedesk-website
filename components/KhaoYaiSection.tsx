@@ -51,7 +51,7 @@ export function KhaoYaiSection({
   );
 
   return (
-    <section id="khaoyai" className={`relative scroll-mt-6 ${variant === 'home' ? 'py-24 md:py-32 border-t border-ink/10' : 'pb-16'}`}>
+    <section id="khaoyai" data-market-index="" className={`relative scroll-mt-6 ${variant === 'home' ? 'py-24 md:py-32 border-t border-ink/10' : 'pb-16'}`}>
       <div className="mx-auto max-w-7xl px-6 md:px-10">
         {variant === 'home' && (
           <>
