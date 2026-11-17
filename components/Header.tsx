@@ -22,11 +22,11 @@ export function Header({ lang }: { lang: Lang }) {
         </Link>
 
         <nav className="hidden md:flex items-center gap-9">
-          <a href={`/${lang}#how`} className="nav-link link-underline">
-            {c.nav.howItWorks}
+          <a href={`/${lang}#features`} className="nav-link link-underline">
+            {c.nav.features}
           </a>
-          <a href={`/${lang}#integrations`} className="nav-link link-underline">
-            {c.nav.integrations}
+          <a href={`/${lang}#steps`} className="nav-link link-underline">
+            {c.nav.steps}
           </a>
           <a href={`/${lang}#faq`} className="nav-link link-underline">
             {c.nav.faq}
@@ -49,7 +49,7 @@ export function Header({ lang }: { lang: Lang }) {
               lang === 'th' ? 'font-thai' : 'font-sans'
             } hidden sm:inline-flex items-center gap-1.5 rounded-full bg-cta px-4 py-2 text-sm text-cta-ink hover:bg-cta-hover transition`}
           >
-            {c.cta.primary}
+            {c.cta.header}
             <span aria-hidden>→</span>
           </TrackedLink>
         </div>
