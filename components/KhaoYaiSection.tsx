@@ -55,7 +55,7 @@ export function KhaoYaiSection({
       <div className="mx-auto max-w-7xl px-6 md:px-10">
         {variant === 'home' && (
           <>
-            <p className="eyebrow">{c.eyebrow}</p>
+            <p className="eyebrow">{c.homeEyebrow}</p>
             <h2 className={`${isThai ? 'display-thai text-[1.9rem] md:text-[2.4rem]' : 'display-serif text-[2.4rem] md:text-[3rem]'} mt-5 text-brand-navy text-balance leading-[1.15]`}>
               {c.title}
             </h2>

@@ -23,9 +23,9 @@
     --c-wkend: 230 238 245;
     --c-hol: 240 229 200;
     color-scheme: light;
-    --font-serif: 'Fraunces', 'Cormorant Garamond', Georgia, serif;
-    --font-sans: 'Inter Tight', -apple-system, BlinkMacSystemFont, sans-serif;
-    --font-thai: 'IBM Plex Sans Thai', 'Sarabun', system-ui, sans-serif;
+    --font-serif: var(--nf-serif), 'Cormorant Garamond', Georgia, serif;
+    --font-sans: var(--nf-sans), -apple-system, BlinkMacSystemFont, sans-serif;
+    --font-thai: var(--nf-thai), 'Sarabun', system-ui, sans-serif;
   }
 
   /* Dark theme follows the visitor's setting (W1, 16 Nov 2026). */

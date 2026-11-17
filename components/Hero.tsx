@@ -2,8 +2,10 @@ import { content, AURASEAOS_URL, SIGNUP_URL, type Lang } from '@/lib/content';
 import { CtaButtons } from '@/components/Cta';
 import { LineQr } from '@/components/LineQr';
 import { TrackedLink } from '@/components/TrackedLink';
+import { LiveCount } from '@/components/proof/LiveCount';
+import type { Proof } from '@/lib/proof';
 
-export function Hero({ lang }: { lang: Lang }) {
+export function Hero({ lang, proof }: { lang: Lang; proof: Proof | null }) {
   const c = content[lang];
   const isThai = lang === 'th';
   const titleClass = isThai
@@ -69,9 +71,16 @@ export function Hero({ lang }: { lang: Lang }) {
             >
               {c.hero.lead}
             </p>
+            <p
+              className={`${
+                isThai ? 'font-thai' : 'font-sans'
+              } mt-4 text-base text-ink-muted max-w-prose-narrow text-pretty reveal delay-3`}
+            >
+              {c.hero.forWhom}
+            </p>
 
             <div className="mt-10 reveal delay-4">
-              <CtaButtons lang={lang} where="hero" />
+              <CtaButtons lang={lang} proof={proof} where="hero" />
               <p
                 className={`${
                   isThai ? 'font-thai' : 'font-sans'
@@ -88,14 +97,7 @@ export function Hero({ lang }: { lang: Lang }) {
                   {c.cta.signup} ↗
                 </TrackedLink>
               </p>
-              <p
-                className={`${
-                  isThai ? 'font-thai' : 'font-sans'
-                } mt-5 flex items-start gap-2 text-sm text-ink-soft`}
-              >
-                <span aria-hidden className="mt-1.5 block h-2 w-2 shrink-0 rounded-full bg-brand-mint" />
-                {c.cta.proof}
-              </p>
+              <LiveCount proof={proof} lang={lang} className="mt-5" />
             </div>
           </div>
 

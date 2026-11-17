@@ -4,7 +4,7 @@ export type Lang = 'th' | 'en';
 export const LINE_URL = 'https://lin.ee/ydDaqx8l';
 export const PHONE_DISPLAY = '0835159599';
 export const PHONE_TEL = 'tel:+66835159599';
-export const EMAIL = 'hello@ratedesk.ai';
+export const EMAIL = 'hello@aurasea.ai';
 export const AURASEAOS_URL = 'https://www.auraseaos.com';
 /** Self-serve sign-up in the app (O3, live since 14 Nov 2026). */
 export const SIGNUP_URL = 'https://app.auraseaos.com/signup';
@@ -14,58 +14,33 @@ const rawContent = {
     locale: 'th',
     other: 'en',
     meta: {
-      title: 'RateDesk — ราคาห้องที่ควรขายทุกเช้าใน LINE สำหรับโรงแรมและรีสอร์ทอิสระ',
+      title: 'RateDesk · ราคาห้องที่ควรขายทุกคืนใน LINE สำหรับโรงแรมเล็กและรีสอร์ท',
       description:
-        'RateDesk ดูราคาที่พักรอบตัวคุณทุกคืน แล้วส่งราคาแนะนำเข้า LINE ทุกเช้า พร้อมเหตุผลและราคาที่พักแถวนี้ · สำหรับโรงแรมและรีสอร์ทอิสระ 10–100 ห้อง',
+        'RateDesk เช็กราคาที่พักรอบตัวคุณทุกคืน แล้วส่งราคาที่ควรขายเข้า LINE พร้อมเหตุผล คุณตัดสินใจเอง · สำหรับโรงแรมเล็ก รีสอร์ท โฮมสเตย์ พูลวิลล่า แกลมปิ้ง ที่ขายบน Agoda',
     },
     nav: {
-      howItWorks: 'วิธีใช้งาน',
-      integrations: 'ใช้กับระบบเดิม',
+      features: 'ฟีเจอร์',
+      steps: 'เริ่มใช้งาน',
       faq: 'คำถามที่พบบ่อย',
     },
     cta: {
-      primary: 'เริ่มทดลองฟรีใน LINE',
-      secondary: 'รับกราฟเทียบตลาดของโรงแรมคุณ ฟรี',
-      trust: 'ทดลองฟรีอย่างน้อย 30 วัน ครอบคลุมวันหยุดยาวอย่างน้อย 1 ครั้ง · ไม่ผูกบัตร · ไม่มีสัญญา · มีแพ็กเกจฟรีให้ใช้ต่อ',
+      primary: 'ส่งชื่อที่พักใน LINE รับกราฟราคา 30 คืนฟรี',
+      primaryHealthCheck: 'ตรวจสุขภาพราคาฟรีใน LINE · รู้ผลใน 5 นาที',
+      header: 'ทักใน LINE',
+      trust: 'ทดลองฟรี 30 วัน ครอบคลุมวันหยุดยาว · ไม่ผูกบัตร · ไม่มีสัญญา',
       signup: 'สมัครเองได้เลย',
-      proof: 'ใช้งานจริงทุกเช้าที่โรงแรมและรีสอร์ทในเขาใหญ่ ปากช่อง และโคราช',
       qr: 'สแกนเพื่อเพิ่ม LINE AuraSea OS (@auraseaos)',
     },
     hero: {
       eyebrow: 'เปิดใช้งานแล้ว · สำหรับโรงแรมและรีสอร์ทอิสระ',
       title: 'ตลาดขึ้นราคา\nแต่ราคาคุณยังเท่าเดิม?',
-      lead: 'RateDesk ดูราคาที่พักรอบตัวคุณทุกคืน แล้วส่งราคาแนะนำเข้า LINE ทุกเช้า เริ่มได้ทันที ไม่ต้องกรอกข้อมูล',
+      lead: 'RateDesk เช็กราคาที่พักรอบตัวคุณทุกคืน แล้วส่งราคาที่ควรขายเข้า LINE พร้อมเหตุผล คุณตัดสินใจเอง',
+      forWhom: 'สำหรับโรงแรมเล็ก รีสอร์ท โฮมสเตย์ พูลวิลล่า แกลมปิ้ง ที่ขายบน Agoda',
       caption: 'ส่วนหนึ่งของ Aurasea OS — ระบบหลังบ้านของโรงแรมและรีสอร์ท',
-    },
-    sample: {
-      eyebrow: 'ทุกเช้าคุณได้อะไร',
-      title: 'ข้อความเช้าที่ส่งเข้า LINE ของคุณ',
-      label: 'ตัวอย่าง · ตัวเลขสมมติ',
-      cardHeader: 'RateDesk · ศ. 20 พ.ย.',
-      cardTitle: 'คืนนี้ขายแพงขึ้นได้',
-      booked: 'จองแล้ว 52/70 ห้อง · โรงแรมแถวนี้น่าจะเต็ม 1 แห่ง',
-      columns: ['ประเภทห้อง', 'ตอนนี้', 'ควรขาย'],
-      rows: [
-        ['Standard', '฿880', '฿1,080'],
-        ['Deluxe', '฿1,235', '฿1,435'],
-        ['Family', '฿1,435', '฿1,635'],
-      ],
-      todayTitle: 'วันนี้ควรทำ',
-      today: [
-        'คืนนี้ขึ้นทุกห้อง ฿200 · Standard เหลือน้อย',
-        'ตั้งราคาวันหยุดยาวตอนนี้ ก่อนห้องถูกหมด',
-        'จ.–พฤ. หน้ายังว่าง · คงราคา อย่าเพิ่งลด',
-      ],
-      competitor: 'คู่แข่งขยับ · โรงแรม B เสาร์นี้ ฿1,514 → ฿1,869',
-      callouts: [
-        'ราคาแนะนำแยกทุกประเภทห้อง พร้อมเหตุผลภาษาไทย',
-        '3 เรื่องที่ควรทำวันนี้ อ่านจบใน 30 วินาที',
-        'ราคาที่พักแถวนี้ อัปเดตอัตโนมัติทุกคืน (สูงสุด 5 แห่งที่คุณเลือก)',
-        'ส่งถึงเจ้าของและผู้จัดการ ทาง LINE และอีเมล',
-      ],
     },
     index: {
       eyebrow: 'ดัชนีเขาใหญ่',
+      homeEyebrow: 'ข้อมูลตลาดจริง อัปเดตทุกคืน',
       title: 'ดัชนีเขาใหญ่ · ราคาที่พักในเขาใหญ่ 30 คืนข้างหน้า',
       zones: 'โซน',
       legend: {
@@ -109,84 +84,77 @@ const rawContent = {
         monthlyButton: 'รับรายงานทาง LINE',
       },
     },
-    problem: {
-      eyebrow: 'ความท้าทาย',
-      title: 'ราคาห้องตัดสินใจช้า\nรายได้หลุดมือทุกคืน',
-      body: [
-        'เจ้าของโรงแรมและรีสอร์ทอิสระต้องเช็คราคาคู่แข่ง ดูยอดจองรายวัน และปรับราคาบน Channel Manager — ทั้งหมดด้วยตัวเองตอนเช้าก่อนเปิดออฟฟิศ',
-        'ผลคือ ในช่วงพีคเสียโอกาสขึ้นราคา ในช่วงโลว์ปล่อยห้องว่างทั้งที่ลดราคานิดเดียวก็ขายได้',
-        'RateDesk ทำงานทุกคืนแทนคุณ — ดูยอดจองของคุณ เช็คราคาคู่แข่งสูงสุด 5 แห่งที่คุณเลือก และส่งราคาแนะนำมาทาง LINE ก่อนกาแฟแก้วแรกของวัน',
+    realMessage: {
+      eyebrow: 'ข้อความจริง',
+      title: 'ข้อความจริงที่เจ้าของที่พักได้รับ',
+      lead: 'ส่งเข้า LINE ทุกเช้า อ่านจบในไม่กี่วินาที · ชื่อที่พักถูกซ่อนไว้',
+    },
+    problemFix: {
+      eyebrow: 'ปัญหาที่เราแก้',
+      title: 'สามเรื่องที่ทำให้ขายห้องได้ต่ำกว่าที่ควร',
+      pairs: [
+        { problem: 'ไล่เช็กราคา Agoda ทีละเว็บทุกเช้า', fix: 'ระบบเช็กราคาที่พักรอบตัวคุณให้ทุกคืน' },
+        { problem: 'ห้องหมดตั้งแต่ยังขายราคาวันธรรมดา', fix: 'รู้ล่วงหน้าว่าคืนไหนตลาดขึ้นราคา' },
+        { problem: 'ไม่แน่ใจว่าควรขึ้นราคาเท่าไหร่', fix: 'ราคาแนะนำแยกประเภทห้อง พร้อมเหตุผล' },
       ],
     },
-    how: {
-      eyebrow: 'วิธีใช้งาน',
-      title: 'สามชั้นของการตัดสินใจราคา',
-      steps: [
-        {
-          n: '01',
-          title: 'ราคาแนะนำทุกประเภทห้อง',
-          body: 'วิเคราะห์ยอดจอง วันในสัปดาห์ วันสำคัญ และราคาคู่แข่งทุกคืน ได้ราคาคืนนี้พร้อมเหตุผลภาษาไทย และราคา 30 คืนข้างหน้าเมื่อมียอดจองล่วงหน้าจาก PMS',
-        },
-        {
-          n: '02',
-          title: 'ราคาคู่แข่งอัตโนมัติ',
-          body: 'ระบบเช็คราคาที่เปิดขายของที่พักที่คุณเลือก (สูงสุด 5 แห่ง) 30 คืนข้างหน้าทุกคืน ไม่ต้องไล่ดูเอง · ที่พักที่ไม่มีราคาออนไลน์ กรอกราคาเองได้',
-        },
-        {
-          n: '03',
-          title: 'สรุปเช้าใน LINE',
-          body: 'จองแล้วกี่ห้อง ราคาแนะนำแต่ละประเภทห้อง คู่แข่งขยับราคา และ 3 เรื่องที่ควรทำวันนี้',
-        },
+    features: {
+      eyebrow: 'ฟีเจอร์',
+      title: 'สิ่งที่ RateDesk ทำให้คุณ',
+      soon: 'เร็วๆ นี้',
+      items: [
+        { key: 'reasons', title: 'ราคาแนะนำพร้อมเหตุผล', body: 'ทุกราคาแนะนำบอกว่าทำไม เช่น ตลาดขึ้นราคา หรือเป็นคืนก่อนวันหยุด' },
+        { key: 'holidayCards', title: 'วันหยุดยาวล่วงหน้า 90 วัน', body: 'ดูว่าที่พักรอบตัวเริ่มขึ้นราคาวันหยุดยาวหรือยัง ก่อนห้องราคาถูกของคุณจะหมด' },
+        { key: 'approveInLine', title: 'กดอนุมัติใน LINE', body: 'อนุมัติราคาใน LINE แล้วคัดลอกไปตั้งใน Agoda ได้ในคลิกเดียว' },
+        { key: 'limits', title: 'ขีดจำกัดของคุณ', body: 'ตั้งราคาต่ำสุด สูงสุด หรือล็อกราคาไว้ ระบบไม่แนะนำเกินขอบเขตนี้' },
+        { key: 'changeAlerts', title: 'แจ้งเมื่อมีอะไรเปลี่ยน', body: 'แจ้งเฉพาะเมื่อตลาดหรือยอดจองเปลี่ยน ไม่ส่งข้อความรก' },
+        { key: 'priceGaps', title: 'ราคาต่างกันระหว่างเว็บ', body: 'เห็นเมื่อราคาของคุณบน Agoda กับ Booking.com ไม่ตรงกัน' },
+        { key: 'localEvents', title: 'งานในพื้นที่', body: 'คอนเสิร์ต งานวิ่ง เทศกาล และวันหยุดใกล้คุณ อยู่ในปฏิทินและสรุปเช้า' },
+        { key: 'noDataEntry', title: 'ไม่ต้องกรอกข้อมูลก็เริ่มได้', body: 'เริ่มจากราคาตลาดรอบตัวคุณได้เลย ส่งข้อมูลการจองเพิ่มเมื่อพร้อม' },
       ],
     },
-    control: {
+    steps: {
+      eyebrow: 'เริ่มใช้งาน',
+      title: 'เริ่มใน 3 ขั้น',
+      items: [
+        'ทักใน LINE ส่งชื่อที่พัก รับกราฟราคา 30 คืนฟรี',
+        'สมัครเองใน 10 นาที เห็นกราฟราคาตลาดทันที',
+        'ทุกวันอังคาร ได้ราคาแนะนำคืนวันศุกร์–เสาร์และวันหยุดทาง LINE',
+      ],
+      itemsHealthCheck: [
+        'ตรวจสุขภาพราคาฟรีใน LINE รู้ผลใน 5 นาที',
+        'สมัครเองใน 10 นาที เห็นกราฟราคาตลาดทันที',
+        'ทุกวันอังคาร ได้ราคาแนะนำคืนวันศุกร์–เสาร์และวันหยุดทาง LINE',
+      ],
+      note: 'ถ้าส่งข้อมูลการจองรายวัน (กรอกในมือถือ อัปโหลด หรือส่งไฟล์รายงานจาก PMS ทาง LINE) จะได้ราคาวันธรรมดาด้วย พร้อมสรุปทุกเช้า 07:00',
+    },
+    proof: {
+      eyebrow: 'จากผู้ใช้จริง',
+      title: 'เจ้าของที่พักพูดถึง RateDesk',
+    },
+    trust: {
       eyebrow: 'คุณคุมราคาเอง',
       title: 'คุณเป็นคนคุมราคาเสมอ',
       checks: [
-        'ระบบแนะนำ คุณตัดสินใจ — ไม่เปลี่ยนราคาบน OTA หรือ Channel Manager เอง',
-        'ไม่ต่ำกว่าราคาขั้นต่ำที่คุณตั้งไว้ในแต่ละประเภทห้อง',
-        'บอกเหตุผลทุกครั้ง ถ้าข้อมูลยังน้อย ระบบบอกตรงๆ ว่า "ข้อมูลยังไม่พอ — คงราคาไว้ก่อน"',
+        'ระบบแนะนำ คุณตัดสินใจเอง',
+        'ไม่เปลี่ยนราคาบน Agoda หรือ Channel Manager เอง',
+        'ไม่แนะนำต่ำกว่าราคาขั้นต่ำที่คุณตั้งไว้',
+        'บอกเหตุผลทุกครั้ง ถ้าข้อมูลยังน้อย บอกตรงๆ ว่า "ข้อมูลยังไม่พอ — คงราคาไว้ก่อน"',
+        'ยอดจองของคุณไม่แชร์ให้ที่พักอื่น',
       ],
+      builtWith: 'สร้างและใช้จริงทุกวันกับ{label}',
+      builtFallback: 'สร้างและใช้งานจริงในโคราช',
     },
-    timeline: {
-      eyebrow: 'เริ่มใช้งาน',
-      title: 'ยิ่งส่งข้อมูล ยิ่งได้ราคาแนะนำครบทุกคืน',
-      steps: [
-        {
-          when: 'วันแรก',
-          body: 'ตั้งค่า เลือกคู่แข่ง แล้วเห็นกราฟตลาด 30 คืนข้างหน้าทันที',
-        },
-        {
-          when: 'ทุกวันอังคาร',
-          body: 'ได้ราคาแนะนำคืนวันศุกร์–เสาร์และวันหยุดยาว ทาง LINE โดยไม่ต้องกรอกข้อมูล',
-        },
-        {
-          when: 'เมื่อส่งข้อมูลการจองทุกวัน',
-          body: 'กรอก อัปโหลด หรือส่งไฟล์ทาง LINE แล้วได้ราคาแนะนำวันธรรมดาด้วย พร้อมสรุปทุกเช้า 07:00',
-        },
+    compare: {
+      eyebrow: 'เทียบกัน',
+      title: 'เช็กเอง vs RateDesk',
+      columns: ['', 'เช็กเอง', 'RateDesk'],
+      rows: [
+        ['เวลา', 'ไล่ดู Agoda ทีละที่ทุกเช้า', 'เช็กให้ทุกคืน สรุปเข้า LINE'],
+        ['วันหยุด', 'รู้ตอนห้องราคาถูกหมดแล้ว', 'เห็นล่วงหน้าว่าตลาดเริ่มขึ้นราคา'],
+        ['เหตุผล', 'ตัดสินใจจากความรู้สึก', 'ราคาแนะนำพร้อมเหตุผลทุกครั้ง'],
+        ['LINE', 'ต้องเปิดหลายเว็บหลายแอป', 'อ่านจบใน LINE ที่ใช้อยู่แล้ว'],
       ],
-      footnote: '',
-    },
-    integrations: {
-      eyebrow: 'ใช้กับระบบเดิม',
-      title: 'ใช้กับระบบที่คุณมีอยู่ — ไม่ต้องเปลี่ยน PMS',
-      lead:
-        'อัปโหลดรายงานที่ส่งออกจาก PMS ที่คุณใช้อยู่ หรือส่งไฟล์รายงานจาก PMS ทาง LINE ได้ · ถ้าไม่มี PMS พนักงานกรอกยอดห้องวันละประมาณ 2 นาทีผ่านมือถือ · ใช้ร่วมกับ Channel Manager เดิมได้ ระบบไม่เปลี่ยนราคาบน OTA เอง',
-      points: [
-        { title: 'มี PMS', body: 'อัปโหลด หรือส่งไฟล์รายงานจาก PMS ทาง LINE วันละครั้ง' },
-        { title: 'ไม่มี PMS', body: 'กรอกยอดห้องผ่านมือถือ วันละประมาณ 2 นาที' },
-        { title: 'Channel Manager', body: 'ใช้ร่วมกับของเดิมได้ คุณเป็นคนเปลี่ยนราคาเอง' },
-      ],
-    },
-    founder: {
-      eyebrow: 'ผู้ก่อตั้ง',
-      title: 'สร้างโดยเจ้าของรีสอร์ท ใช้จริงทุกเช้า',
-      body: 'RateDesk สร้างและใช้จริงทุกเช้าที่รีสอร์ทในโคราช ทุกฟีเจอร์ผ่านการใช้งานจริงที่หน้าเคาน์เตอร์ก่อนเปิดให้โรงแรมและรีสอร์ทอื่นใช้',
-    },
-    report: {
-      title: 'อยากรู้ราคาที่พักแถวคุณ 30 คืนข้างหน้า? ทักมาใน LINE',
-      body: 'บอกชื่อที่พักที่อยากเทียบ 3–5 แห่ง เราส่งตารางราคาให้ภายใน 24 ชม. ไม่ต้องสมัครอะไร',
-      button: 'ทักใน LINE',
     },
     faq: {
       eyebrow: 'คำถามที่พบบ่อย',
@@ -202,8 +170,16 @@ const rawContent = {
           a: 'เหมาะกับโรงแรม รีสอร์ท และเกสต์เฮาส์ ราว 10–100 ห้อง โดยเฉพาะที่เจ้าของดูแลเองและไม่มีทีม Revenue เต็มเวลา',
         },
         {
-          q: 'ไม่มี PMS ใช้ได้ไหม?',
-          a: 'ได้ พนักงานกรอกจำนวนห้องที่ขายได้วันละประมาณ 2 นาทีผ่านมือถือ',
+          q: 'ราคาตลาดมาจากไหน?',
+          a: 'จากราคาห้องเริ่มต้นที่เปิดขายสาธารณะบน Google สำหรับ 2 ท่าน 1 คืน ของที่พักที่คุณเลือกเป็นคู่แข่ง อัปเดตทุกคืน · เลือกคู่แข่งของคุณเองได้',
+        },
+        {
+          q: 'ทำไมเชื่อราคาแนะนำได้?',
+          a: 'ทุกราคาแนะนำบอกเหตุผล เช่น ตลาดขึ้นราคา หรือเป็นคืนก่อนวันหยุด ไม่ต่ำกว่าราคาขั้นต่ำที่คุณตั้ง และถ้าข้อมูลยังน้อย ระบบบอกตรงๆ ว่าคงราคาไว้ก่อน คุณเห็นที่มาของทุกตัวเลข และตัดสินใจเอง',
+        },
+        {
+          q: 'ใช้กับ PMS และ Channel Manager เดิมได้ไหม?',
+          a: 'ได้ ส่งไฟล์รายงานจาก PMS ทาง LINE หรืออัปโหลดในแอป (EasyFO, Little Hotelier, RoomScope) · ถ้าไม่มี PMS พนักงานกรอกยอดห้องวันละประมาณ 2 นาทีผ่านมือถือ · Channel Manager ใช้ของเดิมได้ คุณเป็นคนเปลี่ยนราคาเอง',
         },
         {
           q: 'ไม่มีเวลากรอกข้อมูลทุกวัน ใช้ได้ไหม?',
@@ -211,7 +187,7 @@ const rawContent = {
         },
         {
           q: 'ราคาเท่าไหร่?',
-          a: 'ทดลองฟรีอย่างน้อย 30 วัน และมีแพ็กเกจฟรีให้ใช้ต่อ แพ็กเกจเต็มคิดตามขนาดที่พัก ทักใน LINE เพื่อดูราคา',
+          a: 'ทดลองฟรี 30 วัน มีแพ็กเกจฟรีให้ใช้ตลอด และแพ็กเกจตามขนาดที่พัก สอบถามใน LINE',
           link: { label: 'ทักใน LINE', href: LINE_URL },
         },
         {
@@ -241,14 +217,14 @@ const rawContent = {
       tagline: 'ราคาห้องที่ควรขายทุกเช้าใน LINE สำหรับโรงแรมและรีสอร์ทอิสระ',
       crosslink: 'ส่วนหนึ่งของ Aurasea OS — ระบบหลังบ้านของโรงแรมและรีสอร์ท',
       company:
-        'บริษัท ออร่า ซี จำกัด (AuraSea Co., Ltd.) · ทะเบียนนิติบุคคล 0305568007729 · นครราชสีมา · โทร 0835159599 (ทุกวัน 08:00–18:00 น.) · LINE AuraSea OS (@auraseaos) · hello@ratedesk.ai',
+        'บริษัท ออร่า ซี จำกัด (AuraSea Co., Ltd.) · ทะเบียนนิติบุคคล 0305568007729 · นครราชสีมา · โทร 0835159599 (ทุกวัน 08:00–18:00 น.) · LINE AuraSea OS (@auraseaos) · hello@aurasea.ai',
       privacy: { label: 'นโยบายความเป็นส่วนตัว', href: 'https://www.auraseaos.com/privacy' },
       sections: {
         product: {
           title: 'ผลิตภัณฑ์',
           links: [
-            { label: 'วิธีใช้งาน', href: '#how' },
-            { label: 'ใช้กับระบบเดิม', href: '#integrations' },
+            { label: 'ฟีเจอร์', href: '#features' },
+            { label: 'เริ่มใช้งาน', href: '#steps' },
             { label: 'คำถามที่พบบ่อย', href: '#faq' },
           ],
         },
@@ -272,58 +248,33 @@ const rawContent = {
     locale: 'en',
     other: 'th',
     meta: {
-      title: 'RateDesk — the rate to sell, every morning on LINE, for independent hotels and resorts',
+      title: 'RateDesk · The rate to sell every night, on LINE, for small hotels and resorts',
       description:
-        'RateDesk checks the rates of the properties around you every night, then sends a suggested rate to your LINE every morning, with the reasons and nearby properties’ rates · For independent hotels and resorts of 10–100 rooms.',
+        'RateDesk checks the properties around you every night, then sends the rate to sell to your LINE, with the reason. You decide · For small hotels, resorts, homestays, pool villas and glamping sites selling on Agoda.',
     },
     nav: {
-      howItWorks: 'How it works',
-      integrations: 'Works with your system',
+      features: 'Features',
+      steps: 'Getting started',
       faq: 'FAQ',
     },
     cta: {
-      primary: 'Start your free trial on LINE',
-      secondary: 'Get a free market chart for your hotel',
-      trust: 'Free trial of at least 30 days, covering at least one long weekend · No card · No contract · A free plan to continue on',
+      primary: 'Send your property’s name on LINE — free 30-night rate chart',
+      primaryHealthCheck: 'Free rate health check on LINE · results in 5 minutes',
+      header: 'Message us on LINE',
+      trust: '30-day free trial covering a long weekend · No card · No contract',
       signup: 'Sign up yourself',
-      proof: 'In use every morning at hotels and resorts in Khao Yai, Pak Chong and Korat',
       qr: 'Scan to add LINE AuraSea OS (@auraseaos)',
     },
     hero: {
       eyebrow: 'Live now · For independent hotels and resorts',
       title: 'The market is raising rates.\nAre yours still the same?',
-      lead: 'RateDesk checks the rates of the properties around you every night, then sends a suggested rate to your LINE every morning. Start right away — no data entry needed.',
+      lead: 'RateDesk checks the properties around you every night, then sends the rate to sell to your LINE, with the reason. You decide.',
+      forWhom: 'For small hotels, resorts, homestays, pool villas and glamping sites that sell on Agoda',
       caption: 'Part of Aurasea OS — the back office for hotels and resorts',
-    },
-    sample: {
-      eyebrow: 'What you get every morning',
-      title: 'The morning message in your LINE',
-      label: 'Sample · illustrative figures',
-      cardHeader: 'RateDesk · Fri 20 Nov',
-      cardTitle: 'You can sell higher tonight',
-      booked: 'Booked 52/70 rooms · 1 nearby hotel probably full',
-      columns: ['Room type', 'Now', 'Sell at'],
-      rows: [
-        ['Standard', '฿880', '฿1,080'],
-        ['Deluxe', '฿1,235', '฿1,435'],
-        ['Family', '฿1,435', '฿1,635'],
-      ],
-      todayTitle: 'To do today',
-      today: [
-        'Raise every room ฿200 tonight · Standard is nearly gone',
-        'Set long-weekend rates now, before the cheaper rooms sell out',
-        'Mon–Thu next week still open · hold rates, don’t cut yet',
-      ],
-      competitor: 'Competitor moved · Hotel B this Saturday ฿1,514 → ฿1,869',
-      callouts: [
-        'A suggested rate for every room type, with the reasons in Thai',
-        '3 things to do today, read in 30 seconds',
-        'Nearby properties’ rates, updated automatically every night (up to 5 that you choose)',
-        'Sent to the owner and managers, by LINE and email',
-      ],
     },
     index: {
       eyebrow: 'Khao Yai Index',
+      homeEyebrow: 'Real market data, updated every night',
       title: 'Khao Yai Index · Khao Yai room rates, next 30 nights',
       zones: 'Zone',
       legend: {
@@ -367,84 +318,77 @@ const rawContent = {
         monthlyButton: 'Get the report on LINE',
       },
     },
-    problem: {
-      eyebrow: 'The problem',
-      title: 'Rate decisions made too slowly.\nRevenue lost every night.',
-      body: [
-        'Independent hotel and resort owners check competitor rates, look over daily bookings and adjust prices in their channel manager — all by hand, every morning before the office opens.',
-        'The result: in peak periods you miss the chance to push price. In soft periods you sit on empty rooms when a small adjustment would have closed the booking.',
-        'RateDesk works through the night for you — it reads your bookings, checks up to 5 competitors that you choose, and sends a suggested rate to LINE before your first coffee.',
+    realMessage: {
+      eyebrow: 'A real message',
+      title: 'A real message an owner received',
+      lead: 'Sent to LINE every morning, read in seconds · Property names hidden',
+    },
+    problemFix: {
+      eyebrow: 'What we fix',
+      title: 'Three things that make you sell rooms too cheap',
+      pairs: [
+        { problem: 'Checking Agoda site by site every morning', fix: 'RateDesk checks the properties around you every night' },
+        { problem: 'Selling out while still at weekday rates', fix: 'Know ahead which nights the market is raising rates' },
+        { problem: 'Not sure how much to raise', fix: 'A suggested rate per room type, with the reason' },
       ],
     },
-    how: {
-      eyebrow: 'How it works',
-      title: 'Three layers of rate decisions.',
-      steps: [
-        {
-          n: '01',
-          title: 'A suggested rate for every room type',
-          body: 'Your bookings, the day of the week, important dates and competitor rates are analysed every night. You get tonight’s rate with the reasons in Thai, and rates for the next 30 nights once forward bookings come from your PMS.',
-        },
-        {
-          n: '02',
-          title: 'Competitor rates, automatically',
-          body: 'Every night the system checks the published rates of the properties you choose (up to 5) for the next 30 nights. No more checking them yourself. A property with no rate online can be entered by hand.',
-        },
-        {
-          n: '03',
-          title: 'A morning summary on LINE',
-          body: 'How many rooms are booked, the suggested rate for each room type, competitor price moves, and 3 things to do today.',
-        },
+    features: {
+      eyebrow: 'Features',
+      title: 'What RateDesk does for you',
+      soon: 'Coming soon',
+      items: [
+        { key: 'reasons', title: 'Every rate with its reason', body: 'Each suggested rate says why — the market is rising, or it is the night before a holiday.' },
+        { key: 'holidayCards', title: 'Long holidays, 90 days ahead', body: 'See whether nearby properties have started raising holiday rates, before your cheap rooms are gone.' },
+        { key: 'approveInLine', title: 'Approve in LINE', body: 'Approve a rate in LINE, then copy it to Agoda in one click.' },
+        { key: 'limits', title: 'Your limits', body: 'Set a minimum, a maximum, or lock a rate — suggestions stay inside them.' },
+        { key: 'changeAlerts', title: 'Alerts only when something changes', body: 'Only when the market or your bookings move. No clutter.' },
+        { key: 'priceGaps', title: 'Rate gaps between websites', body: 'See when your rate on Agoda and Booking.com don’t match.' },
+        { key: 'localEvents', title: 'Local events', body: 'Concerts, runs, festivals and holidays near you, in your calendar and morning summary.' },
+        { key: 'noDataEntry', title: 'Start without entering data', body: 'Start from the market around you right away; send your bookings when you’re ready.' },
       ],
     },
-    control: {
-      eyebrow: 'You stay in control',
-      title: 'You are always the one in control of your rates.',
-      checks: [
-        'The system suggests, you decide — it never changes rates on an OTA or channel manager itself',
-        'Never below the minimum rate you set for each room type',
-        'It gives its reasons every time, and when data is still thin it says plainly: "not enough data yet — hold the rate"',
-      ],
-    },
-    timeline: {
+    steps: {
       eyebrow: 'Getting started',
-      title: 'Send your bookings daily and get suggested rates for every night',
-      steps: [
-        {
-          when: 'Day 1',
-          body: 'Set it up, choose your competitors and see the market chart for the next 30 nights right away',
-        },
-        {
-          when: 'Every Tuesday',
-          body: 'Suggested rates for Friday–Saturday nights and long weekends on LINE, with no data entry',
-        },
-        {
-          when: 'When you send bookings daily',
-          body: 'Type them, upload them or send the file on LINE, and you also get weekday rates and a summary every morning at 07:00',
-        },
+      title: 'Start in 3 steps',
+      items: [
+        'Message us on LINE with your property’s name — get a free 30-night rate chart',
+        'Sign up yourself in 10 minutes and see the market chart right away',
+        'Every Tuesday, get suggested rates for Friday–Saturday nights and holidays on LINE',
       ],
-      footnote: '',
-    },
-    integrations: {
-      eyebrow: 'Works with your system',
-      title: 'Works with the system you already have — no need to change your PMS.',
-      lead:
-        'Upload the report you export from the PMS you already use, or send the PMS report file on LINE · With no PMS, staff enter the room numbers in about 2 minutes a day on a phone · Works alongside your existing channel manager; the system never changes your OTA rates itself.',
-      points: [
-        { title: 'With a PMS', body: 'Upload your PMS report, or send the file on LINE, once a day' },
-        { title: 'Without a PMS', body: 'Enter the room numbers on a phone, about 2 minutes a day' },
-        { title: 'Channel manager', body: 'Keep the one you have; you change the rates yourself' },
+      itemsHealthCheck: [
+        'Run a free rate health check on LINE — results in 5 minutes',
+        'Sign up yourself in 10 minutes and see the market chart right away',
+        'Every Tuesday, get suggested rates for Friday–Saturday nights and holidays on LINE',
       ],
+      note: 'Send your daily bookings (on your phone, by upload, or a PMS report file on LINE) and you also get weekday rates and a 07:00 morning summary.',
     },
-    founder: {
-      eyebrow: 'Founder',
-      title: 'Built by a resort owner, used every morning.',
-      body: 'RateDesk is built and used every morning at a resort in Korat. Every feature is used for real at the front desk before other hotels and resorts get it.',
+    proof: {
+      eyebrow: 'From real users',
+      title: 'What property owners say',
     },
-    report: {
-      title: 'Want to know nearby properties’ rates for the next 30 nights? Message us on LINE.',
-      body: 'Name 3–5 properties you want to compare and we send you a rate table within 24 hours. No sign-up needed.',
-      button: 'Message us on LINE',
+    trust: {
+      eyebrow: 'You stay in control',
+      title: 'You always control your rates',
+      checks: [
+        'The system suggests, you decide',
+        'It never changes your rates on Agoda or your channel manager',
+        'It never suggests below the minimum you set',
+        'It always gives the reason — and with too little data it says so: "Not enough data yet — hold the rate"',
+        'Your bookings are never shared with other properties',
+      ],
+      builtWith: 'Built with, and used every day at, a {label}',
+      builtFallback: 'Built and used every day in Korat',
+    },
+    compare: {
+      eyebrow: 'Compared',
+      title: 'Checking yourself vs RateDesk',
+      columns: ['', 'Checking yourself', 'RateDesk'],
+      rows: [
+        ['Time', 'Going through Agoda one property at a time, every morning', 'Checked every night, summarised in LINE'],
+        ['Holidays', 'You find out when your cheap rooms are already gone', 'See early that the market is starting to rise'],
+        ['Reasons', 'A gut feeling', 'Every suggested rate comes with its reason'],
+        ['LINE', 'Several websites and apps', 'Read it all in the LINE you already use'],
+      ],
     },
     faq: {
       eyebrow: 'FAQ',
@@ -460,8 +404,16 @@ const rawContent = {
           a: 'Hotels, resorts and guest houses of about 10–100 rooms, especially owner-run ones without a full-time revenue team.',
         },
         {
-          q: 'Can I use it without a PMS?',
-          a: 'Yes. Staff enter the number of rooms sold on a phone, in about 2 minutes a day.',
+          q: 'Where do the market rates come from?',
+          a: 'From the public starting rate on Google for 2 guests, 1 night, at the properties you choose as competitors — refreshed every night. You pick your own competitors.',
+        },
+        {
+          q: 'Why can I trust a suggested rate?',
+          a: 'Every suggested rate gives its reason — the market is rising, or it is the night before a holiday. It never goes below the minimum you set, and with too little data it says so and holds the rate. You see where every number comes from, and you decide.',
+        },
+        {
+          q: 'Does it work with my PMS and channel manager?',
+          a: 'Yes. Send your PMS report file on LINE or upload it in the app (EasyFO, Little Hotelier, RoomScope) · Without a PMS, staff enter rooms sold on a phone in about 2 minutes a day · Keep your channel manager — you change the rates yourself.',
         },
         {
           q: 'I don’t have time to enter data every day. Can I still use it?',
@@ -469,7 +421,7 @@ const rawContent = {
         },
         {
           q: 'How much does it cost?',
-          a: 'A free trial of at least 30 days, and a free plan to continue on. The full plan is priced by property size — message us on LINE for the price.',
+          a: 'A 30-day free trial, a free plan you can keep, and plans by property size — ask us on LINE.',
           link: { label: 'Message us on LINE', href: LINE_URL },
         },
         {
@@ -499,14 +451,14 @@ const rawContent = {
       tagline: 'The rate to sell, every morning on LINE, for independent hotels and resorts.',
       crosslink: 'Part of Aurasea OS — the back office for hotels and resorts',
       company:
-        'AuraSea Co., Ltd. (บริษัท ออร่า ซี จำกัด) · Company registration 0305568007729 · Nakhon Ratchasima · Tel 0835159599 (daily 08:00–18:00) · LINE AuraSea OS (@auraseaos) · hello@ratedesk.ai',
+        'AuraSea Co., Ltd. (บริษัท ออร่า ซี จำกัด) · Company registration 0305568007729 · Nakhon Ratchasima · Tel 0835159599 (daily 08:00–18:00) · LINE AuraSea OS (@auraseaos) · hello@aurasea.ai',
       privacy: { label: 'Privacy policy', href: 'https://www.auraseaos.com/en/privacy' },
       sections: {
         product: {
           title: 'Product',
           links: [
-            { label: 'How it works', href: '#how' },
-            { label: 'Works with your system', href: '#integrations' },
+            { label: 'Features', href: '#features' },
+            { label: 'Getting started', href: '#steps' },
             { label: 'FAQ', href: '#faq' },
           ],
         },

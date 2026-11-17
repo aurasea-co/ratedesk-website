@@ -1,8 +1,9 @@
-import { content, PHONE_DISPLAY, PHONE_TEL, type Lang } from '@/lib/content';
+import { content, EMAIL, PHONE_DISPLAY, PHONE_TEL, type Lang } from '@/lib/content';
+import type { Proof } from '@/lib/proof';
 import { CtaButtons } from '@/components/Cta';
 
 /** Final call to action before the footer (WEB4-7). */
-export function FinalCta({ lang }: { lang: Lang }) {
+export function FinalCta({ lang, proof }: { lang: Lang; proof: Proof | null }) {
   const f = content[lang].finalCta;
   const isThai = lang === 'th';
   return (
@@ -12,12 +13,16 @@ export function FinalCta({ lang }: { lang: Lang }) {
           {f.title}
         </h2>
         <div className="mt-10">
-          <CtaButtons lang={lang} dark where="final" />
+          <CtaButtons lang={lang} proof={proof} dark where="final" />
         </div>
         <p className={`${isThai ? 'font-thai' : 'font-sans'} mt-6 text-white/80`}>
           {f.phone}{' '}
           <a href={PHONE_TEL} className="underline underline-offset-4 hover:text-brand-mint">
             {PHONE_DISPLAY}
+          </a>{' '}
+          {isThai ? '(ทุกวัน 08:00–18:00 น.)' : '(daily 08:00–18:00)'} ·{' '}
+          <a href={`mailto:${EMAIL}`} className="underline underline-offset-4 hover:text-brand-mint">
+            {EMAIL}
           </a>
         </p>
       </div>

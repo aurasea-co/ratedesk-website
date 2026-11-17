@@ -1,6 +1,14 @@
 import type { Metadata } from 'next';
 import { Analytics } from '@vercel/analytics/react';
+import { Fraunces, Inter_Tight, IBM_Plex_Sans_Thai } from 'next/font/google';
 import './globals.css';
+
+// WS2 (18 Nov 2026): fonts self-hosted by next/font — the Google Fonts stylesheet was render-blocking and cost
+// ~0.5 s of first paint on a phone. The faces are exposed as --nf-* and globals.css builds its stacks from them
+// (a stack naming the family literally matches nothing next/font registers — the app's O7 lesson).
+const serif = Fraunces({ subsets: ['latin'], weight: ['300', '400', '500', '600', '700'], variable: '--nf-serif', display: 'swap' });
+const sans = Inter_Tight({ subsets: ['latin'], weight: ['300', '400', '500', '600'], variable: '--nf-sans', display: 'swap' });
+const thai = IBM_Plex_Sans_Thai({ subsets: ['thai', 'latin'], weight: ['300', '400', '500', '600', '700'], variable: '--nf-thai', display: 'swap' });
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://www.ratedesk.ai'),
@@ -29,18 +37,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="th">
+    <html lang="th" className={`${serif.variable} ${sans.variable} ${thai.variable}`}>
       <head>
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link
-          rel="preconnect"
-          href="https://fonts.gstatic.com"
-          crossOrigin="anonymous"
-        />
-        <link
-          href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,400;9..144,500;9..144,600;9..144,700&family=Inter+Tight:wght@300;400;500;600&family=IBM+Plex+Sans+Thai:wght@300;400;500;600;700&display=swap"
-          rel="stylesheet"
-        />
         <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
       </head>
       <body>

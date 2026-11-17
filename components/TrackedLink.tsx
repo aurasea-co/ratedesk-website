@@ -24,7 +24,8 @@ export type CtaPlacement =
   | 'report'
   | 'faq'
   | 'final_primary'
-  | 'final_secondary';
+  | 'final_secondary'
+  | 'steps';
 
 export function TrackedLink({
   href,
@@ -48,6 +49,7 @@ export function TrackedLink({
       href={href}
       className={className}
       aria-label={ariaLabel}
+      data-cta={placement}
       {...(external ? { target: '_blank', rel: 'noopener noreferrer' } : {})}
       onClick={() => track('cta_click', { placement, lang })}
     >

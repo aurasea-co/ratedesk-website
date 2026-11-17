@@ -1,49 +1,40 @@
 import { content, LINE_URL, type Lang } from '@/lib/content';
+import { flagOf, type Proof } from '@/lib/proof';
 import { TrackedLink } from '@/components/TrackedLink';
 
 /**
- * Primary (start the trial on LINE) + secondary (the free market chart, also
- * on LINE) buttons, used in the hero and the final CTA. Each is tracked by
- * placement (W1-B5).
+ * The ONE call to action (WS2, 18 Nov 2026), used in the hero and the final
+ * section. Its wording follows the app's flags: the 5-minute health check once
+ * GR11 is live, else the free 30-night chart on LINE. Tracked by placement.
  */
+export function primaryCtaText(lang: Lang, proof: Proof | null): string {
+  const c = content[lang].cta;
+  return flagOf(proof, 'healthCheck') === 'live' ? c.primaryHealthCheck : c.primary;
+}
+
 export function CtaButtons({
   lang,
+  proof,
   dark = false,
   where,
 }: {
   lang: Lang;
+  proof: Proof | null;
   dark?: boolean;
   where: 'hero' | 'final';
 }) {
-  const c = content[lang];
   const font = lang === 'th' ? 'font-thai' : 'font-sans';
   return (
-    <div className="flex flex-col sm:flex-row gap-3 sm:items-center">
-      <TrackedLink
-        href={LINE_URL}
-        placement={`${where}_primary`}
-        lang={lang}
-        className={`${font} inline-flex items-center justify-center gap-2 rounded-full px-6 py-3.5 text-base font-medium transition ${
-          dark
-            ? 'bg-brand-mint text-brand-deep hover:bg-white'
-            : 'bg-cta text-cta-ink hover:bg-cta-hover'
-        }`}
-      >
-        {c.cta.primary}
-        <span aria-hidden>→</span>
-      </TrackedLink>
-      <TrackedLink
-        href={LINE_URL}
-        placement={`${where}_secondary`}
-        lang={lang}
-        className={`${font} inline-flex items-center justify-center rounded-full px-6 py-3.5 text-base border transition ${
-          dark
-            ? 'border-white/40 text-white hover:border-white'
-            : 'border-brand-navy/30 text-brand-navy hover:border-brand-navy'
-        }`}
-      >
-        {c.cta.secondary}
-      </TrackedLink>
-    </div>
+    <TrackedLink
+      href={LINE_URL}
+      placement={`${where}_primary`}
+      lang={lang}
+      className={`${font} inline-flex items-center justify-center gap-2 rounded-full px-6 py-3.5 text-base font-medium text-center transition ${
+        dark ? 'bg-brand-mint text-brand-deep hover:bg-white' : 'bg-cta text-cta-ink hover:bg-cta-hover'
+      }`}
+    >
+      {primaryCtaText(lang, proof)}
+      <span aria-hidden>→</span>
+    </TrackedLink>
   );
 }
