@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import { Analytics } from '@vercel/analytics/react';
+import { SiteMeasure } from '@/components/SiteMeasure';
 import { Fraunces, Inter_Tight, IBM_Plex_Sans_Thai } from 'next/font/google';
 import './globals.css';
 
@@ -45,6 +46,7 @@ export default function RootLayout({
         {children}
         {/* Cookieless page views + one event per CTA and zone tab (W1). */}
         <Analytics />
+        <SiteMeasure />
       </body>
     </html>
   );
