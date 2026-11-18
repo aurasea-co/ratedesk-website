@@ -1,7 +1,7 @@
 'use client';
 
 // WS4 (Bo, 18 Nov 2026) — what this page counts, with NO cookie and NO personal data: one page view, each <section id>
-// the first time it is scrolled into view, and every tap on a [data-cta] button. Taps on the LINE add-friend link go
+// the first time its top reaches the upper 60% of the screen (a % of the SECTION would never fire on a tall one), and every tap on a [data-cta] button. Taps on the LINE add-friend link go
 // through the app's counting redirect (same LINE account, nothing changes for the person); sign-up links keep the
 // ad's utm_source / utm_campaign. Counts are stored per day by the Aurasea app (website_events_daily) — never who.
 
@@ -46,7 +46,7 @@ export function SiteMeasure() {
         const id = sectionOf(e.target);
         if (e.isIntersecting && id && !seen.has(id)) { seen.add(id); send('section_seen', { section: id }); }
       }
-    }, { threshold: 0.4 });
+    }, { threshold: 0, rootMargin: '0px 0px -40% 0px' });
     document.querySelectorAll('section[id]').forEach((s) => io?.observe(s));
     return () => io?.disconnect();
   }, [path]);
