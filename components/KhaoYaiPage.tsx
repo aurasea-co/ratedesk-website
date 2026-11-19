@@ -32,7 +32,7 @@ export async function KhaoYaiPage({ lang }: { lang: Lang }) {
           <div>
             <h2 className={`${h2} text-brand-navy`}>{c.howToReadTitle}</h2>
             <ul className={`${font} mt-5 space-y-3 text-ink-soft leading-relaxed list-disc pl-5`}>
-              {c.howToRead.map((t) => (
+              {c.howToRead.map((t) => t.replace('{min}', String(feed.minPriced))).map((t) => (
                 <li key={t}>{t}</li>
               ))}
             </ul>
@@ -40,7 +40,7 @@ export async function KhaoYaiPage({ lang }: { lang: Lang }) {
           <div>
             <h2 className={`${h2} text-brand-navy`}>{c.methodTitle}</h2>
             <ul className={`${font} mt-5 space-y-3 text-ink-soft leading-relaxed list-disc pl-5`}>
-              {c.method.map((t) => (
+              {c.method.map((t) => t.replace('{min}', String(feed.minPriced))).map((t) => (
                 <li key={t}>{t}</li>
               ))}
             </ul>

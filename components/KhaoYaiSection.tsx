@@ -70,7 +70,8 @@ export function KhaoYaiSection({
               zones: c.zones,
               legend: c.legend,
               today: c.today,
-              gapTip: c.gapTip,
+              // the minimum comes from the feed (KX1: 10), never a number in the copy
+              gapTip: c.gapTip.replace('{min}', String(feed.minPriced)),
               priced: c.priced,
               columns: c.columns,
               tableNote: c.tableNote,

@@ -42,7 +42,7 @@ export function mockKhaoYaiFeed(now: Date): KhaoYaiFeed {
   ];
   return {
     updatedAt: new Date(Date.parse(`${start}T03:10:00+07:00`)).toISOString(),
-    minPriced: 6,
+    minPriced: 10,
     zones: zones.map((z, zi) => {
       const rnd = seeded(97 + zi * 31);
       const nights: KhaoYaiNight[] = [];
@@ -54,8 +54,8 @@ export function mockKhaoYaiFeed(now: Date): KhaoYaiFeed {
         const lift = (dow === 6 ? 1.38 : dow === 5 ? 1.18 : 1) * (hol ? 1.22 : 1);
         const median = z.base * lift * (0.95 + rnd() * 0.1);
         const full = dow === 6 && rnd() < 0.35;
-        const priced = full ? 4 : 7 + Math.floor(rnd() * 7);
-        const known = priced >= 6;
+        const priced = full ? 4 : 10 + Math.floor(rnd() * 5);
+        const known = priced >= 10;
         nights.push({
           date,
           median: known ? baht(median) : null,
