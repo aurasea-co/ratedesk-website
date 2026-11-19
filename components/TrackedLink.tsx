@@ -21,6 +21,7 @@ export type CtaPlacement =
   | 'index'
   | 'index_page'
   | 'khaoyai_monthly'
+  | 'index_subscribe'
   | 'report'
   | 'faq'
   | 'final_primary'

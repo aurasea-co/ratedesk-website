@@ -22,6 +22,7 @@
     --c-cta-hover: 4 52 44;
     --c-wkend: 230 238 245;
     --c-hol: 240 229 200;
+    --c-full: 180 100 10;
     color-scheme: light;
     --font-serif: var(--nf-serif), 'Cormorant Garamond', Georgia, serif;
     --font-sans: var(--nf-sans), -apple-system, BlinkMacSystemFont, sans-serif;
@@ -49,6 +50,7 @@
       --c-cta-hover: 143 224 196;
       --c-wkend: 27 44 63;
       --c-hol: 62 51 27;
+      --c-full: 240 170 70;
       color-scheme: dark;
     }
   }
@@ -73,6 +75,7 @@
     --c-cta-hover: 4 52 44;
     --c-wkend: 230 238 245;
     --c-hol: 240 229 200;
+    --c-full: 180 100 10;
     color-scheme: light;
   }
 
@@ -230,4 +233,13 @@
   .horizon-anim {
     animation: none;
   }
+}
+
+/* KX2 — the Khao Yai Stay Index prints on A4 for the ชมรม: no navigation, no button, figures in black. */
+@media print {
+  @page { size: A4; margin: 14mm; }
+  .no-print { display: none !important; }
+  .khaoyai-page { color: #000 !important; background: #fff !important; }
+  .khaoyai-page section { break-inside: avoid; }
+  .khaoyai-page a { text-decoration: none; color: #000 !important; }
 }

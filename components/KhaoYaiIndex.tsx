@@ -17,7 +17,18 @@ export type IndexCopy = {
   priced: string;
   columns: readonly string[];
   tableNote: string;
+  /** KX2 — "ตลาดเกือบเต็ม" marker and its tip (nights with half or more likely full) */
+  nearlyFull?: string;
+  fullTip?: string;
+  /** KX2 — the public page: full dates with the year in the table, "{p} จาก {n}" priced, summary cards */
+  fullDates?: boolean;
+  pricedOf?: string;
+  cards?: { thisWeekend: string; nextHoliday: string; median: string; full: string; from: string; notEnough: string; none: string };
 };
+
+/** KX2 — a night where half the properties or more have no room on sale on Google: the market is likely nearly full. */
+export const NEARLY_FULL_SHARE = 0.5;
+const nearlyFull = (n: KhaoYaiNight) => n.noPrice != null && n.noPrice >= NEARLY_FULL_SHARE;
 
 type Lang = 'th' | 'en';
 
@@ -35,9 +46,9 @@ const MON = {
   en: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
 };
 
-function nightLabel(date: string, lang: Lang, withWeekday = true): string {
+function nightLabel(date: string, lang: Lang, withWeekday = true, withYear = false): string {
   const d = new Date(`${date}T00:00:00Z`);
-  const dm = `${d.getUTCDate()} ${MON[lang][d.getUTCMonth()]}`;
+  const dm = `${d.getUTCDate()} ${MON[lang][d.getUTCMonth()]}${withYear ? ` ${d.getUTCFullYear() + (lang === 'th' ? 543 : 0)}` : ''}`;
   return withWeekday ? `${WD[lang][d.getUTCDay()]} ${dm}` : dm;
 }
 
@@ -56,11 +67,13 @@ function runs(nights: KhaoYaiNight[]): number[][] {
   return out;
 }
 
-function niceTicks(lo: number, hi: number): number[] {
+/** KX2 — the axis always reaches below the lowest plotted value and above the highest, with a label at the bottom
+ *  (the first gridline used to be rounded UP, so the lowest prices sat under no label). */
+export function niceTicks(lo: number, hi: number): number[] {
   const span = hi - lo;
-  const step = span > 3000 ? 1000 : span > 1200 ? 500 : 250;
+  const step = span > 3000 ? 1000 : span > 1200 ? 500 : span > 500 ? 250 : 100;
   const ticks: number[] = [];
-  for (let v = Math.ceil(lo / step) * step; v <= hi; v += step) ticks.push(v);
+  for (let v = Math.floor(lo / step) * step; v < hi + step; v += step) ticks.push(v);
   return ticks;
 }
 
@@ -111,6 +124,7 @@ export function KhaoYaiIndexView({
         </div>
       )}
 
+      {copy.cards && <SummaryCards zone={zone} lang={lang} copy={copy} />}
       <p className="mt-6 text-lg text-ink-soft text-pretty">{summary}</p>
 
       <Chart zone={zone} lang={lang} copy={copy} />
@@ -134,7 +148,7 @@ export function KhaoYaiIndexView({
               return (
                 <tr key={n.date} className="border-b border-ink/10">
                   <td className="py-2.5 pr-3 text-ink">
-                    {nightLabel(n.date, lang)}
+                    {nightLabel(n.date, lang, true, copy.fullDates)}
                     {hol && <span className="block text-xs text-ink-muted">{hol}</span>}
                   </td>
                   <td className="py-2.5 pr-3 text-right font-semibold text-ink">
@@ -143,8 +157,9 @@ export function KhaoYaiIndexView({
                   <td className="py-2.5 pr-3 text-right text-ink-soft">
                     {n.p25 != null && n.p75 != null ? `${baht(n.p25)}–${baht(n.p75)}` : '—'}
                   </td>
-                  <td className="py-2.5 pr-3 text-right text-ink-soft">{pct(n.raised7d)}</td>
-                  <td className="py-2.5 text-right text-ink-soft">{pct(n.noPrice)}</td>
+                  {/* KX2 — "ที่พักที่น่าจะเต็ม" (was "ไม่มีราคาบน Google"); "ขึ้นราคาใน 7 วัน" removed (mostly "—") */}
+                  <td className={`py-2.5 pr-3 text-right ${nearlyFull(n) ? 'font-semibold text-ink' : 'text-ink-soft'}`}>{pct(n.noPrice)}</td>
+                  <td className="py-2.5 text-right text-ink-soft">{copy.pricedOf ? copy.pricedOf.replace('{p}', String(n.priced)).replace('{n}', String(zone.properties)) : n.priced}</td>
                 </tr>
               );
             })}
@@ -189,6 +204,12 @@ function Legend({ copy }: { copy: IndexCopy }) {
         <span aria-hidden className="block h-3 w-0 border-l-2 border-dashed border-ink-subtle" />
         {copy.legend.gap}
       </li>
+      {copy.nearlyFull && (
+        <li className={item}>
+          <svg aria-hidden width="12" height="10"><path d="M 1 1 L 11 1 L 6 9 Z" style={{ fill: 'rgb(var(--c-full))' }} /></svg>
+          {copy.nearlyFull}
+        </li>
+      )}
     </ul>
   );
 }
@@ -218,10 +239,11 @@ function Chart({ zone, lang, copy }: { zone: KhaoYaiZone; lang: Lang; copy: Inde
 
   const { ticks, y } = useMemo(() => {
     const vals = nights.flatMap((n) => [n.p25, n.p75, n.median]).filter((v): v is number => v != null);
-    const lo = Math.min(...vals) * 0.92;
-    const hi = Math.max(...vals) * 1.04;
+    const t = niceTicks(Math.min(...vals) * 0.97, Math.max(...vals) * 1.02)
+    const lo = t[0];
+    const hi = t[t.length - 1];
     return {
-      ticks: niceTicks(lo, hi),
+      ticks: t,
       y: (v: number) => padT + (1 - (v - lo) / (hi - lo)) * (H - padT - padB),
     };
   }, [nights, H]);
@@ -296,11 +318,20 @@ function Chart({ zone, lang, copy }: { zone: KhaoYaiZone; lang: Lang; copy: Inde
         )}
 
         <line x1={x(0)} x2={x(0)} y1={padT} y2={H - padB} className="stroke-ink/40" strokeDasharray="2 3" />
+        {/* KX2 — "วันนี้" sits on the today line, the axis shows every 7th night's date (the two used to sit side by side and read "วันนี้ 26 พ.ย.") */}
+        <text x={x(0) + 4} y={H - padB - 6} fontSize={11} className="fill-ink-soft" data-testid="khaoyai-today">{copy.today}</text>
         {nights.map((n, i) =>
-          i === 0 || i % 7 === 0 ? (
-            <text key={`x${i}`} x={x(i)} y={H - 10} textAnchor="middle" fontSize={11} className="fill-ink-muted">
-              {i === 0 ? copy.today : nightLabel(n.date, lang, false)}
+          i % 7 === 0 ? (
+            <text key={`x${i}`} x={x(i)} y={H - 10} textAnchor={i === 0 ? 'start' : 'middle'} fontSize={11} className="fill-ink-muted">
+              {nightLabel(n.date, lang, false)}
             </text>
+          ) : null,
+        )}
+        {copy.nearlyFull && nights.map((n, i) =>
+          nearlyFull(n) ? (
+            <path key={`f${i}`} d={`M ${x(i) - 5} ${padT + 2} L ${x(i) + 5} ${padT + 2} L ${x(i)} ${padT + 10} Z`} style={{ fill: 'rgb(var(--c-full))' }} data-nearly-full={n.date}>
+              <title>{copy.nearlyFull}</title>
+            </path>
           ) : null,
         )}
 
@@ -348,9 +379,39 @@ function Chart({ zone, lang, copy }: { zone: KhaoYaiZone; lang: Lang; copy: Inde
           ) : (
             <p className="mt-1 text-ink-soft">{copy.gapTip}</p>
           )}
+          {copy.fullTip && nearlyFull(a) && (
+            <p className="mt-1 font-medium text-ink">{copy.nearlyFull} · {copy.fullTip.replace('{pct}', String(Math.round((a.noPrice ?? 0) * 100))).replace('{n}', String(a.priced))}</p>
+          )}
           <p className="text-xs text-ink-muted">{copy.priced.replace('{n}', String(a.priced))}</p>
         </div>
       )}
+    </div>
+  );
+}
+
+/** KX2 — the page's summary cards for the zone shown: this weekend's Saturday and the next long weekend's first night,
+ *  each with its median, likely-full share and n. A night under the minimum says ข้อมูลไม่พอ — never a figure. */
+function SummaryCards({ zone, lang, copy }: { zone: KhaoYaiZone; lang: Lang; copy: IndexCopy }) {
+  const c = copy.cards!;
+  const sat = zone.nights.find((n) => new Date(`${n.date}T00:00:00Z`).getUTCDay() === 6);
+  const hol = zone.nights.find((n) => n.holidayTh || n.holidayEn);
+  const card = (title: string, n: KhaoYaiNight | undefined, extra?: string | null) => (
+    <div className="rounded-2xl border border-ink/15 p-5" data-testid="khaoyai-card">
+      <p className="text-sm text-ink-muted">{title}</p>
+      {n ? (
+        <>
+          <p className="mt-1 font-semibold text-ink">{nightLabel(n.date, lang, true, true)}{extra ? ` · ${extra}` : ''}</p>
+          <p className="mt-2 text-ink">{c.median} <span className="font-semibold">{n.median != null ? baht(n.median) : c.notEnough}</span></p>
+          <p className="text-ink">{c.full} <span className="font-semibold">{pct(n.noPrice)}</span></p>
+          <p className="mt-1 text-xs text-ink-muted">{c.from.replace('{n}', String(n.priced))}</p>
+        </>
+      ) : <p className="mt-1 text-ink-soft">{c.none}</p>}
+    </div>
+  );
+  return (
+    <div className="mt-6 grid grid-cols-1 sm:grid-cols-2 gap-4">
+      {card(c.thisWeekend, sat)}
+      {card(c.nextHoliday, hol, hol ? (lang === 'th' ? hol.holidayTh : hol.holidayEn) : null)}
     </div>
   );
 }

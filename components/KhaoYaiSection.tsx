@@ -1,4 +1,5 @@
 import { content, LINE_URL, type Lang } from '@/lib/content';
+import { indexCopy } from '@/lib/khaoyai-copy';
 import { isStale, zonesWithData, type KhaoYaiFeed } from '@/lib/khaoyai';
 import { KhaoYaiIndexView } from '@/components/KhaoYaiIndex';
 import { TrackedLink } from '@/components/TrackedLink';
@@ -75,6 +76,9 @@ export function KhaoYaiSection({
               priced: c.priced,
               columns: c.columns,
               tableNote: c.tableNote,
+              // KX2 — the same "ตลาดเกือบเต็ม" marker as the public page
+              nearlyFull: indexCopy[lang].chart.nearlyFull,
+              fullTip: indexCopy[lang].chart.fullTip,
             }}
           />
         </div>
